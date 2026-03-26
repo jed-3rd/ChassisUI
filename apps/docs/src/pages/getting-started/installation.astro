@@ -8,42 +8,42 @@ import DocsLayout from '../../layouts/DocsLayout.astro';
 
   <h2>Web Components (framework-agnostic)</h2>
   <p>The core package provides Lit-based Web Components that work everywhere.</p>
-  <pre><code>npm install @chassis-ui/core @chassis-ui/tokens @chassis-ui/themes</code></pre>
+  <pre><code>npm install @chassisui/core @chassisui/tokens @chassisui/themes</code></pre>
 
   <h3>Usage</h3>
   <pre><code>&lt;!-- Import tokens and a theme --&gt;
-&lt;link rel="stylesheet" href="@chassis-ui/tokens/css/global" /&gt;
-&lt;link rel="stylesheet" href="@chassis-ui/tokens/css/material3" /&gt;
+&lt;link rel="stylesheet" href="@chassisui/tokens/css/global" /&gt;
+&lt;link rel="stylesheet" href="@chassisui/tokens/css/material3" /&gt;
 
 &lt;!-- Set active theme --&gt;
 &lt;html data-theme="material3"&gt;
 
 &lt;!-- Use components --&gt;
 &lt;script type="module"&gt;
-  import '@chassis-ui/core/button';
+  import '@chassisui/core/button';
 &lt;/script&gt;
 
 &lt;chassis-button variant="primary"&gt;Click me&lt;/chassis-button&gt;</code></pre>
 
   <h2>React</h2>
-  <pre><code>npm install @chassis-ui/react @chassis-ui/core @chassis-ui/tokens @chassis-ui/themes</code></pre>
-  <pre><code>import &lbrace; Button &rbrace; from '@chassis-ui/react';
+  <pre><code>npm install @chassisui/react @chassisui/core @chassisui/tokens @chassisui/themes</code></pre>
+  <pre><code>import &lbrace; Button &rbrace; from '@chassisui/react';
 
 function App() &lbrace;
   return &lt;Button variant="primary"&gt;Click me&lt;/Button&gt;;
 &rbrace;</code></pre>
 
   <h2>Astro</h2>
-  <pre><code>npm install @chassis-ui/astro @chassis-ui/core @chassis-ui/tokens @chassis-ui/themes</code></pre>
+  <pre><code>npm install @chassisui/astro @chassisui/core @chassisui/tokens @chassisui/themes</code></pre>
   <pre><code>---
-import Button from '@chassis-ui/astro/Button.astro';
+import Button from '@chassisui/astro/Button.astro';
 ---
 
 &lt;Button variant="primary"&gt;Click me&lt;/Button&gt;</code></pre>
 
   <h2>Angular</h2>
-  <pre><code>npm install @chassis-ui/angular @chassis-ui/core @chassis-ui/tokens @chassis-ui/themes</code></pre>
-  <pre><code>import &lbrace; ButtonComponent &rbrace; from '@chassis-ui/angular';
+  <pre><code>npm install @chassisui/angular @chassisui/core @chassisui/tokens @chassisui/themes</code></pre>
+  <pre><code>import &lbrace; ButtonComponent &rbrace; from '@chassisui/angular';
 
 @Component(&lbrace;
   imports: [ButtonComponent],
@@ -52,9 +52,9 @@ import Button from '@chassis-ui/astro/Button.astro';
 export class AppComponent &lbrace;&rbrace;</code></pre>
 
   <h2>Svelte</h2>
-  <pre><code>npm install @chassis-ui/svelte @chassis-ui/core @chassis-ui/tokens @chassis-ui/themes</code></pre>
+  <pre><code>npm install @chassisui/svelte @chassisui/core @chassisui/tokens @chassisui/themes</code></pre>
   <pre><code>&lt;script&gt;
-  import &lbrace; Button &rbrace; from '@chassis-ui/svelte';
+  import &lbrace; Button &rbrace; from '@chassisui/svelte';
 &lt;/script&gt;
 
 &lt;Button variant="primary"&gt;Click me&lt;/Button&gt;</code></pre>

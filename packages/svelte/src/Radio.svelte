@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/radio';
+  import '@chassisui/core/radio';
   export let value = '';
   export let label = '';
   export let checked = false;

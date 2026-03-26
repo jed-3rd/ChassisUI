@@ -21,12 +21,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
     webComponent={`<chassis-spinner></chassis-spinner>
 <chassis-spinner size="sm"></chassis-spinner>
 <chassis-spinner size="lg"></chassis-spinner>`}
-    react={`import { Spinner } from '@chassis-ui/react';
+    react={`import { Spinner } from '@chassisui/react';
 
 <Spinner />
 <Spinner size="sm" />
 <Spinner size="lg" />`}
-    angular={`import { SpinnerComponent } from '@chassis-ui/angular';
+    angular={`import { SpinnerComponent } from '@chassisui/angular';
 
 @Component({
   imports: [SpinnerComponent],
@@ -36,13 +36,13 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Spinner from '@chassis-ui/astro/Spinner.astro';
+import Spinner from '@chassisui/astro/Spinner.astro';
 ---
 
 <Spinner />
 <Spinner size="lg" />`}
     svelte={`<script>
-  import { Spinner } from '@chassis-ui/svelte';
+  import { Spinner } from '@chassisui/svelte';
 </script>
 
 <Spinner />
@@ -79,7 +79,7 @@ import Spinner from '@chassis-ui/astro/Spinner.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/spinner';
+  import '@chassisui/core/spinner';
 </script>
 
 <style>

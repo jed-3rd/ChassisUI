@@ -30,14 +30,14 @@ import CodeTabs from '../../components/CodeTabs.astro';
   <p>Card content here.</p>
   <span slot="footer">Footer</span>
 </chassis-card>`}
-    react={`import { Card } from '@chassis-ui/react';
+    react={`import { Card } from '@chassisui/react';
 
 <Card>
   <span slot="header">Card Title</span>
   <p>Card content here.</p>
   <span slot="footer">Footer</span>
 </Card>`}
-    angular={`import { CardComponent } from '@chassis-ui/angular';
+    angular={`import { CardComponent } from '@chassisui/angular';
 
 @Component({
   imports: [CardComponent],
@@ -51,7 +51,7 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Card from '@chassis-ui/astro/Card.astro';
+import Card from '@chassisui/astro/Card.astro';
 ---
 
 <Card>
@@ -60,7 +60,7 @@ import Card from '@chassis-ui/astro/Card.astro';
   <span slot="footer">Footer</span>
 </Card>`}
     svelte={`<script>
-  import { Card } from '@chassis-ui/svelte';
+  import { Card } from '@chassisui/svelte';
 </script>
 
 <Card>
@@ -72,5 +72,5 @@ import Card from '@chassis-ui/astro/Card.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/card';
+  import '@chassisui/core/card';
 </script>

@@ -1,6 +1,10 @@
 {
-  "name": "@chassis-ui/tokens",
+  "name": "@chassisui/tokens",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "type": "module",
   "exports": {
     ".": "./dist/js/tokens.js",

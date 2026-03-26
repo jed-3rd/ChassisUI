@@ -15,10 +15,10 @@ import CodeTabs from '../../components/CodeTabs.astro';
 
   <CodeTabs
     webComponent={`<chassis-date-picker></chassis-date-picker>`}
-    react={`import { DatePicker } from '@chassis-ui/react';
+    react={`import { DatePicker } from '@chassisui/react';
 
 <DatePicker />`}
-    angular={`import { DatePickerComponent } from '@chassis-ui/angular';
+    angular={`import { DatePickerComponent } from '@chassisui/angular';
 
 @Component({
   imports: [DatePickerComponent],
@@ -29,12 +29,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import DatePicker from '@chassis-ui/astro/DatePicker.astro';
+import DatePicker from '@chassisui/astro/DatePicker.astro';
 ---
 
 <DatePicker />`}
     svelte={`<script>
-  import { DatePicker } from '@chassis-ui/svelte';
+  import { DatePicker } from '@chassisui/svelte';
 </script>
 
 <DatePicker />`}
@@ -88,7 +88,7 @@ import DatePicker from '@chassis-ui/astro/DatePicker.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/date-picker';
+  import '@chassisui/core/date-picker';
 </script>
 
 <style>

@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/dialog';
+  import '@chassisui/core/dialog';
   export let open = false;
   export let modal = true;
 </script>

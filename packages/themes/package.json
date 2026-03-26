@@ -1,6 +1,10 @@
 {
-  "name": "@chassis-ui/themes",
+  "name": "@chassisui/themes",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

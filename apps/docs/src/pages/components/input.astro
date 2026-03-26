@@ -15,10 +15,10 @@ import CodeTabs from '../../components/CodeTabs.astro';
 
   <CodeTabs
     webComponent={`<chassis-input label="Name" placeholder="Enter your name"></chassis-input>`}
-    react={`import { Input } from '@chassis-ui/react';
+    react={`import { Input } from '@chassisui/react';
 
 <Input label="Name" placeholder="Enter your name" />`}
-    angular={`import { InputComponent } from '@chassis-ui/angular';
+    angular={`import { InputComponent } from '@chassisui/angular';
 
 @Component({
   imports: [InputComponent],
@@ -28,12 +28,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Input from '@chassis-ui/astro/Input.astro';
+import Input from '@chassisui/astro/Input.astro';
 ---
 
 <Input label="Name" placeholder="Enter your name" />`}
     svelte={`<script>
-  import { Input } from '@chassis-ui/svelte';
+  import { Input } from '@chassisui/svelte';
 </script>
 
 <Input label="Name" placeholder="Enter your name" />`}
@@ -61,5 +61,5 @@ import Input from '@chassis-ui/astro/Input.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/input';
+  import '@chassisui/core/input';
 </script>

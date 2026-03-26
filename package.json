@@ -12,7 +12,7 @@
     "dev": "turbo run dev",
     "test": "turbo run test",
     "lint": "turbo run lint",
-    "tokens:build": "turbo run build --filter=@chassis-ui/tokens",
+    "tokens:build": "turbo run build --filter=@chassisui/tokens",
     "clean": "turbo run clean"
   },
   "devDependencies": {

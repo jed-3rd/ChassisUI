@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/button';
+  import '@chassisui/core/button';
   export let variant = 'primary';
   export let size = 'md';
   export let disabled = false;

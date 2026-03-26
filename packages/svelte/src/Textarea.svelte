@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/textarea';
+  import '@chassisui/core/textarea';
   export let label = '';
   export let placeholder = '';
   export let value = '';

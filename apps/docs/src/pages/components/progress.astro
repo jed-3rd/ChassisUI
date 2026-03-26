@@ -17,10 +17,10 @@ import CodeTabs from '../../components/CodeTabs.astro';
 
   <CodeTabs
     webComponent={`<chassis-progress value="75" max="100"></chassis-progress>`}
-    react={`import { Progress } from '@chassis-ui/react';
+    react={`import { Progress } from '@chassisui/react';
 
 <Progress value={75} max={100} />`}
-    angular={`import { ProgressComponent } from '@chassis-ui/angular';
+    angular={`import { ProgressComponent } from '@chassisui/angular';
 
 @Component({
   imports: [ProgressComponent],
@@ -30,12 +30,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Progress from '@chassis-ui/astro/Progress.astro';
+import Progress from '@chassisui/astro/Progress.astro';
 ---
 
 <Progress value={75} max={100} />`}
     svelte={`<script>
-  import { Progress } from '@chassis-ui/svelte';
+  import { Progress } from '@chassisui/svelte';
 </script>
 
 <Progress value={75} max={100} />`}
@@ -89,7 +89,7 @@ import Progress from '@chassis-ui/astro/Progress.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/progress';
+  import '@chassisui/core/progress';
 </script>
 
 <style>

@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/dropdown-menu';
+  import '@chassisui/core/dropdown-menu';
   export let placement = 'bottom-start';
 </script>
 

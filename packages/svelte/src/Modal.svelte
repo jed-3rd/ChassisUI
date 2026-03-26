@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/modal';
+  import '@chassisui/core/modal';
   export let modalTitle = '';
   export let open = false;
   export let modalSize = 'md';

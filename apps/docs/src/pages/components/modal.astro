@@ -29,7 +29,7 @@ import CodeTabs from '../../components/CodeTabs.astro';
     <button>Confirm</button>
   </div>
 </chassis-modal>`}
-    react={`import { Modal } from '@chassis-ui/react';
+    react={`import { Modal } from '@chassisui/react';
 
 <Modal modalTitle="Confirm Action" open={isOpen}>
   <p>Are you sure?</p>
@@ -38,7 +38,7 @@ import CodeTabs from '../../components/CodeTabs.astro';
     <button>Confirm</button>
   </div>
 </Modal>`}
-    angular={`import { ModalComponent } from '@chassis-ui/angular';
+    angular={`import { ModalComponent } from '@chassisui/angular';
 
 @Component({
   imports: [ModalComponent],
@@ -59,7 +59,7 @@ export class MyComponent {
   isOpen = false;
 }`}
     astro={`---
-import Modal from '@chassis-ui/astro/Modal.astro';
+import Modal from '@chassisui/astro/Modal.astro';
 ---
 
 <button id="open-btn">Open</button>
@@ -67,7 +67,7 @@ import Modal from '@chassis-ui/astro/Modal.astro';
   <p>Are you sure?</p>
 </Modal>`}
     svelte={`<script>
-  import { Modal } from '@chassis-ui/svelte';
+  import { Modal } from '@chassisui/svelte';
   let open = false;
 </script>
 
@@ -138,7 +138,7 @@ import Modal from '@chassis-ui/astro/Modal.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/modal';
+  import '@chassisui/core/modal';
 
   document.getElementById('open-modal-btn')?.addEventListener('click', () => {
     (document.getElementById('demo-modal') as any)?.show();

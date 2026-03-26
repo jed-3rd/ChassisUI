@@ -21,13 +21,13 @@ import CodeTabs from '../../components/CodeTabs.astro';
 <chassis-alert variant="success">Operation completed.</chassis-alert>
 <chassis-alert variant="warning">Please review.</chassis-alert>
 <chassis-alert variant="error">Something went wrong.</chassis-alert>`}
-    react={`import { Alert } from '@chassis-ui/react';
+    react={`import { Alert } from '@chassisui/react';
 
 <Alert variant="info">Informational message.</Alert>
 <Alert variant="success">Operation completed.</Alert>
 <Alert variant="warning">Please review.</Alert>
 <Alert variant="error">Something went wrong.</Alert>`}
-    angular={`import { AlertComponent } from '@chassis-ui/angular';
+    angular={`import { AlertComponent } from '@chassisui/angular';
 
 @Component({
   imports: [AlertComponent],
@@ -38,13 +38,13 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Alert from '@chassis-ui/astro/Alert.astro';
+import Alert from '@chassisui/astro/Alert.astro';
 ---
 
 <Alert variant="info">Informational message.</Alert>
 <Alert variant="error">Something went wrong.</Alert>`}
     svelte={`<script>
-  import { Alert } from '@chassis-ui/svelte';
+  import { Alert } from '@chassisui/svelte';
 </script>
 
 <Alert variant="info">Informational message.</Alert>
@@ -99,7 +99,7 @@ import Alert from '@chassis-ui/astro/Alert.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/alert';
+  import '@chassisui/core/alert';
 </script>
 
 <style>

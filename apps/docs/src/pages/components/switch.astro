@@ -17,11 +17,11 @@ import CodeTabs from '../../components/CodeTabs.astro';
   <CodeTabs
     webComponent={`<chassis-switch label="Notifications"></chassis-switch>
 <chassis-switch label="Dark mode" checked></chassis-switch>`}
-    react={`import { Switch } from '@chassis-ui/react';
+    react={`import { Switch } from '@chassisui/react';
 
 <Switch label="Notifications" />
 <Switch label="Dark mode" checked />`}
-    angular={`import { SwitchComponent } from '@chassis-ui/angular';
+    angular={`import { SwitchComponent } from '@chassisui/angular';
 
 @Component({
   imports: [SwitchComponent],
@@ -32,13 +32,13 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Switch from '@chassis-ui/astro/Switch.astro';
+import Switch from '@chassisui/astro/Switch.astro';
 ---
 
 <Switch label="Notifications" />
 <Switch label="Dark mode" checked />`}
     svelte={`<script>
-  import { Switch } from '@chassis-ui/svelte';
+  import { Switch } from '@chassisui/svelte';
 </script>
 
 <Switch label="Notifications" />
@@ -89,7 +89,7 @@ import Switch from '@chassis-ui/astro/Switch.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/switch';
+  import '@chassisui/core/switch';
 </script>
 
 <style>

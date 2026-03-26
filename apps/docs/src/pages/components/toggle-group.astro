@@ -23,14 +23,14 @@ import CodeTabs from '../../components/CodeTabs.astro';
   <button data-value="center">Center</button>
   <button data-value="right">Right</button>
 </chassis-toggle-group>`}
-    react={`import { ToggleGroup } from '@chassis-ui/react';
+    react={`import { ToggleGroup } from '@chassisui/react';
 
 <ToggleGroup value="center">
   <button data-value="left">Left</button>
   <button data-value="center">Center</button>
   <button data-value="right">Right</button>
 </ToggleGroup>`}
-    angular={`import { ToggleGroupComponent } from '@chassis-ui/angular';
+    angular={`import { ToggleGroupComponent } from '@chassisui/angular';
 
 @Component({
   imports: [ToggleGroupComponent],
@@ -44,7 +44,7 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import ToggleGroup from '@chassis-ui/astro/ToggleGroup.astro';
+import ToggleGroup from '@chassisui/astro/ToggleGroup.astro';
 ---
 
 <ToggleGroup value="center">
@@ -53,7 +53,7 @@ import ToggleGroup from '@chassis-ui/astro/ToggleGroup.astro';
   <button data-value="right">Right</button>
 </ToggleGroup>`}
     svelte={`<script>
-  import { ToggleGroup } from '@chassis-ui/svelte';
+  import { ToggleGroup } from '@chassisui/svelte';
 </script>
 
 <ToggleGroup value="center">
@@ -103,7 +103,7 @@ import ToggleGroup from '@chassis-ui/astro/ToggleGroup.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/toggle-group';
+  import '@chassisui/core/toggle-group';
 </script>
 
 <style>

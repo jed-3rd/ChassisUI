@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/input';
+  import '@chassisui/core/input';
   export let type = 'text';
   export let value = '';
   export let placeholder = '';

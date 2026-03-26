@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/card';
+  import '@chassisui/core/card';
   export let elevated = false;
   export let outlined = false;
 </script>

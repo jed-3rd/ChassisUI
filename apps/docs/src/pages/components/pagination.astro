@@ -15,10 +15,10 @@ import CodeTabs from '../../components/CodeTabs.astro';
 
   <CodeTabs
     webComponent={`<chassis-pagination total="10" current="1"></chassis-pagination>`}
-    react={`import { Pagination } from '@chassis-ui/react';
+    react={`import { Pagination } from '@chassisui/react';
 
 <Pagination total={10} current={1} onChange={(e) => console.log(e.detail.page)} />`}
-    angular={`import { PaginationComponent } from '@chassis-ui/angular';
+    angular={`import { PaginationComponent } from '@chassisui/angular';
 
 @Component({
   imports: [PaginationComponent],
@@ -33,12 +33,12 @@ export class MyComponent {
   currentPage = 1;
 }`}
     astro={`---
-import Pagination from '@chassis-ui/astro/Pagination.astro';
+import Pagination from '@chassisui/astro/Pagination.astro';
 ---
 
 <Pagination total={10} current={1} />`}
     svelte={`<script>
-  import { Pagination } from '@chassis-ui/svelte';
+  import { Pagination } from '@chassisui/svelte';
 </script>
 
 <Pagination total={10} current={1} />`}
@@ -100,7 +100,7 @@ import Pagination from '@chassis-ui/astro/Pagination.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/pagination';
+  import '@chassisui/core/pagination';
 </script>
 
 <style>

@@ -1,0 +1,36 @@
+name: Publish to npm
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: npm
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - run: npm ci
+
+      - run: npx turbo build
+
+      - run: |
+          npm publish --workspace=packages/tokens --access public --provenance
+          npm publish --workspace=packages/core --access public --provenance
+          npm publish --workspace=packages/themes --access public --provenance
+          npm publish --workspace=packages/react --access public --provenance
+          npm publish --workspace=packages/astro --access public --provenance
+          npm publish --workspace=packages/svelte --access public --provenance
+          npm publish --workspace=packages/angular --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

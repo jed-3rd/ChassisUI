@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/progress';
+  import '@chassisui/core/progress';
   export let value = 0;
   export let max = 100;
   export let variant = 'linear';

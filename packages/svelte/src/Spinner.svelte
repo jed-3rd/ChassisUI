@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/spinner';
+  import '@chassisui/core/spinner';
   export let size = 'md';
 </script>
 

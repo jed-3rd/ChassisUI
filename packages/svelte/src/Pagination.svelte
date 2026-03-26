@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/pagination';
+  import '@chassisui/core/pagination';
   export let total = 1;
   export let current = 1;
   export let siblings = 1;

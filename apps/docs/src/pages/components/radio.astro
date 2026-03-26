@@ -23,14 +23,14 @@ import CodeTabs from '../../components/CodeTabs.astro';
   <chassis-radio value="banana" label="Banana"></chassis-radio>
   <chassis-radio value="cherry" label="Cherry"></chassis-radio>
 </chassis-radio-group>`}
-    react={`import { RadioGroup, Radio } from '@chassis-ui/react';
+    react={`import { RadioGroup, Radio } from '@chassisui/react';
 
 <RadioGroup label="Favorite fruit" value="apple">
   <Radio value="apple" label="Apple" />
   <Radio value="banana" label="Banana" />
   <Radio value="cherry" label="Cherry" />
 </RadioGroup>`}
-    angular={`import { RadioGroupComponent, RadioComponent } from '@chassis-ui/angular';
+    angular={`import { RadioGroupComponent, RadioComponent } from '@chassisui/angular';
 
 @Component({
   imports: [RadioGroupComponent, RadioComponent],
@@ -44,8 +44,8 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import RadioGroup from '@chassis-ui/astro/RadioGroup.astro';
-import Radio from '@chassis-ui/astro/Radio.astro';
+import RadioGroup from '@chassisui/astro/RadioGroup.astro';
+import Radio from '@chassisui/astro/Radio.astro';
 ---
 
 <RadioGroup label="Favorite fruit" value="apple">
@@ -54,7 +54,7 @@ import Radio from '@chassis-ui/astro/Radio.astro';
   <Radio value="cherry" label="Cherry" />
 </RadioGroup>`}
     svelte={`<script>
-  import { RadioGroup, Radio } from '@chassis-ui/svelte';
+  import { RadioGroup, Radio } from '@chassisui/svelte';
 </script>
 
 <RadioGroup label="Favorite fruit" value="apple">
@@ -133,7 +133,7 @@ import Radio from '@chassis-ui/astro/Radio.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/radio';
+  import '@chassisui/core/radio';
 </script>
 
 <style>

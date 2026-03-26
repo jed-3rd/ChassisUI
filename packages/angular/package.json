@@ -1,6 +1,10 @@
 {
-  "name": "@chassis-ui/angular",
+  "name": "@chassisui/angular",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -14,13 +18,13 @@
   "peerDependencies": {
     "@angular/core": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "@angular/common": "^17.0.0 || ^18.0.0 || ^19.0.0",
-    "@chassis-ui/core": "*"
+    "@chassisui/core": "*"
   },
   "devDependencies": {
     "@angular/core": "^19.0.0",
     "@angular/common": "^19.0.0",
     "typescript": "^5.7.0",
-    "@chassis-ui/core": "*",
+    "@chassisui/core": "*",
     "rxjs": "^7.8.0",
     "zone.js": "^0.15.0"
   }

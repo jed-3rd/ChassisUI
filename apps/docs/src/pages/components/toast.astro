@@ -19,27 +19,27 @@ import CodeTabs from '../../components/CodeTabs.astro';
   </ComponentPreview>
 
   <CodeTabs
-    webComponent={`import { ToastManager } from '@chassis-ui/core/toast';
+    webComponent={`import { ToastManager } from '@chassisui/core/toast';
 
 ToastManager.show('File saved.', { variant: 'success' });
 ToastManager.show('Network error.', { variant: 'error', duration: 8000 });`}
-    react={`import { ToastManager } from '@chassis-ui/react';
+    react={`import { ToastManager } from '@chassisui/react';
 
 ToastManager.show('File saved.', { variant: 'success' });
 ToastManager.show('Network error.', { variant: 'error', duration: 8000 });`}
-    angular={`import '@chassis-ui/core/toast';
-import { ToastManager } from '@chassis-ui/core/toast';
+    angular={`import '@chassisui/core/toast';
+import { ToastManager } from '@chassisui/core/toast';
 
 ToastManager.show('File saved.', { variant: 'success' });`}
     astro={`---
 ---
 
 <script>
-  import { ToastManager } from '@chassis-ui/core/toast';
+  import { ToastManager } from '@chassisui/core/toast';
   ToastManager.show('File saved.', { variant: 'success' });
 </script>`}
     svelte={`<script>
-  import { ToastManager } from '@chassis-ui/core/toast';
+  import { ToastManager } from '@chassisui/core/toast';
   ToastManager.show('File saved.', { variant: 'success' });
 </script>`}
   />
@@ -103,9 +103,9 @@ ToastManager.show('File saved.', { variant: 'success' });`}
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/toast';
-  import '@chassis-ui/core/button';
-  import { ToastManager } from '@chassis-ui/core/toast';
+  import '@chassisui/core/toast';
+  import '@chassisui/core/button';
+  import { ToastManager } from '@chassisui/core/toast';
 
   function initToastDemo() {
     document.getElementById('toast-info')?.addEventListener('click', () => {

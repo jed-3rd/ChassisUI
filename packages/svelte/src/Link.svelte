@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/link';
+  import '@chassisui/core/link';
   export let href = '';
   export let target = '';
   export let variant = 'default';

@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/date-picker';
+  import '@chassisui/core/date-picker';
   export let value = '';
   export let min = '';
   export let max = '';

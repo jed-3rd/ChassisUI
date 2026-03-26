@@ -23,14 +23,14 @@ import CodeTabs from '../../components/CodeTabs.astro';
 <chassis-badge variant="warning">Warning</chassis-badge>
 <chassis-badge variant="error">Error</chassis-badge>
 <chassis-badge variant="info">Info</chassis-badge>`}
-    react={`import { Badge } from '@chassis-ui/react';
+    react={`import { Badge } from '@chassisui/react';
 
 <Badge>Default</Badge>
 <Badge variant="success">Success</Badge>
 <Badge variant="warning">Warning</Badge>
 <Badge variant="error">Error</Badge>
 <Badge variant="info">Info</Badge>`}
-    angular={`import { BadgeComponent } from '@chassis-ui/angular';
+    angular={`import { BadgeComponent } from '@chassisui/angular';
 
 @Component({
   imports: [BadgeComponent],
@@ -44,7 +44,7 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Badge from '@chassis-ui/astro/Badge.astro';
+import Badge from '@chassisui/astro/Badge.astro';
 ---
 
 <Badge>Default</Badge>
@@ -53,7 +53,7 @@ import Badge from '@chassis-ui/astro/Badge.astro';
 <Badge variant="error">Error</Badge>
 <Badge variant="info">Info</Badge>`}
     svelte={`<script>
-  import { Badge } from '@chassis-ui/svelte';
+  import { Badge } from '@chassisui/svelte';
 </script>
 
 <Badge>Default</Badge>
@@ -101,7 +101,7 @@ import Badge from '@chassis-ui/astro/Badge.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/badge';
+  import '@chassisui/core/badge';
 </script>
 
 <style>

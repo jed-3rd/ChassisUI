@@ -1,38 +1,38 @@
 import { createComponent } from '@lit/react';
 import React from 'react';
 
-import { ChassisButton } from '@chassis-ui/core/button';
-import { ChassisInput } from '@chassis-ui/core/input';
-import { ChassisCard } from '@chassis-ui/core/card';
-import { ChassisCheckbox } from '@chassis-ui/core/checkbox';
-import { ChassisSwitch } from '@chassis-ui/core/switch';
-import { ChassisSelect } from '@chassis-ui/core/select';
-import { ChassisDialog } from '@chassis-ui/core/dialog';
-import { ChassisBadge } from '@chassis-ui/core/badge';
-import { ChassisTooltip } from '@chassis-ui/core/tooltip';
-import { ChassisRadio, ChassisRadioGroup } from '@chassis-ui/core/radio';
-import { ChassisDivider } from '@chassis-ui/core/divider';
-import { ChassisIcon } from '@chassis-ui/core/icon';
-import { ChassisLink } from '@chassis-ui/core/link';
-import { ChassisSpinner } from '@chassis-ui/core/spinner';
-import { ChassisProgress } from '@chassis-ui/core/progress';
-import { ChassisAvatar } from '@chassis-ui/core/avatar';
-import { ChassisTextarea } from '@chassis-ui/core/textarea';
-import { ChassisTabs, ChassisTabPanel } from '@chassis-ui/core/tabs';
-import { ChassisAlert } from '@chassis-ui/core/alert';
-import { ChassisToast } from '@chassis-ui/core/toast';
-import { ChassisAccordion, ChassisAccordionItem } from '@chassis-ui/core/accordion';
-import { ChassisSkeleton } from '@chassis-ui/core/skeleton';
-import { ChassisTable } from '@chassis-ui/core/table';
-import { ChassisBreadcrumb } from '@chassis-ui/core/breadcrumb';
-import { ChassisPagination } from '@chassis-ui/core/pagination';
-import { ChassisChip } from '@chassis-ui/core/chip';
-import { ChassisPopover } from '@chassis-ui/core/popover';
-import { ChassisDropdownMenu } from '@chassis-ui/core/dropdown-menu';
-import { ChassisSlider } from '@chassis-ui/core/slider';
-import { ChassisToggleGroup } from '@chassis-ui/core/toggle-group';
-import { ChassisDatePicker } from '@chassis-ui/core/date-picker';
-import { ChassisModal } from '@chassis-ui/core/modal';
+import { ChassisButton } from '@chassisui/core/button';
+import { ChassisInput } from '@chassisui/core/input';
+import { ChassisCard } from '@chassisui/core/card';
+import { ChassisCheckbox } from '@chassisui/core/checkbox';
+import { ChassisSwitch } from '@chassisui/core/switch';
+import { ChassisSelect } from '@chassisui/core/select';
+import { ChassisDialog } from '@chassisui/core/dialog';
+import { ChassisBadge } from '@chassisui/core/badge';
+import { ChassisTooltip } from '@chassisui/core/tooltip';
+import { ChassisRadio, ChassisRadioGroup } from '@chassisui/core/radio';
+import { ChassisDivider } from '@chassisui/core/divider';
+import { ChassisIcon } from '@chassisui/core/icon';
+import { ChassisLink } from '@chassisui/core/link';
+import { ChassisSpinner } from '@chassisui/core/spinner';
+import { ChassisProgress } from '@chassisui/core/progress';
+import { ChassisAvatar } from '@chassisui/core/avatar';
+import { ChassisTextarea } from '@chassisui/core/textarea';
+import { ChassisTabs, ChassisTabPanel } from '@chassisui/core/tabs';
+import { ChassisAlert } from '@chassisui/core/alert';
+import { ChassisToast } from '@chassisui/core/toast';
+import { ChassisAccordion, ChassisAccordionItem } from '@chassisui/core/accordion';
+import { ChassisSkeleton } from '@chassisui/core/skeleton';
+import { ChassisTable } from '@chassisui/core/table';
+import { ChassisBreadcrumb } from '@chassisui/core/breadcrumb';
+import { ChassisPagination } from '@chassisui/core/pagination';
+import { ChassisChip } from '@chassisui/core/chip';
+import { ChassisPopover } from '@chassisui/core/popover';
+import { ChassisDropdownMenu } from '@chassisui/core/dropdown-menu';
+import { ChassisSlider } from '@chassisui/core/slider';
+import { ChassisToggleGroup } from '@chassisui/core/toggle-group';
+import { ChassisDatePicker } from '@chassisui/core/date-picker';
+import { ChassisModal } from '@chassisui/core/modal';
 
 export const Button = createComponent({
   tagName: 'chassis-button',
@@ -267,8 +267,8 @@ export const Modal = createComponent({
 });
 
 // Re-export ToastManager for imperative use
-export { ToastManager } from '@chassis-ui/core/toast';
+export { ToastManager } from '@chassisui/core/toast';
 
 // Re-export theme utilities
-export { ThemeSwitcher } from '@chassis-ui/themes';
-export type { ThemeName } from '@chassis-ui/themes';
+export { ThemeSwitcher } from '@chassisui/themes';
+export type { ThemeName } from '@chassisui/themes';

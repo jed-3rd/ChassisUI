@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/accordion';
+  import '@chassisui/core/accordion';
   export let multiple = false;
 </script>
 

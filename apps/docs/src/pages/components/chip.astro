@@ -25,13 +25,13 @@ import CodeTabs from '../../components/CodeTabs.astro';
 <chassis-chip variant="filter" selected>Selected Filter</chassis-chip>
 <chassis-chip variant="choice">Choice A</chassis-chip>
 <chassis-chip variant="input" removable>Tag One</chassis-chip>`}
-    react={`import { Chip } from '@chassis-ui/react';
+    react={`import { Chip } from '@chassisui/react';
 
 <Chip variant="filter">Filter Chip</Chip>
 <Chip variant="filter" selected>Selected Filter</Chip>
 <Chip variant="choice">Choice A</Chip>
 <Chip variant="input" removable onRemove={() => handleRemove()}>Tag One</Chip>`}
-    angular={`import { ChipComponent } from '@chassis-ui/angular';
+    angular={`import { ChipComponent } from '@chassisui/angular';
 
 @Component({
   imports: [ChipComponent],
@@ -43,14 +43,14 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Chip from '@chassis-ui/astro/Chip.astro';
+import Chip from '@chassisui/astro/Chip.astro';
 ---
 
 <Chip variant="filter">Filter Chip</Chip>
 <Chip variant="filter" selected>Selected Filter</Chip>
 <Chip variant="input" removable>Tag One</Chip>`}
     svelte={`<script>
-  import { Chip } from '@chassis-ui/svelte';
+  import { Chip } from '@chassisui/svelte';
 </script>
 
 <Chip variant="filter">Filter Chip</Chip>
@@ -121,8 +121,8 @@ import Chip from '@chassis-ui/astro/Chip.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/chip';
-  import '@chassis-ui/core/icon';
+  import '@chassisui/core/chip';
+  import '@chassisui/core/icon';
 </script>
 
 <style>

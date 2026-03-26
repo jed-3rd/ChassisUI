@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/switch';
+  import '@chassisui/core/switch';
   export let checked = false;
   export let label = '';
   export let disabled = false;

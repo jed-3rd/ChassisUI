@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/badge';
+  import '@chassisui/core/badge';
   export let variant = 'default';
   export let value = '';
   export let dot = false;

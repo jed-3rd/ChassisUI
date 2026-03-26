@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/toggle-group';
+  import '@chassisui/core/toggle-group';
   export let value = '';
   export let multiple = false;
 </script>

@@ -17,10 +17,10 @@ import CodeTabs from '../../components/CodeTabs.astro';
 
   <CodeTabs
     webComponent={`<chassis-divider></chassis-divider>`}
-    react={`import { Divider } from '@chassis-ui/react';
+    react={`import { Divider } from '@chassisui/react';
 
 <Divider />`}
-    angular={`import { DividerComponent } from '@chassis-ui/angular';
+    angular={`import { DividerComponent } from '@chassisui/angular';
 
 @Component({
   imports: [DividerComponent],
@@ -30,12 +30,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Divider from '@chassis-ui/astro/Divider.astro';
+import Divider from '@chassisui/astro/Divider.astro';
 ---
 
 <Divider />`}
     svelte={`<script>
-  import { Divider } from '@chassis-ui/svelte';
+  import { Divider } from '@chassisui/svelte';
 </script>
 
 <Divider />`}
@@ -85,7 +85,7 @@ import Divider from '@chassis-ui/astro/Divider.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/divider';
+  import '@chassisui/core/divider';
 </script>
 
 <style>

@@ -29,13 +29,13 @@ import CodeTabs from '../../components/CodeTabs.astro';
 <chassis-skeleton variant="text" lines="3" width="100%"></chassis-skeleton>
 <chassis-skeleton variant="circular" width="48px" height="48px"></chassis-skeleton>
 <chassis-skeleton variant="rectangular" width="100%" height="120px"></chassis-skeleton>`}
-    react={`import { Skeleton } from '@chassis-ui/react';
+    react={`import { Skeleton } from '@chassisui/react';
 
 <Skeleton variant="text" width="100%" />
 <Skeleton variant="text" lines={3} width="100%" />
 <Skeleton variant="circular" width="48px" height="48px" />
 <Skeleton variant="rectangular" width="100%" height="120px" />`}
-    angular={`import { SkeletonComponent } from '@chassis-ui/angular';
+    angular={`import { SkeletonComponent } from '@chassisui/angular';
 
 @Component({
   imports: [SkeletonComponent],
@@ -46,13 +46,13 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Skeleton from '@chassis-ui/astro/Skeleton.astro';
+import Skeleton from '@chassisui/astro/Skeleton.astro';
 ---
 
 <Skeleton variant="text" width="100%" />
 <Skeleton variant="circular" width="48px" height="48px" />`}
     svelte={`<script>
-  import { Skeleton } from '@chassis-ui/svelte';
+  import { Skeleton } from '@chassisui/svelte';
 </script>
 
 <Skeleton variant="text" width="100%" />
@@ -90,7 +90,7 @@ import Skeleton from '@chassis-ui/astro/Skeleton.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/skeleton';
+  import '@chassisui/core/skeleton';
 </script>
 
 <style>

@@ -20,10 +20,10 @@ import CodeTabs from '../../components/CodeTabs.astro';
 
   <CodeTabs
     webComponent={`<chassis-avatar initials="JD" size="md"></chassis-avatar>`}
-    react={`import { Avatar } from '@chassis-ui/react';
+    react={`import { Avatar } from '@chassisui/react';
 
 <Avatar initials="JD" size="md" />`}
-    angular={`import { AvatarComponent } from '@chassis-ui/angular';
+    angular={`import { AvatarComponent } from '@chassisui/angular';
 
 @Component({
   imports: [AvatarComponent],
@@ -33,12 +33,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Avatar from '@chassis-ui/astro/Avatar.astro';
+import Avatar from '@chassisui/astro/Avatar.astro';
 ---
 
 <Avatar initials="JD" />`}
     svelte={`<script>
-  import { Avatar } from '@chassis-ui/svelte';
+  import { Avatar } from '@chassisui/svelte';
 </script>
 
 <Avatar initials="JD" />`}
@@ -89,7 +89,7 @@ import Avatar from '@chassis-ui/astro/Avatar.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/avatar';
+  import '@chassisui/core/avatar';
 </script>
 
 <style>

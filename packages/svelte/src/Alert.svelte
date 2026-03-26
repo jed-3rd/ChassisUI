@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/alert';
+  import '@chassisui/core/alert';
   export let variant = 'info';
   export let dismissible = false;
 </script>

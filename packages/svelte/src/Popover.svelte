@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/popover';
+  import '@chassisui/core/popover';
   export let trigger = 'click';
   export let placement = 'bottom';
   export let offset = 8;

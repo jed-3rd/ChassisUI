@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/breadcrumb';
+  import '@chassisui/core/breadcrumb';
   export let separator = '/';
 </script>
 

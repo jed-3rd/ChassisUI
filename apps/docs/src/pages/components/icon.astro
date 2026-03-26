@@ -31,12 +31,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
     webComponent={`<chassis-icon name="check"></chassis-icon>
 <chassis-icon name="close"></chassis-icon>
 <chassis-icon name="search"></chassis-icon>`}
-    react={`import { Icon } from '@chassis-ui/react';
+    react={`import { Icon } from '@chassisui/react';
 
 <Icon name="check" />
 <Icon name="close" />
 <Icon name="search" />`}
-    angular={`import { IconComponent } from '@chassis-ui/angular';
+    angular={`import { IconComponent } from '@chassisui/angular';
 
 @Component({
   imports: [IconComponent],
@@ -47,13 +47,13 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Icon from '@chassis-ui/astro/Icon.astro';
+import Icon from '@chassisui/astro/Icon.astro';
 ---
 
 <Icon name="check" />
 <Icon name="close" />`}
     svelte={`<script>
-  import { Icon } from '@chassis-ui/svelte';
+  import { Icon } from '@chassisui/svelte';
 </script>
 
 <Icon name="check" />
@@ -103,7 +103,7 @@ import Icon from '@chassis-ui/astro/Icon.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/icon';
+  import '@chassisui/core/icon';
 </script>
 
 <style>

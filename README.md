@@ -15,14 +15,14 @@ Most design systems lock you into a single framework. Chassis UI takes a differe
 ## Quick Start
 
 ```bash
-npm install @chassis-ui/core
+npm install @chassisui/core
 ```
 
 Use any component as a standard Web Component:
 
 ```html
 <script type="module">
-  import '@chassis-ui/core/button';
+  import '@chassisui/core/button';
 </script>
 
 <chassis-button variant="filled">Click me</chassis-button>
@@ -32,22 +32,22 @@ Use any component as a standard Web Component:
 
 ```bash
 # React
-npm install @chassis-ui/react
+npm install @chassisui/react
 
 # Angular
-npm install @chassis-ui/angular
+npm install @chassisui/angular
 
 # Svelte
-npm install @chassis-ui/svelte
+npm install @chassisui/svelte
 
 # Astro
-npm install @chassis-ui/astro
+npm install @chassisui/astro
 ```
 
 **React**
 
 ```jsx
-import { Button } from '@chassis-ui/react';
+import { Button } from '@chassisui/react';
 
 export default () => <Button variant="filled">Click me</Button>;
 ```
@@ -56,7 +56,7 @@ export default () => <Button variant="filled">Click me</Button>;
 
 ```svelte
 <script>
-  import { Button } from '@chassis-ui/svelte';
+  import { Button } from '@chassisui/svelte';
 </script>
 
 <Button variant="filled">Click me</Button>
@@ -65,7 +65,7 @@ export default () => <Button variant="filled">Click me</Button>;
 **Angular**
 
 ```typescript
-import { ButtonComponent } from '@chassis-ui/angular';
+import { ButtonComponent } from '@chassisui/angular';
 
 @Component({
   imports: [ButtonComponent],
@@ -78,7 +78,7 @@ export class AppComponent {}
 
 ```astro
 ---
-import Button from '@chassis-ui/astro/Button.astro';
+import Button from '@chassisui/astro/Button.astro';
 ---
 <Button variant="filled">Click me</Button>
 ```
@@ -199,7 +199,7 @@ chassis-ui/
 - **Base class**: All components extend `ChassisElement` (extends `LitElement`) for shared styles and token access
 - **Mixins**: `FormMixin`, `FocusMixin`, `AriaMixin`, `PopoverMixin`, `SlotMixin`, `ResizeMixin` compose behavior
 - **Shadow Parts**: Every component exposes `::part()` targets for external style customization
-- **Per-component exports**: Import only what you use — `import '@chassis-ui/core/button'`
+- **Per-component exports**: Import only what you use — `import '@chassisui/core/button'`
 
 ## Development
 

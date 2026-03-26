@@ -15,10 +15,10 @@ import CodeTabs from '../../components/CodeTabs.astro';
 
   <CodeTabs
     webComponent={`<chassis-slider value="50" min="0" max="100"></chassis-slider>`}
-    react={`import { Slider } from '@chassis-ui/react';
+    react={`import { Slider } from '@chassisui/react';
 
 <Slider value="50" min={0} max={100} />`}
-    angular={`import { SliderComponent } from '@chassis-ui/angular';
+    angular={`import { SliderComponent } from '@chassisui/angular';
 
 @Component({
   imports: [SliderComponent],
@@ -32,12 +32,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Slider from '@chassis-ui/astro/Slider.astro';
+import Slider from '@chassisui/astro/Slider.astro';
 ---
 
 <Slider value="50" min={0} max={100} />`}
     svelte={`<script>
-  import { Slider } from '@chassis-ui/svelte';
+  import { Slider } from '@chassisui/svelte';
 </script>
 
 <Slider value="50" min={0} max={100} />`}
@@ -92,7 +92,7 @@ import Slider from '@chassis-ui/astro/Slider.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/slider';
+  import '@chassisui/core/slider';
 </script>
 
 <style>

@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/divider';
+  import '@chassisui/core/divider';
   export let orientation = 'horizontal';
   export let label = '';
 </script>

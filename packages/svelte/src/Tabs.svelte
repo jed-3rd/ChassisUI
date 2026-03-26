@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/tabs';
+  import '@chassisui/core/tabs';
   export let value = '';
   export let variant = 'underline';
 </script>

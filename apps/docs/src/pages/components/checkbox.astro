@@ -19,12 +19,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
     webComponent={`<chassis-checkbox label="Accept terms"></chassis-checkbox>
 <chassis-checkbox label="Pre-checked" checked></chassis-checkbox>
 <chassis-checkbox label="Mixed" indeterminate></chassis-checkbox>`}
-    react={`import { Checkbox } from '@chassis-ui/react';
+    react={`import { Checkbox } from '@chassisui/react';
 
 <Checkbox label="Accept terms" />
 <Checkbox label="Pre-checked" checked />
 <Checkbox label="Mixed" indeterminate />`}
-    angular={`import { CheckboxComponent } from '@chassis-ui/angular';
+    angular={`import { CheckboxComponent } from '@chassisui/angular';
 
 @Component({
   imports: [CheckboxComponent],
@@ -36,14 +36,14 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Checkbox from '@chassis-ui/astro/Checkbox.astro';
+import Checkbox from '@chassisui/astro/Checkbox.astro';
 ---
 
 <Checkbox label="Accept terms" />
 <Checkbox label="Pre-checked" checked />
 <Checkbox label="Mixed" indeterminate />`}
     svelte={`<script>
-  import { Checkbox } from '@chassis-ui/svelte';
+  import { Checkbox } from '@chassisui/svelte';
 </script>
 
 <Checkbox label="Accept terms" />
@@ -93,7 +93,7 @@ import Checkbox from '@chassis-ui/astro/Checkbox.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/checkbox';
+  import '@chassisui/core/checkbox';
 </script>
 
 <style>

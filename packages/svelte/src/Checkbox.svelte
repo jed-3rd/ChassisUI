@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/checkbox';
+  import '@chassisui/core/checkbox';
   export let checked = false;
   export let indeterminate = false;
   export let label = '';

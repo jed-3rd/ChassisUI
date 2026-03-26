@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/avatar';
+  import '@chassisui/core/avatar';
   export let src = '';
   export let alt = '';
   export let initials = '';

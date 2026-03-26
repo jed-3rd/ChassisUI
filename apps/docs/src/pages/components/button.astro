@@ -19,12 +19,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
     webComponent={`<chassis-button variant="primary">Click me</chassis-button>
 <chassis-button variant="secondary">Secondary</chassis-button>
 <chassis-button variant="link">Link</chassis-button>`}
-    react={`import { Button } from '@chassis-ui/react';
+    react={`import { Button } from '@chassisui/react';
 
 <Button variant="primary">Click me</Button>
 <Button variant="secondary">Secondary</Button>
 <Button variant="link">Link</Button>`}
-    angular={`import { ButtonComponent } from '@chassis-ui/angular';
+    angular={`import { ButtonComponent } from '@chassisui/angular';
 
 @Component({
   imports: [ButtonComponent],
@@ -36,14 +36,14 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Button from '@chassis-ui/astro/Button.astro';
+import Button from '@chassisui/astro/Button.astro';
 ---
 
 <Button variant="primary">Click me</Button>
 <Button variant="secondary">Secondary</Button>
 <Button variant="link">Link</Button>`}
     svelte={`<script>
-  import { Button } from '@chassis-ui/svelte';
+  import { Button } from '@chassisui/svelte';
 </script>
 
 <Button variant="primary">Click me</Button>
@@ -102,7 +102,7 @@ import Button from '@chassis-ui/astro/Button.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/button';
+  import '@chassisui/core/button';
 </script>
 
 <style>

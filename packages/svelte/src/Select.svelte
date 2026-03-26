@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/select';
+  import '@chassisui/core/select';
   export let value = '';
   export let placeholder = 'Select an option';
   export let label = '';

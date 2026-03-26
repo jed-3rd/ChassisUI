@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/table';
+  import '@chassisui/core/table';
   export let sortable = false;
   export let striped = false;
   export let stickyHeader = false;

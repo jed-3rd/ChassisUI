@@ -15,10 +15,10 @@ import CodeTabs from '../../components/CodeTabs.astro';
 
   <CodeTabs
     webComponent={`<chassis-textarea label="Message" placeholder="Type your message..."></chassis-textarea>`}
-    react={`import { Textarea } from '@chassis-ui/react';
+    react={`import { Textarea } from '@chassisui/react';
 
 <Textarea label="Message" placeholder="Type your message..." />`}
-    angular={`import { TextareaComponent } from '@chassis-ui/angular';
+    angular={`import { TextareaComponent } from '@chassisui/angular';
 
 @Component({
   imports: [TextareaComponent],
@@ -28,12 +28,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Textarea from '@chassis-ui/astro/Textarea.astro';
+import Textarea from '@chassisui/astro/Textarea.astro';
 ---
 
 <Textarea label="Message" placeholder="Type your message..." />`}
     svelte={`<script>
-  import { Textarea } from '@chassis-ui/svelte';
+  import { Textarea } from '@chassisui/svelte';
 </script>
 
 <Textarea label="Message" placeholder="Type your message..." />`}
@@ -91,7 +91,7 @@ import Textarea from '@chassis-ui/astro/Textarea.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/textarea';
+  import '@chassisui/core/textarea';
 </script>
 
 <style>

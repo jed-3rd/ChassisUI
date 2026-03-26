@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/icon';
+  import '@chassisui/core/icon';
   export let name = '';
   export let size = 'md';
   export let label = '';

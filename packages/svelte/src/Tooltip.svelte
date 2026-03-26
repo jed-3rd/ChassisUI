@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/tooltip';
+  import '@chassisui/core/tooltip';
   export let content = '';
   export let placement = 'top';
 </script>

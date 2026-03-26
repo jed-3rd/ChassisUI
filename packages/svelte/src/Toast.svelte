@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/toast';
+  import '@chassisui/core/toast';
   export let variant = 'info';
   export let duration = 5000;
   export let dismissible = true;

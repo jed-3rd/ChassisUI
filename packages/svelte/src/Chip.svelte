@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/chip';
+  import '@chassisui/core/chip';
   export let variant = 'filter';
   export let selected = false;
   export let removable = false;

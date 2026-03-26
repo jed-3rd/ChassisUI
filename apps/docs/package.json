@@ -1,5 +1,5 @@
 {
-  "name": "@chassis-ui/docs",
+  "name": "@chassisui/docs",
   "version": "0.1.0",
   "type": "module",
   "private": true,
@@ -12,10 +12,10 @@
   "dependencies": {
     "astro": "^5.0.0",
     "@astrojs/mdx": "^4.0.0",
-    "@chassis-ui/core": "*",
-    "@chassis-ui/tokens": "*",
-    "@chassis-ui/themes": "*",
-    "@chassis-ui/astro": "*",
+    "@chassisui/core": "*",
+    "@chassisui/tokens": "*",
+    "@chassisui/themes": "*",
+    "@chassisui/astro": "*",
     "lit": "^3.2.0"
   }
 }

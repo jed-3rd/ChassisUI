@@ -18,11 +18,11 @@ import CodeTabs from '../../components/CodeTabs.astro';
   <CodeTabs
     webComponent={`<chassis-link href="#">Default link</chassis-link>
 <chassis-link href="#" variant="subtle">Subtle link</chassis-link>`}
-    react={`import { Link } from '@chassis-ui/react';
+    react={`import { Link } from '@chassisui/react';
 
 <Link href="#">Default link</Link>
 <Link href="#" variant="subtle">Subtle link</Link>`}
-    angular={`import { LinkComponent } from '@chassis-ui/angular';
+    angular={`import { LinkComponent } from '@chassisui/angular';
 
 @Component({
   imports: [LinkComponent],
@@ -33,13 +33,13 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Link from '@chassis-ui/astro/Link.astro';
+import Link from '@chassisui/astro/Link.astro';
 ---
 
 <Link href="#">Default link</Link>
 <Link href="#" variant="subtle">Subtle link</Link>`}
     svelte={`<script>
-  import { Link } from '@chassis-ui/svelte';
+  import { Link } from '@chassisui/svelte';
 </script>
 
 <Link href="#">Default link</Link>
@@ -87,7 +87,7 @@ import Link from '@chassis-ui/astro/Link.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/link';
+  import '@chassisui/core/link';
 </script>
 
 <style>

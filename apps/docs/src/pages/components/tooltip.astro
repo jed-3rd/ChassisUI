@@ -28,12 +28,12 @@ import CodeTabs from '../../components/CodeTabs.astro';
     webComponent={`<chassis-tooltip content="Helpful text" placement="top">
   <chassis-button>Hover me</chassis-button>
 </chassis-tooltip>`}
-    react={`import { Tooltip, Button } from '@chassis-ui/react';
+    react={`import { Tooltip, Button } from '@chassisui/react';
 
 <Tooltip content="Helpful text" placement="top">
   <Button>Hover me</Button>
 </Tooltip>`}
-    angular={`import { TooltipComponent, ButtonComponent } from '@chassis-ui/angular';
+    angular={`import { TooltipComponent, ButtonComponent } from '@chassisui/angular';
 
 @Component({
   imports: [TooltipComponent, ButtonComponent],
@@ -45,15 +45,15 @@ import CodeTabs from '../../components/CodeTabs.astro';
 })
 export class MyComponent {}`}
     astro={`---
-import Tooltip from '@chassis-ui/astro/Tooltip.astro';
-import Button from '@chassis-ui/astro/Button.astro';
+import Tooltip from '@chassisui/astro/Tooltip.astro';
+import Button from '@chassisui/astro/Button.astro';
 ---
 
 <Tooltip content="Helpful text" placement="top">
   <Button>Hover me</Button>
 </Tooltip>`}
     svelte={`<script>
-  import { Tooltip, Button } from '@chassis-ui/svelte';
+  import { Tooltip, Button } from '@chassisui/svelte';
 </script>
 
 <Tooltip content="Helpful text" placement="top">
@@ -95,8 +95,8 @@ import Button from '@chassis-ui/astro/Button.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/tooltip';
-  import '@chassis-ui/core/button';
+  import '@chassisui/core/tooltip';
+  import '@chassisui/core/button';
 </script>
 
 <style>

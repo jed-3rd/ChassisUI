@@ -1,5 +1,5 @@
 <script>
-  import '@chassis-ui/core/skeleton';
+  import '@chassisui/core/skeleton';
   export let variant = 'text';
   export let width = undefined;
   export let height = undefined;

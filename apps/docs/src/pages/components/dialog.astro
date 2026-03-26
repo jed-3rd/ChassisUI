@@ -34,7 +34,7 @@ import CodeTabs from '../../components/CodeTabs.astro';
     <chassis-button variant="primary">Confirm</chassis-button>
   </div>
 </chassis-dialog>`}
-    react={`import { Dialog, Button } from '@chassis-ui/react';
+    react={`import { Dialog, Button } from '@chassisui/react';
 
 const [open, setOpen] = useState(false);
 
@@ -47,7 +47,7 @@ const [open, setOpen] = useState(false);
     <Button variant="primary" onClick={() => setOpen(false)}>Confirm</Button>
   </div>
 </Dialog>`}
-    angular={`import { DialogComponent, ButtonComponent } from '@chassis-ui/angular';
+    angular={`import { DialogComponent, ButtonComponent } from '@chassisui/angular';
 
 @Component({
   imports: [DialogComponent, ButtonComponent],
@@ -67,8 +67,8 @@ export class MyComponent {
   open = false;
 }`}
     astro={`---
-import Dialog from '@chassis-ui/astro/Dialog.astro';
-import Button from '@chassis-ui/astro/Button.astro';
+import Dialog from '@chassisui/astro/Dialog.astro';
+import Button from '@chassisui/astro/Button.astro';
 ---
 
 <Button onclick="document.querySelector('#my-dialog').open = true">
@@ -83,7 +83,7 @@ import Button from '@chassis-ui/astro/Button.astro';
   </div>
 </Dialog>`}
     svelte={`<script>
-  import { Dialog, Button } from '@chassis-ui/svelte';
+  import { Dialog, Button } from '@chassisui/svelte';
   let open = false;
 </script>
 
@@ -157,8 +157,8 @@ import Button from '@chassis-ui/astro/Button.astro';
 </DocsLayout>
 
 <script>
-  import '@chassis-ui/core/dialog';
-  import '@chassis-ui/core/button';
+  import '@chassisui/core/dialog';
+  import '@chassisui/core/button';
 </script>
 
 <style>

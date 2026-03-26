@@ -1,31 +1,31 @@
 /* Design Tokens */
-@import '@chassis-ui/tokens/css/global';
-@import '@chassis-ui/tokens/css/material2';
-@import '@chassis-ui/tokens/css/material3';
-@import '@chassis-ui/tokens/css/polaris';
-@import '@chassis-ui/tokens/css/carbon';
-@import '@chassis-ui/tokens/css/default';
-@import '@chassis-ui/tokens/css/hig';
-@import '@chassis-ui/tokens/css/atlassian';
-@import '@chassis-ui/tokens/css/fluent';
-@import '@chassis-ui/tokens/css/lightning';
-@import '@chassis-ui/tokens/css/primer';
-@import '@chassis-ui/tokens/css/spectrum';
-@import '@chassis-ui/tokens/css/uber';
+@import '@chassisui/tokens/css/global';
+@import '@chassisui/tokens/css/material2';
+@import '@chassisui/tokens/css/material3';
+@import '@chassisui/tokens/css/polaris';
+@import '@chassisui/tokens/css/carbon';
+@import '@chassisui/tokens/css/default';
+@import '@chassisui/tokens/css/hig';
+@import '@chassisui/tokens/css/atlassian';
+@import '@chassisui/tokens/css/fluent';
+@import '@chassisui/tokens/css/lightning';
+@import '@chassisui/tokens/css/primer';
+@import '@chassisui/tokens/css/spectrum';
+@import '@chassisui/tokens/css/uber';
 
 /* Theme overrides */
-@import '@chassis-ui/themes/css/material2';
-@import '@chassis-ui/themes/css/material3';
-@import '@chassis-ui/themes/css/polaris';
-@import '@chassis-ui/themes/css/carbon';
-@import '@chassis-ui/themes/css/default';
-@import '@chassis-ui/themes/css/hig';
-@import '@chassis-ui/themes/css/atlassian';
-@import '@chassis-ui/themes/css/fluent';
-@import '@chassis-ui/themes/css/lightning';
-@import '@chassis-ui/themes/css/primer';
-@import '@chassis-ui/themes/css/spectrum';
-@import '@chassis-ui/themes/css/uber';
+@import '@chassisui/themes/css/material2';
+@import '@chassisui/themes/css/material3';
+@import '@chassisui/themes/css/polaris';
+@import '@chassisui/themes/css/carbon';
+@import '@chassisui/themes/css/default';
+@import '@chassisui/themes/css/hig';
+@import '@chassisui/themes/css/atlassian';
+@import '@chassisui/themes/css/fluent';
+@import '@chassisui/themes/css/lightning';
+@import '@chassisui/themes/css/primer';
+@import '@chassisui/themes/css/spectrum';
+@import '@chassisui/themes/css/uber';
 
 /* Dark mode overrides — applied on top of active theme */
 [data-mode="dark"] {
