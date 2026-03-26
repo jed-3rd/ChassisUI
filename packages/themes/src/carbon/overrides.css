@@ -1,0 +1,20 @@
+/* IBM Carbon - Component-specific overrides */
+[data-theme="carbon"] chassis-button::part(base) {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  border-radius: 0;
+}
+
+[data-theme="carbon"] chassis-card::part(base) {
+  border-radius: 0;
+  border: none;
+}
+
+[data-theme="carbon"] chassis-input::part(input) {
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--chassis-color-outline, #8d8d8d);
+  background: var(--chassis-color-surface-variant, #e0e0e0);
+}

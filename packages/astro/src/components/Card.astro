@@ -1,0 +1,18 @@
+---
+export interface Props {
+  elevated?: boolean;
+  outlined?: boolean;
+}
+
+const { elevated = false, outlined = false } = Astro.props;
+---
+
+<chassis-card elevated={elevated} outlined={outlined}>
+  <slot name="header" slot="header" />
+  <slot />
+  <slot name="footer" slot="footer" />
+</chassis-card>
+
+<script>
+  import '@chassis-ui/core/card';
+</script>

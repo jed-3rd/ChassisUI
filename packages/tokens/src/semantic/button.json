@@ -1,0 +1,34 @@
+{
+  "chassis": {
+    "button": {
+      "primary": {
+        "background": { "value": "{chassis.color.primary}" },
+        "color": { "value": "{chassis.color.on-primary}" },
+        "border-radius": { "value": "{chassis.shape.radius.md}" },
+        "padding-x": { "value": "{chassis.spacing.400}" },
+        "padding-y": { "value": "{chassis.spacing.200}" },
+        "font-size": { "value": "{chassis.typography.font-size.md}" },
+        "font-weight": { "value": "{chassis.typography.font-weight.medium}" }
+      },
+      "secondary": {
+        "background": { "value": "transparent" },
+        "color": { "value": "{chassis.color.primary}" },
+        "border-color": { "value": "{chassis.color.outline}" },
+        "border-radius": { "value": "{chassis.shape.radius.md}" },
+        "padding-x": { "value": "{chassis.spacing.400}" },
+        "padding-y": { "value": "{chassis.spacing.200}" },
+        "font-size": { "value": "{chassis.typography.font-size.md}" },
+        "font-weight": { "value": "{chassis.typography.font-weight.medium}" }
+      },
+      "link": {
+        "background": { "value": "transparent" },
+        "color": { "value": "{chassis.color.primary}" },
+        "border-radius": { "value": "{chassis.shape.radius.md}" },
+        "padding-x": { "value": "{chassis.spacing.400}" },
+        "padding-y": { "value": "{chassis.spacing.200}" },
+        "font-size": { "value": "{chassis.typography.font-size.md}" },
+        "font-weight": { "value": "{chassis.typography.font-weight.medium}" }
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Dropdown Menu">
+  <h1>Dropdown Menu</h1>
+  <p>A floating menu of actions anchored to a trigger. Full keyboard navigation with arrow keys, Home, End, and Escape.</p>
+
+  <h2>Basic Usage</h2>
+  <ComponentPreview title="Action menu">
+    <chassis-dropdown-menu>
+      <button slot="trigger">Actions ▾</button>
+      <button role="menuitem" data-value="edit">Edit</button>
+      <button role="menuitem" data-value="duplicate">Duplicate</button>
+      <div role="separator"></div>
+      <button role="menuitem" data-value="delete">Delete</button>
+    </chassis-dropdown-menu>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-dropdown-menu>
+  <button slot="trigger">Actions ▾</button>
+  <button role="menuitem" data-value="edit">Edit</button>
+  <button role="menuitem" data-value="duplicate">Duplicate</button>
+  <div role="separator"></div>
+  <button role="menuitem" data-value="delete">Delete</button>
+</chassis-dropdown-menu>`}
+    react={`import { DropdownMenu } from '@chassis-ui/react';
+
+<DropdownMenu>
+  <button slot="trigger">Actions ▾</button>
+  <button role="menuitem" data-value="edit">Edit</button>
+  <button role="menuitem" data-value="duplicate">Duplicate</button>
+  <div role="separator"></div>
+  <button role="menuitem" data-value="delete">Delete</button>
+</DropdownMenu>`}
+    angular={`import { DropdownMenuComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [DropdownMenuComponent],
+  template: \`
+    <chassis-dropdown-menu-wrapper>
+      <button slot="trigger">Actions ▾</button>
+      <button role="menuitem" data-value="edit">Edit</button>
+      <button role="menuitem" data-value="duplicate">Duplicate</button>
+      <div role="separator"></div>
+      <button role="menuitem" data-value="delete">Delete</button>
+    </chassis-dropdown-menu-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import DropdownMenu from '@chassis-ui/astro/DropdownMenu.astro';
+---
+
+<DropdownMenu>
+  <button slot="trigger">Actions ▾</button>
+  <button role="menuitem" data-value="edit">Edit</button>
+  <button role="menuitem" data-value="duplicate">Duplicate</button>
+</DropdownMenu>`}
+    svelte={`<script>
+  import { DropdownMenu } from '@chassis-ui/svelte';
+</script>
+
+<DropdownMenu>
+  <button slot="trigger">Actions ▾</button>
+  <button role="menuitem" data-value="edit">Edit</button>
+  <button role="menuitem" data-value="duplicate">Duplicate</button>
+</DropdownMenu>`}
+  />
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>placement</code></td><td><code>PopoverPlacement</code></td><td><code>'bottom'</code></td><td>Preferred placement relative to trigger</td></tr>
+      <tr><td><code>offset</code></td><td><code>number</code></td><td><code>8</code></td><td>Distance from trigger in pixels</td></tr>
+      <tr><td><code>open</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Whether the menu is visible</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>menu</code></td><td>The floating menu container</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Events</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Event</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>chassis-open</code></td><td>Fired when the menu opens</td></tr>
+      <tr><td><code>chassis-close</code></td><td>Fired when the menu closes</td></tr>
+      <tr><td><code>chassis-select</code></td><td>Fired when an item is selected. Detail: <code>{'{ value: string }'}</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Menu uses <code>role="menu"</code>, items use <code>role="menuitem"</code></li>
+    <li>Arrow keys navigate between items</li>
+    <li>Home/End jump to first/last item</li>
+    <li>Escape closes menu and returns focus to trigger</li>
+    <li>Disabled items use <code>aria-disabled="true"</code></li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/dropdown-menu';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

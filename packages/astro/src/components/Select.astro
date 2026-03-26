@@ -1,0 +1,27 @@
+---
+export interface Props {
+  value?: string;
+  placeholder?: string;
+  label?: string;
+  error?: string;
+  disabled?: boolean;
+  required?: boolean;
+}
+
+const { value = '', placeholder = 'Select an option', label = '', error = '', disabled = false, required = false } = Astro.props;
+---
+
+<chassis-select
+  value={value}
+  placeholder={placeholder}
+  label={label}
+  error={error}
+  disabled={disabled}
+  required={required}
+>
+  <slot />
+</chassis-select>
+
+<script>
+  import '@chassis-ui/core/select';
+</script>

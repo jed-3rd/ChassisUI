@@ -1,0 +1,128 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Breadcrumb">
+  <h1>Breadcrumb</h1>
+  <p>Navigation trail showing the current page location within a hierarchy. Automatically adds separators and marks the last item as current.</p>
+
+  <h2>Basic Usage</h2>
+  <ComponentPreview title="Default separator (/)">
+    <chassis-breadcrumb>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Shoes</a>
+      <span>Running Shoes</span>
+    </chassis-breadcrumb>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-breadcrumb>
+  <a href="/">Home</a>
+  <a href="/products">Products</a>
+  <span>Current Page</span>
+</chassis-breadcrumb>`}
+    react={`import { Breadcrumb } from '@chassis-ui/react';
+
+<Breadcrumb>
+  <a href="/">Home</a>
+  <a href="/products">Products</a>
+  <span>Current Page</span>
+</Breadcrumb>`}
+    angular={`import { BreadcrumbComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [BreadcrumbComponent],
+  template: \`
+    <chassis-breadcrumb-wrapper>
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <span>Current Page</span>
+    </chassis-breadcrumb-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Breadcrumb from '@chassis-ui/astro/Breadcrumb.astro';
+---
+
+<Breadcrumb>
+  <a href="/">Home</a>
+  <a href="/products">Products</a>
+  <span>Current Page</span>
+</Breadcrumb>`}
+    svelte={`<script>
+  import { Breadcrumb } from '@chassis-ui/svelte';
+</script>
+
+<Breadcrumb>
+  <a href="/">Home</a>
+  <a href="/products">Products</a>
+  <span>Current Page</span>
+</Breadcrumb>`}
+  />
+
+  <h2>Custom Separator</h2>
+  <ComponentPreview title="Chevron separator">
+    <chassis-breadcrumb separator="›">
+      <a href="#">Home</a>
+      <a href="#">Category</a>
+      <span>Item</span>
+    </chassis-breadcrumb>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>separator</code></td><td><code>string</code></td><td><code>'/'</code></td><td>Character(s) between breadcrumb items</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The breadcrumb nav container</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>&lt;nav&gt;</code> with <code>aria-label="Breadcrumb"</code></li>
+    <li>Last item automatically receives <code>aria-current="page"</code></li>
+    <li>Slotted items get <code>role="listitem"</code></li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/breadcrumb';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

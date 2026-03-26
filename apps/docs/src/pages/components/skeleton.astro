@@ -1,0 +1,116 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Skeleton">
+  <h1>Skeleton</h1>
+  <p>Placeholder loading indicators for content that hasn't loaded yet. Supports text, circular, and rectangular variants.</p>
+
+  <h2>Variants</h2>
+  <ComponentPreview title="Text / Circular / Rectangular">
+    <div style="display: flex; flex-direction: column; gap: 1.5rem; width: 300px;">
+      <chassis-skeleton variant="text" width="100%"></chassis-skeleton>
+      <chassis-skeleton variant="text" lines="3" width="100%"></chassis-skeleton>
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <chassis-skeleton variant="circular" width="48px" height="48px"></chassis-skeleton>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
+          <chassis-skeleton variant="text" width="60%"></chassis-skeleton>
+          <chassis-skeleton variant="text" width="80%"></chassis-skeleton>
+        </div>
+      </div>
+      <chassis-skeleton variant="rectangular" width="100%" height="120px"></chassis-skeleton>
+    </div>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-skeleton variant="text" width="100%"></chassis-skeleton>
+<chassis-skeleton variant="text" lines="3" width="100%"></chassis-skeleton>
+<chassis-skeleton variant="circular" width="48px" height="48px"></chassis-skeleton>
+<chassis-skeleton variant="rectangular" width="100%" height="120px"></chassis-skeleton>`}
+    react={`import { Skeleton } from '@chassis-ui/react';
+
+<Skeleton variant="text" width="100%" />
+<Skeleton variant="text" lines={3} width="100%" />
+<Skeleton variant="circular" width="48px" height="48px" />
+<Skeleton variant="rectangular" width="100%" height="120px" />`}
+    angular={`import { SkeletonComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [SkeletonComponent],
+  template: \`
+    <chassis-skeleton-wrapper variant="text" width="100%"></chassis-skeleton-wrapper>
+    <chassis-skeleton-wrapper variant="circular" width="48px" height="48px"></chassis-skeleton-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Skeleton from '@chassis-ui/astro/Skeleton.astro';
+---
+
+<Skeleton variant="text" width="100%" />
+<Skeleton variant="circular" width="48px" height="48px" />`}
+    svelte={`<script>
+  import { Skeleton } from '@chassis-ui/svelte';
+</script>
+
+<Skeleton variant="text" width="100%" />
+<Skeleton variant="circular" width="48px" height="48px" />`}
+  />
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>variant</code></td><td><code>'text' | 'circular' | 'rectangular'</code></td><td><code>'text'</code></td><td>Shape of the skeleton</td></tr>
+      <tr><td><code>width</code></td><td><code>string</code></td><td><code>''</code></td><td>Custom width (CSS value)</td></tr>
+      <tr><td><code>height</code></td><td><code>string</code></td><td><code>''</code></td><td>Custom height (CSS value)</td></tr>
+      <tr><td><code>lines</code></td><td><code>number</code></td><td><code>1</code></td><td>Number of text lines (text variant only)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The skeleton element</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>aria-hidden="true"</code> — decorative placeholder, not announced by screen readers</li>
+    <li>Shimmer animation uses <code>prefers-reduced-motion</code> media query consideration</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/skeleton';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

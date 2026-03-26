@@ -1,0 +1,16 @@
+---
+export interface Props {
+  variant?: 'info' | 'success' | 'warning' | 'error';
+  dismissible?: boolean;
+}
+
+const { variant = 'info', dismissible = false } = Astro.props;
+---
+
+<chassis-alert variant={variant} dismissible={dismissible}>
+  <slot />
+</chassis-alert>
+
+<script>
+  import '@chassis-ui/core/alert';
+</script>

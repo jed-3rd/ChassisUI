@@ -1,0 +1,154 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Tabs">
+  <h1>Tabs</h1>
+  <p>Organize content into switchable panels with underline or contained tab styles. Full keyboard navigation.</p>
+
+  <h2>Underline Tabs</h2>
+  <ComponentPreview title="Default underline variant">
+    <chassis-tabs value="tab1">
+      <button slot="tab" value="tab1">Overview</button>
+      <button slot="tab" value="tab2">Features</button>
+      <button slot="tab" value="tab3">Pricing</button>
+      <div value="tab1">Overview content goes here.</div>
+      <div value="tab2">Features content goes here.</div>
+      <div value="tab3">Pricing content goes here.</div>
+    </chassis-tabs>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-tabs value="tab1">
+  <button slot="tab" value="tab1">Overview</button>
+  <button slot="tab" value="tab2">Features</button>
+  <div value="tab1">Overview content</div>
+  <div value="tab2">Features content</div>
+</chassis-tabs>`}
+    react={`import { Tabs } from '@chassis-ui/react';
+
+<Tabs value="tab1">
+  <button slot="tab" value="tab1">Overview</button>
+  <button slot="tab" value="tab2">Features</button>
+  <div value="tab1">Overview content</div>
+  <div value="tab2">Features content</div>
+</Tabs>`}
+    angular={`import { TabsComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [TabsComponent],
+  template: \`
+    <chassis-tabs-wrapper value="tab1">
+      <button slot="tab" value="tab1">Overview</button>
+      <button slot="tab" value="tab2">Features</button>
+      <div value="tab1">Overview content</div>
+      <div value="tab2">Features content</div>
+    </chassis-tabs-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Tabs from '@chassis-ui/astro/Tabs.astro';
+---
+
+<Tabs value="tab1">
+  <button slot="tab" value="tab1">Overview</button>
+  <button slot="tab" value="tab2">Features</button>
+  <div value="tab1">Overview content</div>
+  <div value="tab2">Features content</div>
+</Tabs>`}
+    svelte={`<script>
+  import { Tabs } from '@chassis-ui/svelte';
+</script>
+
+<Tabs value="tab1">
+  <button slot="tab" value="tab1">Overview</button>
+  <button slot="tab" value="tab2">Features</button>
+  <div value="tab1">Overview content</div>
+  <div value="tab2">Features content</div>
+</Tabs>`}
+  />
+
+  <h2>Contained Variant</h2>
+  <ComponentPreview title="Contained tab style">
+    <chassis-tabs value="a" variant="contained">
+      <button slot="tab" value="a">Design</button>
+      <button slot="tab" value="b">Code</button>
+      <button slot="tab" value="c">Preview</button>
+      <div value="a">Design panel content.</div>
+      <div value="b">Code panel content.</div>
+      <div value="c">Preview panel content.</div>
+    </chassis-tabs>
+  </ComponentPreview>
+
+  <h2>Props — chassis-tabs</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>value</code></td><td><code>string</code></td><td><code>''</code></td><td>Active tab value</td></tr>
+      <tr><td><code>variant</code></td><td><code>'underline' | 'contained'</code></td><td><code>'underline'</code></td><td>Visual style</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Props — tab buttons</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Attribute</th><th>Type</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>slot="tab"</code></td><td>—</td><td>Required. Assigns the element to the tab list.</td></tr>
+      <tr><td><code>value</code></td><td><code>string</code></td><td>Matches the panel <code>value</code></td></tr>
+      <tr><td><code>disabled</code></td><td><code>boolean</code></td><td>Disables the tab</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The tabs container</td></tr>
+      <tr><td><code>tab-list</code></td><td>The tab button row</td></tr>
+      <tr><td><code>indicator</code></td><td>The active tab indicator</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>role="tablist"</code>, <code>role="tab"</code>, <code>role="tabpanel"</code></li>
+    <li><code>aria-selected</code> reflects the active tab</li>
+    <li>Arrow keys, Home, End for keyboard navigation</li>
+    <li>Focus follows selection</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/tabs';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

@@ -1,0 +1,117 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Textarea">
+  <h1>Textarea</h1>
+  <p>A multi-line text input with label, validation, character counter, and auto-resize support.</p>
+
+  <h2>Basic</h2>
+  <ComponentPreview title="Default textarea">
+    <chassis-textarea label="Message" placeholder="Type your message..."></chassis-textarea>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-textarea label="Message" placeholder="Type your message..."></chassis-textarea>`}
+    react={`import { Textarea } from '@chassis-ui/react';
+
+<Textarea label="Message" placeholder="Type your message..." />`}
+    angular={`import { TextareaComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [TextareaComponent],
+  template: \`
+    <chassis-textarea-wrapper label="Message" placeholder="Type your message..."></chassis-textarea-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Textarea from '@chassis-ui/astro/Textarea.astro';
+---
+
+<Textarea label="Message" placeholder="Type your message..." />`}
+    svelte={`<script>
+  import { Textarea } from '@chassis-ui/svelte';
+</script>
+
+<Textarea label="Message" placeholder="Type your message..." />`}
+  />
+
+  <h2>Validation &amp; Counter</h2>
+  <ComponentPreview title="Error state and character counter">
+    <chassis-textarea label="Bio" error="Too short" helper-text="Tell us about yourself" maxlength="200" rows="4"></chassis-textarea>
+  </ComponentPreview>
+
+  <h2>Auto Resize</h2>
+  <ComponentPreview title="Grows with content">
+    <chassis-textarea label="Notes" placeholder="Start typing..." resize="auto" rows="2"></chassis-textarea>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>label</code></td><td><code>string</code></td><td><code>''</code></td><td>Label text</td></tr>
+      <tr><td><code>placeholder</code></td><td><code>string</code></td><td><code>''</code></td><td>Placeholder text</td></tr>
+      <tr><td><code>value</code></td><td><code>string</code></td><td><code>''</code></td><td>Current value</td></tr>
+      <tr><td><code>rows</code></td><td><code>number</code></td><td><code>3</code></td><td>Visible rows</td></tr>
+      <tr><td><code>maxlength</code></td><td><code>number</code></td><td><code>0</code></td><td>Max characters (0 = unlimited)</td></tr>
+      <tr><td><code>resize</code></td><td><code>'none' | 'vertical' | 'auto'</code></td><td><code>'vertical'</code></td><td>Resize behavior</td></tr>
+      <tr><td><code>error</code></td><td><code>string</code></td><td><code>''</code></td><td>Error message</td></tr>
+      <tr><td><code>helper-text</code></td><td><code>string</code></td><td><code>''</code></td><td>Helper text below input</td></tr>
+      <tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disable the textarea</td></tr>
+      <tr><td><code>required</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Mark as required</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The wrapper container</td></tr>
+      <tr><td><code>textarea</code></td><td>The native textarea element</td></tr>
+      <tr><td><code>label</code></td><td>The label element</td></tr>
+      <tr><td><code>helper</code></td><td>The helper/error text</td></tr>
+      <tr><td><code>counter</code></td><td>The character counter</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>aria-invalid</code> when error is present</li>
+    <li>Label is associated with the textarea</li>
+    <li>Required state shown with asterisk and native <code>required</code> attribute</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/textarea';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

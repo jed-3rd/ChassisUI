@@ -1,0 +1,124 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Tooltip">
+  <h1>Tooltip</h1>
+  <p>Tooltips display brief helper text on hover or focus. Supports four placement directions.</p>
+
+  <h2>Placements</h2>
+  <ComponentPreview title="Top / Bottom / Left / Right">
+    <chassis-tooltip content="Tooltip on top" placement="top">
+      <chassis-button variant="secondary">Top</chassis-button>
+    </chassis-tooltip>
+    <chassis-tooltip content="Tooltip on bottom" placement="bottom">
+      <chassis-button variant="secondary">Bottom</chassis-button>
+    </chassis-tooltip>
+    <chassis-tooltip content="Tooltip on left" placement="left">
+      <chassis-button variant="secondary">Left</chassis-button>
+    </chassis-tooltip>
+    <chassis-tooltip content="Tooltip on right" placement="right">
+      <chassis-button variant="secondary">Right</chassis-button>
+    </chassis-tooltip>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-tooltip content="Helpful text" placement="top">
+  <chassis-button>Hover me</chassis-button>
+</chassis-tooltip>`}
+    react={`import { Tooltip, Button } from '@chassis-ui/react';
+
+<Tooltip content="Helpful text" placement="top">
+  <Button>Hover me</Button>
+</Tooltip>`}
+    angular={`import { TooltipComponent, ButtonComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [TooltipComponent, ButtonComponent],
+  template: \`
+    <chassis-tooltip-wrapper content="Helpful text" placement="top">
+      <chassis-button-wrapper variant="secondary">Hover me</chassis-button-wrapper>
+    </chassis-tooltip-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Tooltip from '@chassis-ui/astro/Tooltip.astro';
+import Button from '@chassis-ui/astro/Button.astro';
+---
+
+<Tooltip content="Helpful text" placement="top">
+  <Button>Hover me</Button>
+</Tooltip>`}
+    svelte={`<script>
+  import { Tooltip, Button } from '@chassis-ui/svelte';
+</script>
+
+<Tooltip content="Helpful text" placement="top">
+  <Button>Hover me</Button>
+</Tooltip>`}
+  />
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>content</code></td><td><code>string</code></td><td><code>''</code></td><td>Tooltip text to display</td></tr>
+      <tr><td><code>placement</code></td><td><code>'top' | 'bottom' | 'left' | 'right'</code></td><td><code>'top'</code></td><td>Position relative to the trigger</td></tr>
+      <tr><td><code>open</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Manually control visibility</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The tooltip wrapper</td></tr>
+      <tr><td><code>trigger</code></td><td>The trigger slot container</td></tr>
+      <tr><td><code>content</code></td><td>The tooltip popup element</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Shows on hover and focus, hides on blur and mouse leave</li>
+    <li>Tooltip content acts as an accessible description</li>
+    <li>Non-interactive — does not trap focus</li>
+    <li>Respects <code>prefers-reduced-motion</code> for animations</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/tooltip';
+  import '@chassis-ui/core/button';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

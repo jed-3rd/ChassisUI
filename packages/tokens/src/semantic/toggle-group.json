@@ -1,0 +1,14 @@
+{
+  "chassis": {
+    "toggle-group": {
+      "background": { "value": "#ffffff" },
+      "color": { "value": "#1c1b1f" },
+      "border-color": { "value": "#79747e" },
+      "border-radius": { "value": "8px" },
+      "selected-background": { "value": "#6200ee" },
+      "selected-color": { "value": "#ffffff" },
+      "hover-background": { "value": "#e7e0ec" },
+      "font-size": { "value": "0.875rem" }
+    }
+  }
+}

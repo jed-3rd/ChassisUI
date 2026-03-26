@@ -1,0 +1,19 @@
+{
+  "chassis": {
+    "tabs": {
+      "border-color": { "value": "{chassis.color.outline-variant}" },
+      "tab-color": { "value": "{chassis.color.on-surface-variant}" },
+      "tab-color-active": { "value": "{chassis.color.primary}" },
+      "tab-color-hover": { "value": "{chassis.color.on-surface}" },
+      "tab-font-size": { "value": "{chassis.typography.font-size.sm}" },
+      "tab-font-weight": { "value": "500" },
+      "tab-padding-x": { "value": "{chassis.spacing.400}" },
+      "tab-padding-y": { "value": "{chassis.spacing.300}" },
+      "indicator-color": { "value": "{chassis.color.primary}" },
+      "indicator-height": { "value": "2px" },
+      "contained-background": { "value": "{chassis.color.surface-variant}" },
+      "contained-active-background": { "value": "{chassis.color.surface}" },
+      "contained-radius": { "value": "{chassis.shape.radius.md}" }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+---
+export interface Props {
+  variant?: 'primary' | 'secondary' | 'link';
+  size?: 'sm' | 'md' | 'lg';
+  disabled?: boolean;
+  loading?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+}
+
+const { variant = 'primary', size = 'md', disabled = false, loading = false, type = 'button' } = Astro.props;
+---
+
+<chassis-button
+  variant={variant}
+  size={size}
+  disabled={disabled}
+  loading={loading}
+  type={type}
+>
+  <slot />
+  <slot name="prefix" slot="prefix" />
+  <slot name="suffix" slot="suffix" />
+</chassis-button>
+
+<script>
+  import '@chassis-ui/core/button';
+</script>

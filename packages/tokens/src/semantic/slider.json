@@ -1,0 +1,12 @@
+{
+  "chassis": {
+    "slider": {
+      "track-color": { "value": "#e7e0ec" },
+      "track-height": { "value": "4px" },
+      "fill-color": { "value": "#6200ee" },
+      "thumb-color": { "value": "#6200ee" },
+      "thumb-size": { "value": "20px" },
+      "thumb-hover-ring": { "value": "8px" }
+    }
+  }
+}

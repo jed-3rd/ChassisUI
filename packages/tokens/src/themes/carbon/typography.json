@@ -1,0 +1,29 @@
+{
+  "chassis": {
+    "typography": {
+      "font-family": {
+        "primary": { "value": "'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" },
+        "mono": { "value": "'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', monospace" }
+      },
+      "font-size": {
+        "xs": { "value": "0.75rem" },
+        "sm": { "value": "0.875rem" },
+        "md": { "value": "1rem" },
+        "lg": { "value": "1.125rem" },
+        "xl": { "value": "1.25rem" },
+        "2xl": { "value": "1.75rem" },
+        "3xl": { "value": "2.625rem" }
+      },
+      "font-weight": {
+        "regular": { "value": "400" },
+        "medium": { "value": "500" },
+        "bold": { "value": "600" }
+      },
+      "line-height": {
+        "tight": { "value": "1.29" },
+        "normal": { "value": "1.5" },
+        "loose": { "value": "1.7" }
+      }
+    }
+  }
+}

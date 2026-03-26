@@ -1,0 +1,21 @@
+{
+  "name": "@chassis-ui/docs",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "@astrojs/mdx": "^4.0.0",
+    "@chassis-ui/core": "*",
+    "@chassis-ui/tokens": "*",
+    "@chassis-ui/themes": "*",
+    "@chassis-ui/astro": "*",
+    "lit": "^3.2.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "chassis": {
+    "date-picker": {
+      "trigger-background": { "value": "#ffffff" },
+      "trigger-color": { "value": "#1c1b1f" },
+      "trigger-border-color": { "value": "#79747e" },
+      "calendar-background": { "value": "#ffffff" },
+      "calendar-border-color": { "value": "#cac4d0" },
+      "day-hover-background": { "value": "#e7e0ec" },
+      "day-selected-background": { "value": "#6200ee" },
+      "day-selected-color": { "value": "#ffffff" },
+      "day-today-border-color": { "value": "#6200ee" },
+      "range-background": { "value": "rgba(98, 0, 238, 0.08)" }
+    }
+  }
+}

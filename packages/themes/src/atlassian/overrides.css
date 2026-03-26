@@ -1,0 +1,120 @@
+/* Atlassian Design System - Component-specific overrides */
+
+/* Buttons: tight 3px radius, medium weight, Atlassian blue */
+[data-theme="atlassian"] chassis-button::part(base) {
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 500;
+  border-radius: 3px;
+  box-shadow: none;
+  min-height: 32px;
+}
+
+[data-theme="atlassian"] chassis-button[variant="primary"]::part(base) {
+  box-shadow: none;
+}
+
+[data-theme="atlassian"] chassis-button[variant="primary"]::part(base):hover {
+  filter: none;
+  background: #0065FF;
+}
+
+[data-theme="atlassian"] chassis-button[variant="secondary"]::part(base) {
+  background: var(--chassis-color-surface-variant, #F4F5F7);
+  color: var(--chassis-color-on-surface, #172B4D);
+  border: none;
+}
+
+[data-theme="atlassian"] chassis-button[variant="secondary"]::part(base):hover {
+  background: #EBECF0;
+}
+
+[data-theme="atlassian"] chassis-button[variant="link"]::part(base) {
+  color: var(--chassis-color-primary, #0052CC);
+  border-radius: 3px;
+}
+
+[data-theme="atlassian"] chassis-button[variant="link"]::part(base):hover {
+  text-decoration: underline;
+}
+
+/* Cards: tight radius, Atlassian shadow, no border */
+[data-theme="atlassian"] chassis-card::part(base) {
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 1px 1px rgba(9, 30, 66, 0.25), 0 0 1px rgba(9, 30, 66, 0.31);
+  background: var(--chassis-color-surface, #FFFFFF);
+}
+
+/* Inputs: tight radius, subtle border, Atlassian field style */
+[data-theme="atlassian"] chassis-input::part(input) {
+  border-radius: 3px;
+  border: 2px solid var(--chassis-color-outline, #DFE1E6);
+  background: var(--chassis-color-surface-variant, #FAFBFC);
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+[data-theme="atlassian"] chassis-input::part(input):hover {
+  background: var(--chassis-color-surface-variant, #EBECF0);
+}
+
+[data-theme="atlassian"] chassis-input::part(input):focus-visible {
+  border-color: var(--chassis-color-primary, #0052CC);
+  background: var(--chassis-color-surface, #FFFFFF);
+  box-shadow: none;
+  outline: none;
+}
+
+/* Switch */
+[data-theme="atlassian"] chassis-switch::part(track) {
+  border-radius: 9999px;
+}
+
+/* Checkbox: very tight radius */
+[data-theme="atlassian"] chassis-checkbox::part(control) {
+  border-radius: 3px;
+  border: 2px solid var(--chassis-color-outline, #DFE1E6);
+}
+
+/* Badge: tight radius, bold */
+[data-theme="atlassian"] chassis-badge::part(base) {
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+/* Dialog: tight radius, Atlassian overlay shadow */
+[data-theme="atlassian"] chassis-dialog::part(dialog) {
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 20px 32px -8px rgba(9, 30, 66, 0.25), 0 0 1px rgba(9, 30, 66, 0.31);
+}
+
+/* Select */
+[data-theme="atlassian"] chassis-select::part(trigger) {
+  border-radius: 3px;
+  border: 2px solid var(--chassis-color-outline, #DFE1E6);
+  background: var(--chassis-color-surface-variant, #FAFBFC);
+}
+
+/* Dark mode */
+[data-theme="atlassian"][data-mode="dark"] chassis-button[variant="secondary"]::part(base) {
+  background: var(--chassis-color-surface-variant, #1B2638);
+  color: var(--chassis-color-on-surface, #B6C2CF);
+}
+
+[data-theme="atlassian"][data-mode="dark"] chassis-input::part(input) {
+  background: var(--chassis-color-surface, #1D2125);
+  border-color: var(--chassis-color-outline, #A6C5E229);
+}
+
+[data-theme="atlassian"][data-mode="dark"] chassis-input::part(input):focus-visible {
+  border-color: var(--chassis-color-primary, #579DFF);
+}
+
+[data-theme="atlassian"][data-mode="dark"] chassis-card::part(base) {
+  background: var(--chassis-color-surface, #22272B);
+  box-shadow: 0 1px 1px rgba(3, 4, 4, 0.5), 0 0 1px rgba(3, 4, 4, 0.6);
+}

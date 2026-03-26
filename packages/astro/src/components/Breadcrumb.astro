@@ -1,0 +1,15 @@
+---
+export interface Props {
+  separator?: string;
+}
+
+const { separator = '/' } = Astro.props;
+---
+
+<chassis-breadcrumb separator={separator}>
+  <slot />
+</chassis-breadcrumb>
+
+<script>
+  import '@chassis-ui/core/breadcrumb';
+</script>

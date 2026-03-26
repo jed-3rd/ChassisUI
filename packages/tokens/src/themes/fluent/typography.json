@@ -1,0 +1,29 @@
+{
+  "chassis": {
+    "typography": {
+      "font-family": {
+        "primary": { "value": "'Segoe UI Variable', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif" },
+        "mono": { "value": "'Cascadia Code', 'Cascadia Mono', 'Consolas', 'Courier New', monospace" }
+      },
+      "font-size": {
+        "xs": { "value": "0.625rem" },
+        "sm": { "value": "0.75rem" },
+        "md": { "value": "0.875rem" },
+        "lg": { "value": "1rem" },
+        "xl": { "value": "1.25rem" },
+        "2xl": { "value": "1.5rem" },
+        "3xl": { "value": "1.75rem" }
+      },
+      "font-weight": {
+        "regular": { "value": "400" },
+        "medium": { "value": "600" },
+        "bold": { "value": "700" }
+      },
+      "line-height": {
+        "tight": { "value": "1.14" },
+        "normal": { "value": "1.43" },
+        "loose": { "value": "1.6" }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+---
+export interface Props {
+  trigger?: 'click' | 'hover' | 'manual';
+  placement?: string;
+  offset?: number;
+  arrow?: boolean;
+}
+
+const { trigger = 'click', placement = 'bottom', offset = 8, arrow = false } = Astro.props;
+---
+
+<chassis-popover trigger={trigger} placement={placement} offset={offset} arrow={arrow}>
+  <slot />
+</chassis-popover>
+
+<script>
+  import '@chassis-ui/core/popover';
+</script>

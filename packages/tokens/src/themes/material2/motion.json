@@ -1,0 +1,17 @@
+{
+  "chassis": {
+    "motion": {
+      "duration": {
+        "instant": { "value": "50ms" },
+        "short": { "value": "150ms" },
+        "medium": { "value": "300ms" },
+        "long": { "value": "500ms" }
+      },
+      "easing": {
+        "standard": { "value": "cubic-bezier(0.4, 0, 0.2, 1)" },
+        "decelerate": { "value": "cubic-bezier(0, 0, 0.2, 1)" },
+        "accelerate": { "value": "cubic-bezier(0.4, 0, 1, 1)" }
+      }
+    }
+  }
+}

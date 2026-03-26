@@ -1,0 +1,374 @@
+---
+export interface Props {
+  defaultTheme?: 'default' | 'material2' | 'material3' | 'polaris' | 'carbon' | 'hig' | 'atlassian' | 'fluent' | 'lightning' | 'primer' | 'spectrum' | 'uber';
+  defaultMode?: 'light' | 'dark';
+}
+
+const { defaultTheme = 'default', defaultMode = 'dark' } = Astro.props;
+---
+
+<div class="chassis-theme-switcher" data-default-theme={defaultTheme} data-default-mode={defaultMode}>
+  <div class="theme-dropdown">
+    <button class="theme-dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+      <span class="theme-dropdown-swatch"></span>
+      <span class="theme-dropdown-label">Default</span>
+      <svg class="theme-dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <ul class="theme-dropdown-menu" role="listbox" aria-label="Select theme">
+      <li class="theme-option" role="option" data-theme="material3" data-color="#6750A4">
+        <span class="theme-option-swatch" style="background:#6750A4"></span>
+        <span class="theme-option-label">Material 3</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="theme-option" role="option" data-theme="fluent" data-color="#0F6CBD">
+        <span class="theme-option-swatch" style="background:#0F6CBD"></span>
+        <span class="theme-option-label">Fluent</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="theme-option" role="option" data-theme="hig" data-color="#007AFF">
+        <span class="theme-option-swatch" style="background:#007AFF"></span>
+        <span class="theme-option-label">Apple HIG</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="theme-option" role="option" data-theme="lightning" data-color="#0176D3">
+        <span class="theme-option-swatch" style="background:#0176D3"></span>
+        <span class="theme-option-label">Lightning</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="theme-option" role="option" data-theme="material2" data-color="#6200EE">
+        <span class="theme-option-swatch" style="background:#6200EE"></span>
+        <span class="theme-option-label">Material 2</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="theme-option" role="option" data-theme="carbon" data-color="#0F62FE">
+        <span class="theme-option-swatch" style="background:#0F62FE"></span>
+        <span class="theme-option-label">Carbon</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="theme-option" role="option" data-theme="atlassian" data-color="#0052CC">
+        <span class="theme-option-swatch" style="background:#0052CC"></span>
+        <span class="theme-option-label">Atlassian</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="theme-option" role="option" data-theme="spectrum" data-color="#0265DC">
+        <span class="theme-option-swatch" style="background:#0265DC"></span>
+        <span class="theme-option-label">Spectrum</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="theme-option" role="option" data-theme="polaris" data-color="#008060">
+        <span class="theme-option-swatch" style="background:#008060"></span>
+        <span class="theme-option-label">Polaris</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="theme-option" role="option" data-theme="primer" data-color="#1F883D">
+        <span class="theme-option-swatch" style="background:#1F883D"></span>
+        <span class="theme-option-label">Primer</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="theme-option" role="option" data-theme="uber" data-color="#000000">
+        <span class="theme-option-swatch" style="background:#000000"></span>
+        <span class="theme-option-label">Uber Base</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+      <li class="theme-option" role="option" data-theme="default" data-color="#18181B">
+        <span class="theme-option-swatch" style="background:#18181B; border-color: rgba(255,255,255,0.5)"></span>
+        <span class="theme-option-label">Default</span>
+        <svg class="theme-option-check" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7L6 10L11 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </li>
+    </ul>
+  </div>
+  <button class="mode-btn" aria-label="Toggle dark mode">
+    <span class="mode-icon mode-icon--light">☀</span>
+    <span class="mode-icon mode-icon--dark">☾</span>
+  </button>
+</div>
+
+<style is:global>
+  .chassis-theme-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Dropdown trigger */
+  .theme-dropdown {
+    position: relative;
+  }
+
+  .theme-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4375rem 0.75rem;
+    border: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+    border-radius: 8px;
+    background: var(--chassis-color-surface, #fff);
+    color: var(--chassis-color-on-surface, #1c1b1f);
+    font-family: var(--chassis-typography-font-family-primary, sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 150ms ease;
+    white-space: nowrap;
+    min-width: 140px;
+  }
+
+  .theme-dropdown-trigger:hover {
+    border-color: var(--chassis-color-outline, #79747e);
+  }
+
+  .theme-dropdown-swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(0, 0, 0, 0.15);
+    background: #18181B;
+  }
+
+  .theme-dropdown-label {
+    flex: 1;
+    text-align: left;
+  }
+
+  .theme-dropdown-chevron {
+    flex-shrink: 0;
+    transition: transform 200ms ease;
+  }
+
+  .theme-dropdown.open .theme-dropdown-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Dropdown menu */
+  .theme-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    min-width: 200px;
+    max-height: 320px;
+    overflow-y: auto;
+    background: var(--chassis-color-surface, #fff);
+    border: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+    border-radius: 10px;
+    padding: 4px;
+    margin: 0;
+    list-style: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+  }
+
+  .theme-dropdown.open .theme-dropdown-menu {
+    display: block;
+  }
+
+  /* Theme option */
+  .theme-option {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.5rem 0.625rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 100ms ease;
+    font-size: 0.8125rem;
+    color: var(--chassis-color-on-surface, #1c1b1f);
+  }
+
+  .theme-option:hover {
+    background: var(--chassis-color-surface-variant, #e7e0ec);
+  }
+
+  .theme-option-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .theme-option-label {
+    flex: 1;
+    font-weight: 500;
+  }
+
+  .theme-option-check {
+    flex-shrink: 0;
+    opacity: 0;
+    color: var(--chassis-color-primary, #6200ee);
+  }
+
+  .theme-option.active .theme-option-check {
+    opacity: 1;
+  }
+
+  .theme-option.active {
+    background: color-mix(in srgb, var(--chassis-color-primary, #6200ee) 8%, transparent);
+  }
+
+  /* Mode toggle */
+  .mode-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+    border-radius: 8px;
+    background: var(--chassis-color-surface, #fff);
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    cursor: pointer;
+    transition: all 150ms ease;
+    font-size: 1.125rem;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .mode-btn:hover {
+    border-color: var(--chassis-color-outline, #79747e);
+  }
+
+  [data-mode="dark"] .mode-btn {
+    color: #f5c842;
+  }
+
+  .mode-icon--dark { display: none; }
+  .mode-icon--light { display: inline; }
+
+  [data-mode="dark"] .mode-icon--dark { display: inline; }
+  [data-mode="dark"] .mode-icon--light { display: none; }
+
+  /* Dark mode overrides */
+  [data-mode="dark"] .theme-dropdown-trigger {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #e6e1e5;
+  }
+
+  [data-mode="dark"] .theme-dropdown-trigger:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  [data-mode="dark"] .theme-dropdown-swatch {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  [data-mode="dark"] .theme-dropdown-menu {
+    background: #2a2a2e;
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  [data-mode="dark"] .theme-option {
+    color: #e6e1e5;
+  }
+
+  [data-mode="dark"] .theme-option:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  [data-mode="dark"] .theme-option.active {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  [data-mode="dark"] .theme-option-swatch {
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  [data-mode="dark"] .mode-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  [data-mode="dark"] .mode-btn:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+</style>
+
+<script>
+  function initThemeSwitcher() {
+    const switcher = document.querySelector('.chassis-theme-switcher');
+    if (!switcher) return;
+
+    const defaultTheme = switcher.getAttribute('data-default-theme') || 'default';
+    const browserPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const defaultMode = switcher.getAttribute('data-default-mode') || (browserPrefersDark ? 'dark' : 'light');
+    const savedTheme = localStorage.getItem('chassis-theme') || defaultTheme;
+    const savedMode = localStorage.getItem('chassis-mode') || defaultMode;
+
+    const dropdown = switcher.querySelector('.theme-dropdown') as HTMLElement;
+    const trigger = switcher.querySelector('.theme-dropdown-trigger') as HTMLButtonElement;
+    const options = switcher.querySelectorAll('.theme-option');
+    const triggerSwatch = trigger.querySelector('.theme-dropdown-swatch') as HTMLElement;
+    const triggerLabel = trigger.querySelector('.theme-dropdown-label') as HTMLElement;
+    const modeBtn = switcher.querySelector('.mode-btn');
+
+    function setTheme(theme: string) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('chassis-theme', theme);
+      options.forEach((opt) => {
+        const isActive = opt.getAttribute('data-theme') === theme;
+        opt.classList.toggle('active', isActive);
+        opt.setAttribute('aria-selected', String(isActive));
+        if (isActive) {
+          const color = opt.getAttribute('data-color') || '#18181B';
+          const label = opt.querySelector('.theme-option-label')?.textContent || 'Default';
+          triggerSwatch.style.background = color;
+          triggerLabel.textContent = label;
+        }
+      });
+    }
+
+    function setMode(mode: string) {
+      document.documentElement.setAttribute('data-mode', mode);
+      localStorage.setItem('chassis-mode', mode);
+    }
+
+    function toggleMode() {
+      const current = document.documentElement.getAttribute('data-mode');
+      setMode(current === 'dark' ? 'light' : 'dark');
+    }
+
+    function toggleDropdown() {
+      const isOpen = dropdown.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    function closeDropdown() {
+      dropdown.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDropdown();
+    });
+
+    options.forEach((opt) => {
+      opt.addEventListener('click', () => {
+        const theme = opt.getAttribute('data-theme');
+        if (theme) setTheme(theme);
+        closeDropdown();
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target as Node)) {
+        closeDropdown();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDropdown();
+    });
+
+    modeBtn?.addEventListener('click', toggleMode);
+
+    setTheme(savedTheme);
+    setMode(savedMode);
+  }
+
+  initThemeSwitcher();
+  document.addEventListener('astro:page-load', initThemeSwitcher);
+</script>

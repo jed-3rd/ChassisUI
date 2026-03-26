@@ -1,0 +1,29 @@
+{
+  "name": "@chassis-ui/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./dist/js/tokens.js",
+    "./css/global": "./dist/css/global.css",
+    "./css/material2": "./dist/css/material2.css",
+    "./css/material3": "./dist/css/material3.css",
+    "./css/polaris": "./dist/css/polaris.css",
+    "./css/carbon": "./dist/css/carbon.css",
+    "./css/default": "./dist/css/default.css",
+    "./css/hig": "./dist/css/hig.css",
+    "./css/atlassian": "./dist/css/atlassian.css",
+    "./css/fluent": "./dist/css/fluent.css",
+    "./css/lightning": "./dist/css/lightning.css",
+    "./css/primer": "./dist/css/primer.css",
+    "./css/spectrum": "./dist/css/spectrum.css",
+    "./css/uber": "./dist/css/uber.css",
+    "./json": "./dist/json/tokens.json"
+  },
+  "scripts": {
+    "build": "node config.mjs",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.0.0"
+  }
+}

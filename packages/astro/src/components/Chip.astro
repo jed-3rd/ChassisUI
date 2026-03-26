@@ -1,0 +1,18 @@
+---
+export interface Props {
+  variant?: 'filter' | 'choice' | 'input';
+  selected?: boolean;
+  removable?: boolean;
+  disabled?: boolean;
+}
+
+const { variant = 'filter', selected = false, removable = false, disabled = false } = Astro.props;
+---
+
+<chassis-chip variant={variant} selected={selected} removable={removable} disabled={disabled}>
+  <slot />
+</chassis-chip>
+
+<script>
+  import '@chassis-ui/core/chip';
+</script>

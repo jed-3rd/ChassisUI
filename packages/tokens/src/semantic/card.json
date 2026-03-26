@@ -1,0 +1,14 @@
+{
+  "chassis": {
+    "card": {
+      "background": { "value": "{chassis.color.surface}" },
+      "color": { "value": "{chassis.color.on-surface}" },
+      "border-color": { "value": "{chassis.color.outline-variant}" },
+      "border-radius": { "value": "{chassis.shape.radius.lg}" },
+      "padding": { "value": "{chassis.spacing.400}" },
+      "elevation": { "value": "{chassis.elevation.2}" },
+      "header-font-size": { "value": "{chassis.typography.font-size.lg}" },
+      "header-font-weight": { "value": "{chassis.typography.font-weight.medium}" }
+    }
+  }
+}

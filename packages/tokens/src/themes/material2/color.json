@@ -1,0 +1,30 @@
+{
+  "chassis": {
+    "color": {
+      "primary": { "value": "#6200EE" },
+      "on-primary": { "value": "#FFFFFF" },
+      "primary-container": { "value": "#BB86FC" },
+      "on-primary-container": { "value": "#21005D" },
+      "secondary": { "value": "#03DAC6" },
+      "on-secondary": { "value": "#000000" },
+      "secondary-container": { "value": "#CEFAF4" },
+      "surface": { "value": "#FFFBFE" },
+      "on-surface": { "value": "#1C1B1F" },
+      "surface-variant": { "value": "#F3EDF7" },
+      "on-surface-variant": { "value": "#49454F" },
+      "outline": { "value": "#79747E" },
+      "outline-variant": { "value": "#C4C0C9" },
+      "error": { "value": "#B00020" },
+      "on-error": { "value": "#FFFFFF" },
+      "error-container": { "value": "#FDECEA" },
+      "background": { "value": "#FFFBFE" },
+      "on-background": { "value": "#1C1B1F" },
+      "success": { "value": "#4CAF50" },
+      "on-success": { "value": "#FFFFFF" },
+      "warning": { "value": "#FB8C00" },
+      "on-warning": { "value": "#FFFFFF" },
+      "info": { "value": "#2196F3" },
+      "on-info": { "value": "#FFFFFF" }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Switch">
+  <h1>Switch</h1>
+  <p>Switches toggle a single setting on or off. Use instead of a checkbox for immediate-effect settings.</p>
+
+  <h2>States</h2>
+  <ComponentPreview title="Off / On">
+    <chassis-switch label="Notifications"></chassis-switch>
+    <chassis-switch label="Dark mode" checked></chassis-switch>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-switch label="Notifications"></chassis-switch>
+<chassis-switch label="Dark mode" checked></chassis-switch>`}
+    react={`import { Switch } from '@chassis-ui/react';
+
+<Switch label="Notifications" />
+<Switch label="Dark mode" checked />`}
+    angular={`import { SwitchComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [SwitchComponent],
+  template: \`
+    <chassis-switch-wrapper label="Notifications" />
+    <chassis-switch-wrapper label="Dark mode" [checked]="true" />
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Switch from '@chassis-ui/astro/Switch.astro';
+---
+
+<Switch label="Notifications" />
+<Switch label="Dark mode" checked />`}
+    svelte={`<script>
+  import { Switch } from '@chassis-ui/svelte';
+</script>
+
+<Switch label="Notifications" />
+<Switch label="Dark mode" checked />`}
+  />
+
+  <h2>Disabled</h2>
+  <ComponentPreview title="Disabled states">
+    <chassis-switch label="Disabled off" disabled></chassis-switch>
+    <chassis-switch label="Disabled on" checked disabled></chassis-switch>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>checked</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Whether the switch is on</td></tr>
+      <tr><td><code>label</code></td><td><code>string</code></td><td><code>''</code></td><td>Label text</td></tr>
+      <tr><td><code>name</code></td><td><code>string</code></td><td><code>''</code></td><td>Form field name</td></tr>
+      <tr><td><code>value</code></td><td><code>string</code></td><td><code>'on'</code></td><td>Value submitted when checked</td></tr>
+      <tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disables the switch</td></tr>
+      <tr><td><code>size</code></td><td><code>'sm' | 'md' | 'lg'</code></td><td><code>'md'</code></td><td>Switch size</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The outer container</td></tr>
+      <tr><td><code>track</code></td><td>The switch track background</td></tr>
+      <tr><td><code>thumb</code></td><td>The sliding thumb indicator</td></tr>
+      <tr><td><code>label</code></td><td>The label text</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li><code>role="switch"</code> with <code>aria-checked</code> state</li>
+    <li>Keyboard toggle via <kbd>Space</kbd> and <kbd>Enter</kbd></li>
+    <li>Label text provides accessible name</li>
+    <li>Default slot available when no <code>label</code> prop is set</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/switch';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

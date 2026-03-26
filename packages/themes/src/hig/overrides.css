@@ -1,0 +1,104 @@
+/* Apple iOS (Human Interface Guidelines) - Component-specific overrides */
+
+/* Buttons: large radius, no uppercase, SF Pro weight */
+[data-theme="hig"] chassis-button::part(base) {
+  text-transform: none;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: none;
+  min-height: 44px;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+[data-theme="hig"] chassis-button[variant="primary"]::part(base) {
+  box-shadow: none;
+}
+
+[data-theme="hig"] chassis-button[variant="secondary"]::part(base) {
+  background: var(--chassis-color-surface-variant, #F2F2F7);
+  color: var(--chassis-color-primary, #007AFF);
+  border: none;
+}
+
+[data-theme="hig"] chassis-button[variant="link"]::part(base) {
+  color: var(--chassis-color-primary, #007AFF);
+  border-radius: 12px;
+}
+
+/* Cards: grouped inset style, large radius, subtle separator */
+[data-theme="hig"] chassis-card::part(base) {
+  border-radius: 16px;
+  border: none;
+  box-shadow: none;
+  background: var(--chassis-color-surface, #FFFFFF);
+}
+
+/* Inputs: iOS rounded rect, gray fill, no visible border */
+[data-theme="hig"] chassis-input::part(input) {
+  border-radius: 10px;
+  border: none;
+  background: var(--chassis-color-surface-variant, #F2F2F7);
+  padding: 0.6875rem 1rem;
+}
+
+[data-theme="hig"] chassis-input::part(input):focus-visible {
+  border: none;
+  box-shadow: 0 0 0 3.5px rgba(0, 122, 255, 0.3);
+  outline: none;
+}
+
+/* Switch: iOS pill toggle */
+[data-theme="hig"] chassis-switch::part(track) {
+  border-radius: 9999px;
+  min-width: 51px;
+  height: 31px;
+}
+
+/* Checkbox: circle style like iOS */
+[data-theme="hig"] chassis-checkbox::part(control) {
+  border-radius: 50%;
+}
+
+/* Badge: capsule shape */
+[data-theme="hig"] chassis-badge::part(base) {
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+
+/* Dialog: iOS action sheet / alert style */
+[data-theme="hig"] chassis-dialog::part(dialog) {
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Select: rounded, filled background */
+[data-theme="hig"] chassis-select::part(trigger) {
+  border-radius: 10px;
+  border: none;
+  background: var(--chassis-color-surface-variant, #F2F2F7);
+}
+
+/* Dark mode specifics */
+[data-theme="hig"][data-mode="dark"] chassis-button[variant="secondary"]::part(base) {
+  background: var(--chassis-color-surface-variant, #1C1C1E);
+  color: var(--chassis-color-primary, #0A84FF);
+}
+
+[data-theme="hig"][data-mode="dark"] chassis-input::part(input) {
+  background: var(--chassis-color-surface-variant, #1C1C1E);
+}
+
+[data-theme="hig"][data-mode="dark"] chassis-input::part(input):focus-visible {
+  box-shadow: 0 0 0 3.5px rgba(10, 132, 255, 0.35);
+}
+
+[data-theme="hig"][data-mode="dark"] chassis-card::part(base) {
+  background: var(--chassis-color-surface, #1C1C1E);
+}
+
+[data-theme="hig"][data-mode="dark"] chassis-select::part(trigger) {
+  background: var(--chassis-color-surface-variant, #1C1C1E);
+}

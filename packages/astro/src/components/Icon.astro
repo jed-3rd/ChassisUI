@@ -1,0 +1,17 @@
+---
+export interface Props {
+  name?: string;
+  size?: 'sm' | 'md' | 'lg';
+  label?: string;
+}
+
+const { name = '', size = 'md', label = '' } = Astro.props;
+---
+
+<chassis-icon name={name} size={size} label={label}>
+  <slot />
+</chassis-icon>
+
+<script>
+  import '@chassis-ui/core/icon';
+</script>

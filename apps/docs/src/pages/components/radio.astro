@@ -1,0 +1,161 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Radio">
+  <h1>Radio</h1>
+  <p>Radio groups let users select exactly one option from a set. Arrow keys navigate between options.</p>
+
+  <h2>Basic Group</h2>
+  <ComponentPreview title="Radio group">
+    <chassis-radio-group label="Favorite fruit" value="apple">
+      <chassis-radio value="apple" label="Apple"></chassis-radio>
+      <chassis-radio value="banana" label="Banana"></chassis-radio>
+      <chassis-radio value="cherry" label="Cherry"></chassis-radio>
+    </chassis-radio-group>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-radio-group label="Favorite fruit" value="apple">
+  <chassis-radio value="apple" label="Apple"></chassis-radio>
+  <chassis-radio value="banana" label="Banana"></chassis-radio>
+  <chassis-radio value="cherry" label="Cherry"></chassis-radio>
+</chassis-radio-group>`}
+    react={`import { RadioGroup, Radio } from '@chassis-ui/react';
+
+<RadioGroup label="Favorite fruit" value="apple">
+  <Radio value="apple" label="Apple" />
+  <Radio value="banana" label="Banana" />
+  <Radio value="cherry" label="Cherry" />
+</RadioGroup>`}
+    angular={`import { RadioGroupComponent, RadioComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [RadioGroupComponent, RadioComponent],
+  template: \`
+    <chassis-radio-group-wrapper label="Favorite fruit" value="apple">
+      <chassis-radio-wrapper value="apple" label="Apple" />
+      <chassis-radio-wrapper value="banana" label="Banana" />
+      <chassis-radio-wrapper value="cherry" label="Cherry" />
+    </chassis-radio-group-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import RadioGroup from '@chassis-ui/astro/RadioGroup.astro';
+import Radio from '@chassis-ui/astro/Radio.astro';
+---
+
+<RadioGroup label="Favorite fruit" value="apple">
+  <Radio value="apple" label="Apple" />
+  <Radio value="banana" label="Banana" />
+  <Radio value="cherry" label="Cherry" />
+</RadioGroup>`}
+    svelte={`<script>
+  import { RadioGroup, Radio } from '@chassis-ui/svelte';
+</script>
+
+<RadioGroup label="Favorite fruit" value="apple">
+  <Radio value="apple" label="Apple" />
+  <Radio value="banana" label="Banana" />
+  <Radio value="cherry" label="Cherry" />
+</RadioGroup>`}
+  />
+
+  <h2>Disabled</h2>
+  <ComponentPreview title="Disabled radio group">
+    <chassis-radio-group label="Plan" value="free" disabled>
+      <chassis-radio value="free" label="Free"></chassis-radio>
+      <chassis-radio value="pro" label="Pro"></chassis-radio>
+      <chassis-radio value="enterprise" label="Enterprise"></chassis-radio>
+    </chassis-radio-group>
+  </ComponentPreview>
+
+  <h2>Radio Group Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>name</code></td><td><code>string</code></td><td><code>''</code></td><td>Form field name for the group</td></tr>
+      <tr><td><code>value</code></td><td><code>string</code></td><td><code>''</code></td><td>Currently selected radio value</td></tr>
+      <tr><td><code>label</code></td><td><code>string</code></td><td><code>''</code></td><td>Group label text</td></tr>
+      <tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disables all radios in the group</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Radio Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>value</code></td><td><code>string</code></td><td><code>''</code></td><td>Value for this radio option</td></tr>
+      <tr><td><code>label</code></td><td><code>string</code></td><td><code>''</code></td><td>Label text for this option</td></tr>
+      <tr><td><code>checked</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Whether this radio is selected</td></tr>
+      <tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disables this radio</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Component</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>RadioGroup / Radio</td><td>The outer container</td></tr>
+      <tr><td><code>control</code></td><td>Radio</td><td>The radio circle indicator</td></tr>
+      <tr><td><code>label</code></td><td>Radio</td><td>The label text</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Events</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Event</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>change</code></td><td>Fired on RadioGroup when selection changes</td></tr>
+      <tr><td><code>chassis-radio-select</code></td><td>Fired on individual Radio when selected</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li><code>role="radiogroup"</code> on the group container</li>
+    <li><code>role="radio"</code> with <code>aria-checked</code> on each option</li>
+    <li>Arrow key navigation (<kbd>Up</kbd>/<kbd>Down</kbd>/<kbd>Left</kbd>/<kbd>Right</kbd>) cycles through options</li>
+    <li><kbd>Space</kbd> selects the focused radio</li>
+    <li>Group label provides accessible name for the fieldset</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/radio';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

@@ -1,0 +1,14 @@
+{
+  "chassis": {
+    "spacing": {
+      "100": { "value": "0.125rem" },
+      "200": { "value": "0.25rem" },
+      "300": { "value": "0.5rem" },
+      "400": { "value": "0.75rem" },
+      "500": { "value": "1rem" },
+      "600": { "value": "1.5rem" },
+      "700": { "value": "2rem" },
+      "800": { "value": "4rem" }
+    }
+  }
+}

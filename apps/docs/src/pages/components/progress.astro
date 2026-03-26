@@ -1,0 +1,115 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Progress">
+  <h1>Progress</h1>
+  <p>Displays progress as a linear bar or circular ring. Supports determinate values and indeterminate animation.</p>
+
+  <h2>Linear</h2>
+  <ComponentPreview title="Determinate linear progress">
+    <chassis-progress value="35" max="100"></chassis-progress>
+    <br />
+    <chassis-progress value="75" max="100"></chassis-progress>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-progress value="75" max="100"></chassis-progress>`}
+    react={`import { Progress } from '@chassis-ui/react';
+
+<Progress value={75} max={100} />`}
+    angular={`import { ProgressComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [ProgressComponent],
+  template: \`
+    <chassis-progress-wrapper [value]="75" [max]="100"></chassis-progress-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Progress from '@chassis-ui/astro/Progress.astro';
+---
+
+<Progress value={75} max={100} />`}
+    svelte={`<script>
+  import { Progress } from '@chassis-ui/svelte';
+</script>
+
+<Progress value={75} max={100} />`}
+  />
+
+  <h2>Indeterminate</h2>
+  <ComponentPreview title="Indeterminate linear progress">
+    <chassis-progress indeterminate></chassis-progress>
+  </ComponentPreview>
+
+  <h2>Circular</h2>
+  <ComponentPreview title="Circular progress variants">
+    <div style="display: flex; gap: 2rem; align-items: center;">
+      <chassis-progress variant="circular" value="60" max="100"></chassis-progress>
+      <chassis-progress variant="circular" indeterminate></chassis-progress>
+    </div>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>value</code></td><td><code>number</code></td><td><code>0</code></td><td>Current progress value</td></tr>
+      <tr><td><code>max</code></td><td><code>number</code></td><td><code>100</code></td><td>Maximum value</td></tr>
+      <tr><td><code>variant</code></td><td><code>'linear' | 'circular'</code></td><td><code>'linear'</code></td><td>Visual style</td></tr>
+      <tr><td><code>indeterminate</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Show indeterminate animation</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The progress container</td></tr>
+      <tr><td><code>track</code></td><td>The background track</td></tr>
+      <tr><td><code>indicator</code></td><td>The filled indicator</td></tr>
+      <tr><td><code>label</code></td><td>The percentage label</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>role="progressbar"</code></li>
+    <li>Sets <code>aria-valuenow</code>, <code>aria-valuemin</code>, <code>aria-valuemax</code> for determinate</li>
+    <li>Omits value attributes for indeterminate state</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/progress';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

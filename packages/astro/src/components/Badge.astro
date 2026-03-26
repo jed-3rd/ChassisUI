@@ -1,0 +1,17 @@
+---
+export interface Props {
+  variant?: 'default' | 'success' | 'warning' | 'error' | 'info';
+  value?: string;
+  dot?: boolean;
+}
+
+const { variant = 'default', value = '', dot = false } = Astro.props;
+---
+
+<chassis-badge variant={variant} value={value} dot={dot}>
+  <slot />
+</chassis-badge>
+
+<script>
+  import '@chassis-ui/core/badge';
+</script>

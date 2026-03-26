@@ -1,0 +1,41 @@
+---
+export interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="component-preview">
+  {title && <h4 class="preview-title">{title}</h4>}
+  <div class="preview-canvas">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .component-preview {
+    margin: 1.5rem 0;
+  }
+
+  .preview-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+  }
+
+  .preview-canvas {
+    padding: 2rem;
+    border: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+    border-radius: var(--chassis-shape-radius-lg, 16px);
+    background: var(--chassis-color-surface, #fff);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+</style>

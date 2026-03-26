@@ -1,0 +1,111 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Divider">
+  <h1>Divider</h1>
+  <p>A visual separator between content sections. Supports horizontal and vertical orientations with optional labels.</p>
+
+  <h2>Horizontal</h2>
+  <ComponentPreview title="Default horizontal divider">
+    <p>Content above</p>
+    <chassis-divider></chassis-divider>
+    <p>Content below</p>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-divider></chassis-divider>`}
+    react={`import { Divider } from '@chassis-ui/react';
+
+<Divider />`}
+    angular={`import { DividerComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [DividerComponent],
+  template: \`
+    <chassis-divider-wrapper></chassis-divider-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Divider from '@chassis-ui/astro/Divider.astro';
+---
+
+<Divider />`}
+    svelte={`<script>
+  import { Divider } from '@chassis-ui/svelte';
+</script>
+
+<Divider />`}
+  />
+
+  <h2>With Label</h2>
+  <ComponentPreview title="Divider with centered label">
+    <chassis-divider label="OR"></chassis-divider>
+  </ComponentPreview>
+
+  <h2>Vertical</h2>
+  <ComponentPreview title="Vertical divider between inline items">
+    <div style="display: flex; align-items: center; gap: 1rem; height: 2rem;">
+      <span>Left</span>
+      <chassis-divider orientation="vertical"></chassis-divider>
+      <span>Right</span>
+    </div>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>orientation</code></td><td><code>'horizontal' | 'vertical'</code></td><td><code>'horizontal'</code></td><td>Direction of the divider</td></tr>
+      <tr><td><code>label</code></td><td><code>string</code></td><td><code>''</code></td><td>Optional text label centered on the divider</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The divider container</td></tr>
+      <tr><td><code>label</code></td><td>The label text element</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>role="separator"</code> for semantic meaning</li>
+    <li><code>aria-orientation</code> reflects the current orientation</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/divider';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

@@ -1,0 +1,13 @@
+{
+  "chassis": {
+    "dropdown-menu": {
+      "background": { "value": "#ffffff" },
+      "color": { "value": "#1c1b1f" },
+      "border-color": { "value": "#cac4d0" },
+      "border-radius": { "value": "8px" },
+      "item-hover-background": { "value": "#e7e0ec" },
+      "item-font-size": { "value": "0.875rem" },
+      "separator-color": { "value": "#cac4d0" }
+    }
+  }
+}

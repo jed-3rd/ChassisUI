@@ -1,0 +1,383 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout title="Design Tokens">
+  <h1>Design Tokens</h1>
+  <p>Chassis UI uses CSS custom properties as design tokens. Toggle the theme switcher above to see values change live.</p>
+
+  <h2>Color</h2>
+  <div class="token-grid">
+    <div class="token-swatch" style="--swatch: var(--chassis-color-primary)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-primary</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-on-primary)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-on-primary</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-primary-container)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-primary-container</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-secondary)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-secondary</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-surface)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-surface</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-on-surface)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-on-surface</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-surface-variant)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-surface-variant</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-outline)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-outline</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-error)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-error</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-success)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-success</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-warning)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-warning</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-info)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-info</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-background)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-background</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-on-background)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-on-background</code>
+    </div>
+    <div class="token-swatch" style="--swatch: var(--chassis-color-scrim)">
+      <div class="swatch-preview"></div>
+      <code>--chassis-color-scrim</code>
+    </div>
+  </div>
+
+  <h2>Typography</h2>
+  <table class="token-table">
+    <thead>
+      <tr><th>Token</th><th>Preview</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>--chassis-typography-font-family-primary</code></td>
+        <td style="font-family: var(--chassis-typography-font-family-primary, sans-serif)">The quick brown fox</td>
+      </tr>
+      <tr>
+        <td><code>--chassis-typography-font-family-mono</code></td>
+        <td style="font-family: var(--chassis-typography-font-family-mono, monospace)">const x = 42;</td>
+      </tr>
+      <tr>
+        <td><code>--chassis-typography-font-size-xs</code></td>
+        <td style="font-size: var(--chassis-typography-font-size-xs, 0.75rem)">Extra Small</td>
+      </tr>
+      <tr>
+        <td><code>--chassis-typography-font-size-sm</code></td>
+        <td style="font-size: var(--chassis-typography-font-size-sm, 0.875rem)">Small</td>
+      </tr>
+      <tr>
+        <td><code>--chassis-typography-font-size-md</code></td>
+        <td style="font-size: var(--chassis-typography-font-size-md, 1rem)">Medium</td>
+      </tr>
+      <tr>
+        <td><code>--chassis-typography-font-size-lg</code></td>
+        <td style="font-size: var(--chassis-typography-font-size-lg, 1.25rem)">Large</td>
+      </tr>
+      <tr>
+        <td><code>--chassis-typography-font-size-xl</code></td>
+        <td style="font-size: var(--chassis-typography-font-size-xl, 1.5rem)">Extra Large</td>
+      </tr>
+      <tr>
+        <td><code>--chassis-typography-font-size-2xl</code></td>
+        <td style="font-size: var(--chassis-typography-font-size-2xl, 2rem)">2XL</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Spacing</h2>
+  <div class="spacing-list">
+    <div class="spacing-row">
+      <code>--chassis-spacing-100</code><span class="spacing-label">0.25rem (4px)</span>
+      <div class="spacing-bar" style="width: var(--chassis-spacing-100, 0.25rem)"></div>
+    </div>
+    <div class="spacing-row">
+      <code>--chassis-spacing-200</code><span class="spacing-label">0.5rem (8px)</span>
+      <div class="spacing-bar" style="width: var(--chassis-spacing-200, 0.5rem)"></div>
+    </div>
+    <div class="spacing-row">
+      <code>--chassis-spacing-300</code><span class="spacing-label">0.75rem (12px)</span>
+      <div class="spacing-bar" style="width: var(--chassis-spacing-300, 0.75rem)"></div>
+    </div>
+    <div class="spacing-row">
+      <code>--chassis-spacing-400</code><span class="spacing-label">1rem (16px)</span>
+      <div class="spacing-bar" style="width: var(--chassis-spacing-400, 1rem)"></div>
+    </div>
+    <div class="spacing-row">
+      <code>--chassis-spacing-500</code><span class="spacing-label">1.25rem (20px)</span>
+      <div class="spacing-bar" style="width: var(--chassis-spacing-500, 1.25rem)"></div>
+    </div>
+    <div class="spacing-row">
+      <code>--chassis-spacing-600</code><span class="spacing-label">1.5rem (24px)</span>
+      <div class="spacing-bar" style="width: var(--chassis-spacing-600, 1.5rem)"></div>
+    </div>
+    <div class="spacing-row">
+      <code>--chassis-spacing-700</code><span class="spacing-label">2rem (32px)</span>
+      <div class="spacing-bar" style="width: var(--chassis-spacing-700, 2rem)"></div>
+    </div>
+    <div class="spacing-row">
+      <code>--chassis-spacing-800</code><span class="spacing-label">4rem (64px)</span>
+      <div class="spacing-bar" style="width: var(--chassis-spacing-800, 4rem)"></div>
+    </div>
+  </div>
+
+  <h2>Shape</h2>
+  <div class="shape-grid">
+    <div class="shape-preview" style="border-radius: var(--chassis-shape-radius-sm, 4px)">
+      <code>radius-sm</code>
+    </div>
+    <div class="shape-preview" style="border-radius: var(--chassis-shape-radius-md, 8px)">
+      <code>radius-md</code>
+    </div>
+    <div class="shape-preview" style="border-radius: var(--chassis-shape-radius-lg, 16px)">
+      <code>radius-lg</code>
+    </div>
+    <div class="shape-preview" style="border-radius: var(--chassis-shape-radius-full, 9999px)">
+      <code>radius-full</code>
+    </div>
+  </div>
+
+  <h2>Elevation</h2>
+  <div class="elevation-grid">
+    <div class="elevation-preview" style="box-shadow: var(--chassis-elevation-0, none)">
+      <code>elevation-0</code>
+    </div>
+    <div class="elevation-preview" style="box-shadow: var(--chassis-elevation-1)">
+      <code>elevation-1</code>
+    </div>
+    <div class="elevation-preview" style="box-shadow: var(--chassis-elevation-2)">
+      <code>elevation-2</code>
+    </div>
+    <div class="elevation-preview" style="box-shadow: var(--chassis-elevation-3)">
+      <code>elevation-3</code>
+    </div>
+    <div class="elevation-preview" style="box-shadow: var(--chassis-elevation-4)">
+      <code>elevation-4</code>
+    </div>
+    <div class="elevation-preview" style="box-shadow: var(--chassis-elevation-5)">
+      <code>elevation-5</code>
+    </div>
+  </div>
+
+  <h2>Z-Index</h2>
+  <table class="token-table">
+    <thead>
+      <tr><th>Token</th><th>Value</th><th>Used By</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>--chassis-z-index-dropdown</code></td><td>1000</td><td>Select, Dropdown Menu</td></tr>
+      <tr><td><code>--chassis-z-index-sticky</code></td><td>1100</td><td>Table sticky header</td></tr>
+      <tr><td><code>--chassis-z-index-overlay</code></td><td>1200</td><td>Dialog</td></tr>
+      <tr><td><code>--chassis-z-index-modal</code></td><td>1300</td><td>Modal</td></tr>
+      <tr><td><code>--chassis-z-index-toast</code></td><td>1400</td><td>Toast</td></tr>
+      <tr><td><code>--chassis-z-index-popover</code></td><td>1500</td><td>Popover, Tooltip</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Opacity</h2>
+  <table class="token-table">
+    <thead>
+      <tr><th>Token</th><th>Value</th><th>Usage</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>--chassis-opacity-disabled</code></td><td>0.38</td><td>Disabled state for all interactive elements</td></tr>
+      <tr><td><code>--chassis-opacity-hover</code></td><td>0.08</td><td>Hover overlay</td></tr>
+      <tr><td><code>--chassis-opacity-pressed</code></td><td>0.12</td><td>Pressed/active state</td></tr>
+      <tr><td><code>--chassis-opacity-focus</code></td><td>0.12</td><td>Focus ring overlay</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Border</h2>
+  <table class="token-table">
+    <thead>
+      <tr><th>Token</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>--chassis-border-width-thin</code></td><td>1px</td></tr>
+      <tr><td><code>--chassis-border-width-medium</code></td><td>2px</td></tr>
+      <tr><td><code>--chassis-border-width-thick</code></td><td>3px</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Sizing</h2>
+  <table class="token-table">
+    <thead>
+      <tr><th>Token</th><th>Value</th><th>Usage</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>--chassis-sizing-icon-sm</code></td><td>16px</td><td>Small icons</td></tr>
+      <tr><td><code>--chassis-sizing-icon-md</code></td><td>24px</td><td>Default icon size</td></tr>
+      <tr><td><code>--chassis-sizing-icon-lg</code></td><td>32px</td><td>Large icons</td></tr>
+      <tr><td><code>--chassis-sizing-touch-target</code></td><td>44px</td><td>Minimum touch target</td></tr>
+      <tr><td><code>--chassis-sizing-avatar-sm</code></td><td>32px</td><td>Small avatar</td></tr>
+      <tr><td><code>--chassis-sizing-avatar-md</code></td><td>40px</td><td>Default avatar</td></tr>
+      <tr><td><code>--chassis-sizing-avatar-lg</code></td><td>48px</td><td>Large avatar</td></tr>
+      <tr><td><code>--chassis-sizing-avatar-xl</code></td><td>64px</td><td>Extra large avatar</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Motion</h2>
+  <table class="token-table">
+    <thead>
+      <tr><th>Token</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>--chassis-motion-duration-short</code></td><td>100ms</td></tr>
+      <tr><td><code>--chassis-motion-duration-medium</code></td><td>200ms</td></tr>
+      <tr><td><code>--chassis-motion-duration-long</code></td><td>300ms</td></tr>
+      <tr><td><code>--chassis-motion-easing-standard</code></td><td>cubic-bezier(0.2, 0, 0, 1)</td></tr>
+      <tr><td><code>--chassis-motion-easing-decelerate</code></td><td>cubic-bezier(0, 0, 0, 1)</td></tr>
+      <tr><td><code>--chassis-motion-easing-accelerate</code></td><td>cubic-bezier(0.3, 0, 1, 1)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Breakpoints</h2>
+  <table class="token-table">
+    <thead>
+      <tr><th>Token</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>--chassis-breakpoint-sm</code></td><td>640px</td></tr>
+      <tr><td><code>--chassis-breakpoint-md</code></td><td>768px</td></tr>
+      <tr><td><code>--chassis-breakpoint-lg</code></td><td>1024px</td></tr>
+      <tr><td><code>--chassis-breakpoint-xl</code></td><td>1280px</td></tr>
+    </tbody>
+  </table>
+</DocsLayout>
+
+<style>
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .token-swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .swatch-preview {
+    width: 100%;
+    height: 48px;
+    border-radius: var(--chassis-shape-radius-sm, 4px);
+    background: var(--swatch);
+    border: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .token-swatch code {
+    font-size: 0.7rem;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+  }
+
+  .token-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .token-table th,
+  .token-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .token-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .spacing-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  .spacing-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .spacing-row code {
+    font-size: 0.75rem;
+    min-width: 200px;
+  }
+
+  .spacing-label {
+    font-size: 0.75rem;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    min-width: 100px;
+  }
+
+  .spacing-bar {
+    height: 16px;
+    background: var(--chassis-color-primary, #6200ee);
+    border-radius: 2px;
+    min-width: 4px;
+  }
+
+  .shape-grid,
+  .elevation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .shape-preview,
+  .elevation-preview {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--chassis-color-surface, #fff);
+    border: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .elevation-preview {
+    border: none;
+    border-radius: var(--chassis-shape-radius-md, 8px);
+  }
+
+  .shape-preview code,
+  .elevation-preview code {
+    font-size: 0.75rem;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+  }
+</style>

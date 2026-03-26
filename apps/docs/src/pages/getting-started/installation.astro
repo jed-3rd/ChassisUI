@@ -1,0 +1,108 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout title="Installation">
+  <h1>Installation</h1>
+  <p>Chassis UI components work with any framework — or none at all. Choose the package that matches your stack.</p>
+
+  <h2>Web Components (framework-agnostic)</h2>
+  <p>The core package provides Lit-based Web Components that work everywhere.</p>
+  <pre><code>npm install @chassis-ui/core @chassis-ui/tokens @chassis-ui/themes</code></pre>
+
+  <h3>Usage</h3>
+  <pre><code>&lt;!-- Import tokens and a theme --&gt;
+&lt;link rel="stylesheet" href="@chassis-ui/tokens/css/global" /&gt;
+&lt;link rel="stylesheet" href="@chassis-ui/tokens/css/material3" /&gt;
+
+&lt;!-- Set active theme --&gt;
+&lt;html data-theme="material3"&gt;
+
+&lt;!-- Use components --&gt;
+&lt;script type="module"&gt;
+  import '@chassis-ui/core/button';
+&lt;/script&gt;
+
+&lt;chassis-button variant="primary"&gt;Click me&lt;/chassis-button&gt;</code></pre>
+
+  <h2>React</h2>
+  <pre><code>npm install @chassis-ui/react @chassis-ui/core @chassis-ui/tokens @chassis-ui/themes</code></pre>
+  <pre><code>import &lbrace; Button &rbrace; from '@chassis-ui/react';
+
+function App() &lbrace;
+  return &lt;Button variant="primary"&gt;Click me&lt;/Button&gt;;
+&rbrace;</code></pre>
+
+  <h2>Astro</h2>
+  <pre><code>npm install @chassis-ui/astro @chassis-ui/core @chassis-ui/tokens @chassis-ui/themes</code></pre>
+  <pre><code>---
+import Button from '@chassis-ui/astro/Button.astro';
+---
+
+&lt;Button variant="primary"&gt;Click me&lt;/Button&gt;</code></pre>
+
+  <h2>Angular</h2>
+  <pre><code>npm install @chassis-ui/angular @chassis-ui/core @chassis-ui/tokens @chassis-ui/themes</code></pre>
+  <pre><code>import &lbrace; ButtonComponent &rbrace; from '@chassis-ui/angular';
+
+@Component(&lbrace;
+  imports: [ButtonComponent],
+  template: `&lt;chassis-button-wrapper variant="primary"&gt;Click me&lt;/chassis-button-wrapper&gt;`
+&rbrace;)
+export class AppComponent &lbrace;&rbrace;</code></pre>
+
+  <h2>Svelte</h2>
+  <pre><code>npm install @chassis-ui/svelte @chassis-ui/core @chassis-ui/tokens @chassis-ui/themes</code></pre>
+  <pre><code>&lt;script&gt;
+  import &lbrace; Button &rbrace; from '@chassis-ui/svelte';
+&lt;/script&gt;
+
+&lt;Button variant="primary"&gt;Click me&lt;/Button&gt;</code></pre>
+
+  <h2>Theme Setup</h2>
+  <p>Every app needs three things to get theming working:</p>
+  <ol>
+    <li><strong>Global tokens CSS</strong> — provides the base design token variables</li>
+    <li><strong>Theme CSS file(s)</strong> — at least one theme (material3, polaris, or carbon)</li>
+    <li><strong><code>data-theme</code> attribute</strong> — set on the <code>&lt;html&gt;</code> element to activate a theme</li>
+  </ol>
+  <pre><code>&lt;html data-theme="material3"&gt;
+  &lt;head&gt;
+    &lt;!-- Load global tokens and one or more themes --&gt;
+    &lt;link rel="stylesheet" href="path/to/global.css" /&gt;
+    &lt;link rel="stylesheet" href="path/to/material3.css" /&gt;
+    &lt;link rel="stylesheet" href="path/to/polaris.css" /&gt;
+    &lt;link rel="stylesheet" href="path/to/carbon.css" /&gt;
+  &lt;/head&gt;
+&lt;/html&gt;</code></pre>
+
+  <p>To switch themes at runtime, just change the attribute:</p>
+  <pre><code>document.documentElement.setAttribute('data-theme', 'polaris');</code></pre>
+  <p>All components re-render instantly via CSS cascade — no page reload needed.</p>
+
+  <h2>Dark Mode</h2>
+  <p>Chassis UI supports light and dark modes via the <code>data-mode</code> attribute:</p>
+  <pre><code>&lt;html data-theme="material3" data-mode="dark"&gt;</code></pre>
+  <p>Or detect system preference automatically:</p>
+  <pre><code>const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+document.documentElement.setAttribute('data-mode', prefersDark ? 'dark' : 'light');</code></pre>
+
+  <h2>Available Components</h2>
+  <p>Chassis UI ships 32 components across 6 categories:</p>
+  <ul>
+    <li><strong>Form</strong> — Button, Checkbox, Date Picker, Input, Radio, Select, Slider, Switch, Textarea, Toggle Group</li>
+    <li><strong>Feedback</strong> — Alert, Progress, Skeleton, Spinner, Toast</li>
+    <li><strong>Navigation</strong> — Breadcrumb, Link, Pagination, Tabs</li>
+    <li><strong>Layout</strong> — Accordion, Card, Divider, Table</li>
+    <li><strong>Overlay</strong> — Dialog, Dropdown Menu, Modal, Popover, Tooltip</li>
+    <li><strong>Data Display</strong> — Avatar, Badge, Chip, Icon</li>
+  </ul>
+
+  <h2>Next Steps</h2>
+  <ul>
+    <li><a href="/getting-started/theming">Learn how theming works</a></li>
+    <li><a href="/components/button">Explore the Button component</a></li>
+    <li><a href="/tokens">Browse all design tokens</a></li>
+    <li><a href="/playground">Try components in the Playground</a></li>
+  </ul>
+</DocsLayout>

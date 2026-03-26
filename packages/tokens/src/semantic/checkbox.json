@@ -1,0 +1,17 @@
+{
+  "chassis": {
+    "checkbox": {
+      "size": { "value": "18px" },
+      "border-color": { "value": "{chassis.color.outline}" },
+      "border-radius": { "value": "{chassis.shape.radius.sm}" },
+      "border-width": { "value": "{chassis.border.width-medium}" },
+      "checked-background": { "value": "{chassis.color.primary}" },
+      "checked-color": { "value": "{chassis.color.on-primary}" },
+      "indeterminate-background": { "value": "{chassis.color.primary}" },
+      "indeterminate-color": { "value": "{chassis.color.on-primary}" },
+      "label-font-size": { "value": "{chassis.typography.font-size.md}" },
+      "label-color": { "value": "{chassis.color.on-surface}" },
+      "focus-ring-color": { "value": "{chassis.color.primary}" }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Pagination">
+  <h1>Pagination</h1>
+  <p>Page navigation control with numbered buttons, prev/next arrows, and ellipsis for large page counts.</p>
+
+  <h2>Basic Usage</h2>
+  <ComponentPreview title="10 pages, current page 5">
+    <chassis-pagination total="10" current="5"></chassis-pagination>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-pagination total="10" current="1"></chassis-pagination>`}
+    react={`import { Pagination } from '@chassis-ui/react';
+
+<Pagination total={10} current={1} onChange={(e) => console.log(e.detail.page)} />`}
+    angular={`import { PaginationComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [PaginationComponent],
+  template: \`
+    <chassis-pagination-wrapper
+      [total]="10"
+      [current]="currentPage"
+    ></chassis-pagination-wrapper>
+  \`
+})
+export class MyComponent {
+  currentPage = 1;
+}`}
+    astro={`---
+import Pagination from '@chassis-ui/astro/Pagination.astro';
+---
+
+<Pagination total={10} current={1} />`}
+    svelte={`<script>
+  import { Pagination } from '@chassis-ui/svelte';
+</script>
+
+<Pagination total={10} current={1} />`}
+  />
+
+  <h2>Large Page Count</h2>
+  <ComponentPreview title="50 pages with ellipsis">
+    <chassis-pagination total="50" current="25" siblings="1"></chassis-pagination>
+  </ComponentPreview>
+
+  <h2>Show Edges</h2>
+  <ComponentPreview title="Always show first and last page">
+    <chassis-pagination total="20" current="10" show-edges></chassis-pagination>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>total</code></td><td><code>number</code></td><td><code>1</code></td><td>Total number of pages</td></tr>
+      <tr><td><code>current</code></td><td><code>number</code></td><td><code>1</code></td><td>Currently active page</td></tr>
+      <tr><td><code>siblings</code></td><td><code>number</code></td><td><code>1</code></td><td>Pages shown on each side of current</td></tr>
+      <tr><td><code>show-edges</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Always show first and last page numbers</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The pagination container</td></tr>
+      <tr><td><code>prev</code></td><td>Previous page button</td></tr>
+      <tr><td><code>next</code></td><td>Next page button</td></tr>
+      <tr><td><code>page</code></td><td>Individual page number button</td></tr>
+      <tr><td><code>ellipsis</code></td><td>The ellipsis indicator</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Events</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Event</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>change</code></td><td>Fired when page changes. Detail: <code>{'{ page: number }'}</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>&lt;nav&gt;</code> with <code>aria-label="Pagination"</code></li>
+    <li>Active page has <code>aria-current="page"</code></li>
+    <li>Prev/next buttons disabled at boundaries</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/pagination';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

@@ -1,0 +1,15 @@
+---
+export interface Props {
+  multiple?: boolean;
+}
+
+const { multiple = false } = Astro.props;
+---
+
+<chassis-accordion multiple={multiple}>
+  <slot />
+</chassis-accordion>
+
+<script>
+  import '@chassis-ui/core/accordion';
+</script>

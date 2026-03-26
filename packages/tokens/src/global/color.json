@@ -1,0 +1,41 @@
+{
+  "chassis": {
+    "color": {
+      "primary": { "value": "#6200EE", "type": "color" },
+      "on-primary": { "value": "#FFFFFF", "type": "color" },
+      "primary-container": { "value": "#E8DEF8", "type": "color" },
+      "on-primary-container": { "value": "#21005D", "type": "color" },
+      "secondary": { "value": "#625B71", "type": "color" },
+      "on-secondary": { "value": "#FFFFFF", "type": "color" },
+      "secondary-container": { "value": "#E8DEF8", "type": "color" },
+      "surface": { "value": "#FFFBFE", "type": "color" },
+      "on-surface": { "value": "#1C1B1F", "type": "color" },
+      "surface-variant": { "value": "#E7E0EC", "type": "color" },
+      "on-surface-variant": { "value": "#49454F", "type": "color" },
+      "outline": { "value": "#79747E", "type": "color" },
+      "outline-variant": { "value": "#CAC4D0", "type": "color" },
+      "error": { "value": "#B3261E", "type": "color" },
+      "on-error": { "value": "#FFFFFF", "type": "color" },
+      "error-container": { "value": "#F9DEDC", "type": "color" },
+      "background": { "value": "#FFFBFE", "type": "color" },
+      "on-background": { "value": "#1C1B1F", "type": "color" },
+      "success": { "value": "#198038", "type": "color" },
+      "on-success": { "value": "#FFFFFF", "type": "color" },
+      "warning": { "value": "#F1C21B", "type": "color" },
+      "on-warning": { "value": "#000000", "type": "color" },
+      "info": { "value": "#0043CE", "type": "color" },
+      "on-info": { "value": "#FFFFFF", "type": "color" },
+      "scrim": { "value": "rgba(0, 0, 0, 0.32)", "type": "color" },
+      "inverse-surface": { "value": "#313033", "type": "color" },
+      "inverse-on-surface": { "value": "#F4EFF4", "type": "color" },
+      "inverse-primary": { "value": "#D0BCFF", "type": "color" },
+      "surface-dim": { "value": "#DED8E1", "type": "color" },
+      "surface-bright": { "value": "#FFF8FE", "type": "color" },
+      "surface-container-lowest": { "value": "#FFFFFF", "type": "color" },
+      "surface-container-low": { "value": "#F7F2FA", "type": "color" },
+      "surface-container": { "value": "#F3EDF7", "type": "color" },
+      "surface-container-high": { "value": "#ECE6F0", "type": "color" },
+      "surface-container-highest": { "value": "#E6E0E9", "type": "color" }
+    }
+  }
+}

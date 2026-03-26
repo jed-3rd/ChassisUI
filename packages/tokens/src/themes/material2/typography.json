@@ -1,0 +1,19 @@
+{
+  "chassis": {
+    "typography": {
+      "font-family": {
+        "primary": { "value": "'Roboto', 'Helvetica Neue', Arial, sans-serif" },
+        "mono": { "value": "'Roboto Mono', 'Courier New', monospace" }
+      },
+      "font-size": {
+        "xs": { "value": "0.75rem" },
+        "sm": { "value": "0.875rem" },
+        "md": { "value": "1rem" },
+        "lg": { "value": "1.25rem" },
+        "xl": { "value": "1.5rem" },
+        "2xl": { "value": "2.125rem" },
+        "3xl": { "value": "3rem" }
+      }
+    }
+  }
+}

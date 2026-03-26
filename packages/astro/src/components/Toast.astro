@@ -1,0 +1,17 @@
+---
+export interface Props {
+  variant?: 'info' | 'success' | 'warning' | 'error';
+  duration?: number;
+  dismissible?: boolean;
+}
+
+const { variant = 'info', duration = 5000, dismissible = true } = Astro.props;
+---
+
+<chassis-toast variant={variant} duration={duration} dismissible={dismissible}>
+  <slot />
+</chassis-toast>
+
+<script>
+  import '@chassis-ui/core/toast';
+</script>

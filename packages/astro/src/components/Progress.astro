@@ -1,0 +1,16 @@
+---
+export interface Props {
+  value?: number;
+  max?: number;
+  variant?: 'linear' | 'circular';
+  indeterminate?: boolean;
+}
+
+const { value = 0, max = 100, variant = 'linear', indeterminate = false } = Astro.props;
+---
+
+<chassis-progress value={value} max={max} variant={variant} indeterminate={indeterminate}></chassis-progress>
+
+<script>
+  import '@chassis-ui/core/progress';
+</script>

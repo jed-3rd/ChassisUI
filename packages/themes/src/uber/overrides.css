@@ -1,0 +1,161 @@
+/* Uber Base Design System — Component Overrides */
+
+/* Buttons — bold, high-contrast, pill-shaped */
+[data-theme="uber"] chassis-button::part(button) {
+  border-radius: 9999px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  transition: background 200ms cubic-bezier(0.2, 0, 0, 1), transform 100ms ease;
+}
+
+[data-theme="uber"] chassis-button::part(button):active {
+  transform: scale(0.96);
+}
+
+[data-theme="uber"] chassis-button[variant="primary"]::part(button) {
+  background: #000000;
+  color: #FFFFFF;
+  border: none;
+  box-shadow: none;
+}
+
+[data-theme="uber"] chassis-button[variant="primary"]::part(button):hover {
+  background: #333333;
+}
+
+[data-theme="uber"] chassis-button[variant="secondary"]::part(button) {
+  background: #F6F6F6;
+  color: #000000;
+  border: none;
+  box-shadow: none;
+}
+
+[data-theme="uber"] chassis-button[variant="secondary"]::part(button):hover {
+  background: #E2E2E2;
+}
+
+[data-theme="uber"] chassis-button[variant="link"]::part(button) {
+  color: #000000;
+  text-decoration: none;
+}
+
+[data-theme="uber"] chassis-button[variant="link"]::part(button):hover {
+  text-decoration: underline;
+}
+
+/* Cards — clean, minimal, generous radius */
+[data-theme="uber"] chassis-card::part(card) {
+  border-radius: 16px;
+  border: 1px solid #E2E2E2;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+[data-theme="uber"] chassis-card::part(card):hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Input — rounded, clean borders */
+[data-theme="uber"] chassis-textfield::part(input) {
+  border-radius: 12px;
+  border: 2px solid #E2E2E2;
+  background: #FFFFFF;
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: border-color 200ms ease;
+}
+
+[data-theme="uber"] chassis-textfield::part(input):focus {
+  border-color: #000000;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Switch — pill toggle */
+[data-theme="uber"] chassis-switch::part(track) {
+  border-radius: 9999px;
+}
+
+[data-theme="uber"] chassis-switch::part(thumb) {
+  border-radius: 9999px;
+}
+
+/* Checkbox — rounded square */
+[data-theme="uber"] chassis-checkbox::part(checkbox) {
+  border-radius: 6px;
+  border: 2px solid #000000;
+}
+
+[data-theme="uber"] chassis-checkbox::part(checkbox):checked {
+  background: #000000;
+}
+
+/* Badge — pill with medium weight */
+[data-theme="uber"] chassis-badge::part(badge) {
+  border-radius: 9999px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* Dialog — generous radius, clean shadow */
+[data-theme="uber"] chassis-dialog::part(dialog) {
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+/* Select — matches input style */
+[data-theme="uber"] chassis-select::part(trigger) {
+  border-radius: 12px;
+  border: 2px solid #E2E2E2;
+}
+
+[data-theme="uber"] chassis-select::part(trigger):focus {
+  border-color: #000000;
+}
+
+/* Dark mode adjustments */
+[data-mode="dark"][data-theme="uber"] chassis-button[variant="primary"]::part(button) {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+[data-mode="dark"][data-theme="uber"] chassis-button[variant="primary"]::part(button):hover {
+  background: #E2E2E2;
+}
+
+[data-mode="dark"][data-theme="uber"] chassis-button[variant="secondary"]::part(button) {
+  background: #333333;
+  color: #FFFFFF;
+}
+
+[data-mode="dark"][data-theme="uber"] chassis-button[variant="secondary"]::part(button):hover {
+  background: #444444;
+}
+
+[data-mode="dark"][data-theme="uber"] chassis-button[variant="link"]::part(button) {
+  color: #FFFFFF;
+}
+
+[data-mode="dark"][data-theme="uber"] chassis-textfield::part(input) {
+  border-color: #333333;
+  background: #1D1D1D;
+}
+
+[data-mode="dark"][data-theme="uber"] chassis-textfield::part(input):focus {
+  border-color: #FFFFFF;
+}
+
+[data-mode="dark"][data-theme="uber"] chassis-card::part(card) {
+  border-color: #333333;
+}
+
+[data-mode="dark"][data-theme="uber"] chassis-checkbox::part(checkbox) {
+  border-color: #FFFFFF;
+}
+
+[data-mode="dark"][data-theme="uber"] chassis-checkbox::part(checkbox):checked {
+  background: #FFFFFF;
+  color: #000000;
+}

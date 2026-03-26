@@ -1,0 +1,13 @@
+{
+  "chassis": {
+    "shape": {
+      "radius": {
+        "sm": { "value": "3px" },
+        "md": { "value": "6px" },
+        "lg": { "value": "6px" },
+        "xl": { "value": "12px" },
+        "full": { "value": "9999px" }
+      }
+    }
+  }
+}

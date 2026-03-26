@@ -1,0 +1,13 @@
+---
+export interface Props {
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { size = 'md' } = Astro.props;
+---
+
+<chassis-spinner size={size}></chassis-spinner>
+
+<script>
+  import '@chassis-ui/core/spinner';
+</script>

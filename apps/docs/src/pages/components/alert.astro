@@ -1,0 +1,125 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Alert">
+  <h1>Alert</h1>
+  <p>Inline banner for displaying contextual feedback messages. Supports info, success, warning, and error variants with optional dismiss.</p>
+
+  <h2>Variants</h2>
+  <ComponentPreview title="Info / Success / Warning / Error">
+    <chassis-alert variant="info">This is an informational message.</chassis-alert>
+    <chassis-alert variant="success">Operation completed successfully.</chassis-alert>
+    <chassis-alert variant="warning">Please review before continuing.</chassis-alert>
+    <chassis-alert variant="error">Something went wrong. Please try again.</chassis-alert>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-alert variant="info">Informational message.</chassis-alert>
+<chassis-alert variant="success">Operation completed.</chassis-alert>
+<chassis-alert variant="warning">Please review.</chassis-alert>
+<chassis-alert variant="error">Something went wrong.</chassis-alert>`}
+    react={`import { Alert } from '@chassis-ui/react';
+
+<Alert variant="info">Informational message.</Alert>
+<Alert variant="success">Operation completed.</Alert>
+<Alert variant="warning">Please review.</Alert>
+<Alert variant="error">Something went wrong.</Alert>`}
+    angular={`import { AlertComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [AlertComponent],
+  template: \`
+    <chassis-alert-wrapper variant="info">Informational message.</chassis-alert-wrapper>
+    <chassis-alert-wrapper variant="error">Something went wrong.</chassis-alert-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Alert from '@chassis-ui/astro/Alert.astro';
+---
+
+<Alert variant="info">Informational message.</Alert>
+<Alert variant="error">Something went wrong.</Alert>`}
+    svelte={`<script>
+  import { Alert } from '@chassis-ui/svelte';
+</script>
+
+<Alert variant="info">Informational message.</Alert>
+<Alert variant="error">Something went wrong.</Alert>`}
+  />
+
+  <h2>Dismissible</h2>
+  <ComponentPreview title="Alert with dismiss button">
+    <chassis-alert variant="info" dismissible>You can dismiss this alert.</chassis-alert>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>variant</code></td><td><code>'info' | 'success' | 'warning' | 'error'</code></td><td><code>'info'</code></td><td>Alert color variant</td></tr>
+      <tr><td><code>dismissible</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Show dismiss button</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The alert container</td></tr>
+      <tr><td><code>icon</code></td><td>The status icon</td></tr>
+      <tr><td><code>message</code></td><td>The message content area</td></tr>
+      <tr><td><code>dismiss</code></td><td>The dismiss button</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Events</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Event</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>chassis-dismiss</code></td><td>Fired when the alert is dismissed</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>role="alert"</code> for screen reader announcement</li>
+    <li>Variant icon provides visual context; message slot provides text content</li>
+    <li>Dismiss button has <code>aria-label="Dismiss"</code></li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/alert';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

@@ -1,0 +1,18 @@
+---
+export interface Props {
+  value?: string;
+  min?: string;
+  max?: string;
+  range?: boolean;
+  locale?: string;
+}
+
+const { value = '', min = '', max = '', range = false, locale = 'en-US' } = Astro.props;
+---
+
+<chassis-date-picker value={value} min={min} max={max} range={range} locale={locale}>
+</chassis-date-picker>
+
+<script>
+  import '@chassis-ui/core/date-picker';
+</script>

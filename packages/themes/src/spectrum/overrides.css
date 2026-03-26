@@ -1,0 +1,135 @@
+/* Adobe Spectrum Design System - Component-specific overrides */
+
+/* Buttons: Spectrum pill CTA, rounded fill, distinct focus ring */
+[data-theme="spectrum"] chassis-button::part(base) {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 700;
+  border-radius: 9999px;
+  min-height: 32px;
+  box-shadow: none;
+  transition: background 130ms ease, border-color 130ms ease, color 130ms ease;
+}
+
+[data-theme="spectrum"] chassis-button[variant="primary"]::part(base) {
+  border-radius: 9999px;
+}
+
+[data-theme="spectrum"] chassis-button[variant="primary"]::part(base):hover {
+  filter: none;
+  background: #0054B6;
+}
+
+[data-theme="spectrum"] chassis-button[variant="secondary"]::part(base) {
+  background: transparent;
+  color: var(--chassis-color-on-surface, #1D1D1D);
+  border: 2px solid var(--chassis-color-on-surface, #1D1D1D);
+  border-radius: 9999px;
+}
+
+[data-theme="spectrum"] chassis-button[variant="secondary"]::part(base):hover {
+  background: var(--chassis-color-on-surface, #1D1D1D);
+  color: var(--chassis-color-surface, #FFFFFF);
+}
+
+[data-theme="spectrum"] chassis-button[variant="link"]::part(base) {
+  color: var(--chassis-color-primary, #0265DC);
+  border-radius: 4px;
+}
+
+[data-theme="spectrum"] chassis-button[variant="link"]::part(base):hover {
+  text-decoration: underline;
+}
+
+/* Cards: rounded, quiet elevation */
+[data-theme="spectrum"] chassis-card::part(base) {
+  border-radius: 8px;
+  border: 1px solid var(--chassis-color-outline-variant, #E4E4E4);
+  box-shadow: none;
+  background: var(--chassis-color-surface, #FFFFFF);
+}
+
+/* Inputs: Spectrum textfield — bottom border only, clean */
+[data-theme="spectrum"] chassis-input::part(input) {
+  border-radius: 5px;
+  border: 1px solid var(--chassis-color-outline, #D3D3D3);
+  background: var(--chassis-color-surface, #FFFFFF);
+}
+
+[data-theme="spectrum"] chassis-input::part(input):hover {
+  border-color: #B3B3B3;
+}
+
+[data-theme="spectrum"] chassis-input::part(input):focus-visible {
+  border-color: var(--chassis-color-primary, #0265DC);
+  box-shadow: none;
+  outline: 2px solid var(--chassis-color-primary, #0265DC);
+  outline-offset: -2px;
+}
+
+/* Switch */
+[data-theme="spectrum"] chassis-switch::part(track) {
+  border-radius: 9999px;
+}
+
+/* Checkbox: 4px radius, 2px border */
+[data-theme="spectrum"] chassis-checkbox::part(control) {
+  border-radius: 4px;
+  border: 2px solid var(--chassis-color-on-surface-variant, #6E6E6E);
+}
+
+/* Badge: Spectrum label — rounded rect, bold */
+[data-theme="spectrum"] chassis-badge::part(base) {
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.6875rem;
+}
+
+/* Dialog: Spectrum dialog — padded, large radius */
+[data-theme="spectrum"] chassis-dialog::part(dialog) {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+}
+
+/* Select */
+[data-theme="spectrum"] chassis-select::part(trigger) {
+  border-radius: 5px;
+  border: 1px solid var(--chassis-color-outline, #D3D3D3);
+  background: var(--chassis-color-surface, #FFFFFF);
+}
+
+/* Dark mode */
+[data-theme="spectrum"][data-mode="dark"] chassis-button[variant="primary"]::part(base):hover {
+  background: #378EF0;
+}
+
+[data-theme="spectrum"][data-mode="dark"] chassis-button[variant="secondary"]::part(base) {
+  color: var(--chassis-color-on-surface, #EBEBEB);
+  border-color: var(--chassis-color-on-surface, #EBEBEB);
+}
+
+[data-theme="spectrum"][data-mode="dark"] chassis-button[variant="secondary"]::part(base):hover {
+  background: var(--chassis-color-on-surface, #EBEBEB);
+  color: var(--chassis-color-surface, #1E1E1E);
+}
+
+[data-theme="spectrum"][data-mode="dark"] chassis-input::part(input) {
+  background: var(--chassis-color-surface, #1E1E1E);
+  border-color: var(--chassis-color-outline, #4A4A4A);
+}
+
+[data-theme="spectrum"][data-mode="dark"] chassis-input::part(input):focus-visible {
+  border-color: var(--chassis-color-primary, #378EF0);
+  outline-color: var(--chassis-color-primary, #378EF0);
+}
+
+[data-theme="spectrum"][data-mode="dark"] chassis-card::part(base) {
+  background: var(--chassis-color-surface, #1E1E1E);
+  border-color: var(--chassis-color-outline, #4A4A4A);
+}
+
+[data-theme="spectrum"][data-mode="dark"] chassis-dialog::part(dialog) {
+  background: var(--chassis-color-surface-variant, #2C2C2C);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}

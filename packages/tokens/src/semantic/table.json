@@ -1,0 +1,14 @@
+{
+  "chassis": {
+    "table": {
+      "header-background": { "value": "{chassis.color.surface-variant}" },
+      "header-color": { "value": "{chassis.color.on-surface}" },
+      "header-font-weight": { "value": "{chassis.typography.font-weight.bold}" },
+      "cell-padding": { "value": "0.75rem 1rem" },
+      "border-color": { "value": "{chassis.color.outline-variant}" },
+      "row-hover-background": { "value": "{chassis.color.surface-variant}" },
+      "striped-background": { "value": "rgba(0, 0, 0, 0.02)" },
+      "sort-icon-color": { "value": "{chassis.color.on-surface-variant}" }
+    }
+  }
+}

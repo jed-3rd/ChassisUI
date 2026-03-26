@@ -1,0 +1,183 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Modal">
+  <h1>Modal</h1>
+  <p>A full-featured modal dialog with title, close button, size variants, and overlay dismiss. Built on top of the Dialog foundation with additional conveniences.</p>
+
+  <h2>Basic Usage</h2>
+  <ComponentPreview title="Modal with title and close button">
+    <button id="open-modal-btn">Open Modal</button>
+    <chassis-modal modal-title="Confirm Action" id="demo-modal">
+      <p>Are you sure you want to proceed with this action?</p>
+      <div slot="footer">
+        <button id="cancel-btn">Cancel</button>
+        <button id="confirm-btn">Confirm</button>
+      </div>
+    </chassis-modal>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<button onclick="document.querySelector('#my-modal').show()">Open</button>
+<chassis-modal id="my-modal" modal-title="Confirm Action">
+  <p>Are you sure?</p>
+  <div slot="footer">
+    <button onclick="document.querySelector('#my-modal').hide()">Cancel</button>
+    <button>Confirm</button>
+  </div>
+</chassis-modal>`}
+    react={`import { Modal } from '@chassis-ui/react';
+
+<Modal modalTitle="Confirm Action" open={isOpen}>
+  <p>Are you sure?</p>
+  <div slot="footer">
+    <button onClick={() => setOpen(false)}>Cancel</button>
+    <button>Confirm</button>
+  </div>
+</Modal>`}
+    angular={`import { ModalComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [ModalComponent],
+  template: \`
+    <chassis-modal-wrapper
+      modalTitle="Confirm Action"
+      [open]="isOpen"
+      (closed)="isOpen = false">
+      <p>Are you sure?</p>
+      <div slot="footer">
+        <button (click)="isOpen = false">Cancel</button>
+        <button>Confirm</button>
+      </div>
+    </chassis-modal-wrapper>
+  \`
+})
+export class MyComponent {
+  isOpen = false;
+}`}
+    astro={`---
+import Modal from '@chassis-ui/astro/Modal.astro';
+---
+
+<button id="open-btn">Open</button>
+<Modal modalTitle="Confirm Action">
+  <p>Are you sure?</p>
+</Modal>`}
+    svelte={`<script>
+  import { Modal } from '@chassis-ui/svelte';
+  let open = false;
+</script>
+
+<button on:click={() => open = true}>Open</button>
+<Modal modalTitle="Confirm Action" {open}>
+  <p>Are you sure?</p>
+</Modal>`}
+  />
+
+  <h2>Sizes</h2>
+  <ComponentPreview title="Small, medium, large, and extra-large">
+    <div style="display: flex; gap: 0.5rem;">
+      <button id="open-sm">Small</button>
+      <button id="open-lg">Large</button>
+      <button id="open-xl">Extra Large</button>
+    </div>
+    <chassis-modal modal-title="Small Modal" modal-size="sm" id="modal-sm"><p>Small content area.</p></chassis-modal>
+    <chassis-modal modal-title="Large Modal" modal-size="lg" id="modal-lg"><p>Large content area for more complex layouts.</p></chassis-modal>
+    <chassis-modal modal-title="Extra Large Modal" modal-size="xl" id="modal-xl"><p>Extra large for dashboards and data-heavy views.</p></chassis-modal>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>modal-title</code></td><td><code>string</code></td><td><code>''</code></td><td>Title displayed in the header</td></tr>
+      <tr><td><code>open</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Whether the modal is visible</td></tr>
+      <tr><td><code>modal-size</code></td><td><code>'sm' | 'md' | 'lg' | 'xl'</code></td><td><code>'md'</code></td><td>Width of the modal panel</td></tr>
+      <tr><td><code>closable</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Show close button and allow dismiss</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>overlay</code></td><td>The backdrop overlay</td></tr>
+      <tr><td><code>panel</code></td><td>The modal panel container</td></tr>
+      <tr><td><code>header</code></td><td>The header section with title</td></tr>
+      <tr><td><code>close</code></td><td>The close button</td></tr>
+      <tr><td><code>body</code></td><td>The main content area</td></tr>
+      <tr><td><code>footer</code></td><td>The footer slot area</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Methods</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Method</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>show()</code></td><td>Open the modal programmatically</td></tr>
+      <tr><td><code>hide()</code></td><td>Close the modal programmatically</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>role="dialog"</code> with <code>aria-modal="true"</code></li>
+    <li>Title linked via <code>aria-labelledby</code></li>
+    <li>Focus is trapped within the modal when open</li>
+    <li>Escape key closes the modal (when closable)</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/modal';
+
+  document.getElementById('open-modal-btn')?.addEventListener('click', () => {
+    (document.getElementById('demo-modal') as any)?.show();
+  });
+  document.getElementById('cancel-btn')?.addEventListener('click', () => {
+    (document.getElementById('demo-modal') as any)?.hide();
+  });
+  document.getElementById('confirm-btn')?.addEventListener('click', () => {
+    (document.getElementById('demo-modal') as any)?.hide();
+  });
+  document.getElementById('open-sm')?.addEventListener('click', () => {
+    (document.getElementById('modal-sm') as any)?.show();
+  });
+  document.getElementById('open-lg')?.addEventListener('click', () => {
+    (document.getElementById('modal-lg') as any)?.show();
+  });
+  document.getElementById('open-xl')?.addEventListener('click', () => {
+    (document.getElementById('modal-xl') as any)?.show();
+  });
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

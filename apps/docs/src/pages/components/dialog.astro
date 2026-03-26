@@ -1,0 +1,186 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Dialog">
+  <h1>Dialog</h1>
+  <p>Dialogs display content in a modal overlay that requires user attention. Supports header, body, and footer slots.</p>
+
+  <h2>Basic Dialog</h2>
+  <ComponentPreview title="Modal dialog">
+    <chassis-button variant="primary" onclick="document.querySelector('#demo-dialog').open = true">Open Dialog</chassis-button>
+    <chassis-dialog id="demo-dialog">
+      <span slot="header">Confirm Action</span>
+      <p>Are you sure you want to proceed? This action cannot be undone.</p>
+      <div slot="footer">
+        <chassis-button variant="link" onclick="document.querySelector('#demo-dialog').open = false">Cancel</chassis-button>
+        <chassis-button variant="primary" onclick="document.querySelector('#demo-dialog').open = false">Confirm</chassis-button>
+      </div>
+    </chassis-dialog>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-button onclick="document.querySelector('#my-dialog').open = true">
+  Open Dialog
+</chassis-button>
+
+<chassis-dialog id="my-dialog">
+  <span slot="header">Dialog Title</span>
+  <p>Dialog body content.</p>
+  <div slot="footer">
+    <chassis-button variant="link">Cancel</chassis-button>
+    <chassis-button variant="primary">Confirm</chassis-button>
+  </div>
+</chassis-dialog>`}
+    react={`import { Dialog, Button } from '@chassis-ui/react';
+
+const [open, setOpen] = useState(false);
+
+<Button onClick={() => setOpen(true)}>Open Dialog</Button>
+<Dialog open={open}>
+  <span slot="header">Dialog Title</span>
+  <p>Dialog body content.</p>
+  <div slot="footer">
+    <Button variant="link" onClick={() => setOpen(false)}>Cancel</Button>
+    <Button variant="primary" onClick={() => setOpen(false)}>Confirm</Button>
+  </div>
+</Dialog>`}
+    angular={`import { DialogComponent, ButtonComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [DialogComponent, ButtonComponent],
+  template: \`
+    <chassis-button-wrapper (click)="open = true">Open Dialog</chassis-button-wrapper>
+    <chassis-dialog-wrapper [open]="open">
+      <span slot="header">Dialog Title</span>
+      <p>Dialog body content.</p>
+      <div slot="footer">
+        <chassis-button-wrapper variant="link" (click)="open = false">Cancel</chassis-button-wrapper>
+        <chassis-button-wrapper variant="primary" (click)="open = false">Confirm</chassis-button-wrapper>
+      </div>
+    </chassis-dialog-wrapper>
+  \`
+})
+export class MyComponent {
+  open = false;
+}`}
+    astro={`---
+import Dialog from '@chassis-ui/astro/Dialog.astro';
+import Button from '@chassis-ui/astro/Button.astro';
+---
+
+<Button onclick="document.querySelector('#my-dialog').open = true">
+  Open Dialog
+</Button>
+<Dialog id="my-dialog">
+  <span slot="header">Dialog Title</span>
+  <p>Dialog body content.</p>
+  <div slot="footer">
+    <Button variant="link">Cancel</Button>
+    <Button variant="primary">Confirm</Button>
+  </div>
+</Dialog>`}
+    svelte={`<script>
+  import { Dialog, Button } from '@chassis-ui/svelte';
+  let open = false;
+</script>
+
+<Button on:click={() => open = true}>Open Dialog</Button>
+<Dialog {open}>
+  <span slot="header">Dialog Title</span>
+  <p>Dialog body content.</p>
+  <div slot="footer">
+    <Button variant="link" on:click={() => open = false}>Cancel</Button>
+    <Button variant="primary" on:click={() => open = false}>Confirm</Button>
+  </div>
+</Dialog>`}
+  />
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>open</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Controls dialog visibility</td></tr>
+      <tr><td><code>modal</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Whether to show as modal with backdrop</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Slots</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Slot</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>header</code></td><td>Dialog title content</td></tr>
+      <tr><td>(default)</td><td>Dialog body content</td></tr>
+      <tr><td><code>footer</code></td><td>Action buttons area</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>overlay</code></td><td>The backdrop overlay</td></tr>
+      <tr><td><code>panel</code></td><td>The dialog container</td></tr>
+      <tr><td><code>header</code></td><td>The header section</td></tr>
+      <tr><td><code>body</code></td><td>The body section</td></tr>
+      <tr><td><code>footer</code></td><td>The footer section</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Events</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Event</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>chassis-open</code></td><td>Fired when dialog opens</td></tr>
+      <tr><td><code>chassis-close</code></td><td>Fired when dialog closes</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Built on native <code>&lt;dialog&gt;</code> element</li>
+    <li>Focus trap keeps focus within the dialog while open</li>
+    <li><kbd>Escape</kbd> key closes the dialog</li>
+    <li>Clicking the overlay backdrop closes the dialog</li>
+    <li>Focus returns to trigger element on close</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/dialog';
+  import '@chassis-ui/core/button';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

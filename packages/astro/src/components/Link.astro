@@ -1,0 +1,18 @@
+---
+export interface Props {
+  href?: string;
+  target?: string;
+  variant?: 'default' | 'subtle';
+  underline?: 'always' | 'hover' | 'none';
+}
+
+const { href = '', target = '', variant = 'default', underline = 'always' } = Astro.props;
+---
+
+<chassis-link href={href} target={target} variant={variant} underline={underline}>
+  <slot />
+</chassis-link>
+
+<script>
+  import '@chassis-ui/core/link';
+</script>

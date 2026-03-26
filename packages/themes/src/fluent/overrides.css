@@ -1,0 +1,136 @@
+/* Microsoft Fluent 2 - Component-specific overrides */
+
+/* Buttons: 4px radius, compound-style, subtle shadow on primary */
+[data-theme="fluent"] chassis-button::part(base) {
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 600;
+  border-radius: 4px;
+  min-height: 32px;
+  box-shadow: none;
+  transition: background 100ms ease, border-color 100ms ease;
+}
+
+[data-theme="fluent"] chassis-button[variant="primary"]::part(base) {
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="fluent"] chassis-button[variant="primary"]::part(base):hover {
+  filter: none;
+  background: #115EA3;
+}
+
+[data-theme="fluent"] chassis-button[variant="secondary"]::part(base) {
+  background: var(--chassis-color-surface, #FFFFFF);
+  color: var(--chassis-color-on-surface, #242424);
+  border: 1px solid var(--chassis-color-outline, #D1D1D1);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="fluent"] chassis-button[variant="secondary"]::part(base):hover {
+  background: #F5F5F5;
+}
+
+[data-theme="fluent"] chassis-button[variant="link"]::part(base) {
+  color: var(--chassis-color-primary, #0F6CBD);
+  border-radius: 4px;
+  min-height: auto;
+}
+
+[data-theme="fluent"] chassis-button[variant="link"]::part(base):hover {
+  color: #115EA3;
+}
+
+/* Cards: subtle radius, thin border, Fluent elevation */
+[data-theme="fluent"] chassis-card::part(base) {
+  border-radius: 8px;
+  border: 1px solid var(--chassis-color-outline-variant, #E0E0E0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  background: var(--chassis-color-surface, #FFFFFF);
+}
+
+/* Inputs: Fluent field — bottom border accent on focus */
+[data-theme="fluent"] chassis-input::part(input) {
+  border-radius: 4px;
+  border: 1px solid var(--chassis-color-outline, #D1D1D1);
+  background: var(--chassis-color-surface, #FFFFFF);
+  border-bottom-width: 2px;
+  border-bottom-color: var(--chassis-color-outline, #616161);
+  transition: border-color 100ms ease;
+}
+
+[data-theme="fluent"] chassis-input::part(input):hover {
+  border-bottom-color: var(--chassis-color-on-surface, #242424);
+}
+
+[data-theme="fluent"] chassis-input::part(input):focus-visible {
+  border-bottom-color: var(--chassis-color-primary, #0F6CBD);
+  border-bottom-width: 2px;
+  box-shadow: none;
+  outline: none;
+}
+
+/* Switch: pill track */
+[data-theme="fluent"] chassis-switch::part(track) {
+  border-radius: 9999px;
+}
+
+/* Checkbox: tight radius, thick border */
+[data-theme="fluent"] chassis-checkbox::part(control) {
+  border-radius: 4px;
+  border: 2px solid var(--chassis-color-on-surface-variant, #616161);
+}
+
+/* Badge: rounded, semibold */
+[data-theme="fluent"] chassis-badge::part(base) {
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+/* Dialog: Fluent overlay with rounded corners */
+[data-theme="fluent"] chassis-dialog::part(dialog) {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.24);
+}
+
+/* Select */
+[data-theme="fluent"] chassis-select::part(trigger) {
+  border-radius: 4px;
+  border: 1px solid var(--chassis-color-outline, #D1D1D1);
+  border-bottom-width: 2px;
+  border-bottom-color: var(--chassis-color-outline, #616161);
+}
+
+/* Dark mode */
+[data-theme="fluent"][data-mode="dark"] chassis-button[variant="primary"]::part(base) {
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="fluent"][data-mode="dark"] chassis-button[variant="primary"]::part(base):hover {
+  background: #3B96E8;
+}
+
+[data-theme="fluent"][data-mode="dark"] chassis-button[variant="secondary"]::part(base) {
+  background: var(--chassis-color-surface, #292929);
+  border-color: var(--chassis-color-outline, #404040);
+  color: var(--chassis-color-on-surface, #D6D6D6);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="fluent"][data-mode="dark"] chassis-input::part(input) {
+  background: var(--chassis-color-surface, #292929);
+  border-color: var(--chassis-color-outline, #404040);
+  border-bottom-color: var(--chassis-color-on-surface-variant, #ADADAD);
+}
+
+[data-theme="fluent"][data-mode="dark"] chassis-input::part(input):focus-visible {
+  border-bottom-color: var(--chassis-color-primary, #479EF5);
+}
+
+[data-theme="fluent"][data-mode="dark"] chassis-card::part(base) {
+  background: var(--chassis-color-surface, #292929);
+  border-color: var(--chassis-color-outline-variant, #383838);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,129 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Toggle Group">
+  <h1>Toggle Group</h1>
+  <p>A set of mutually exclusive (or multi-select) toggle buttons grouped together. Ideal for view switchers, alignment tools, and filter selectors.</p>
+
+  <h2>Basic Usage</h2>
+  <ComponentPreview title="Single selection">
+    <chassis-toggle-group value="center">
+      <button data-value="left">Left</button>
+      <button data-value="center">Center</button>
+      <button data-value="right">Right</button>
+    </chassis-toggle-group>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-toggle-group value="center">
+  <button data-value="left">Left</button>
+  <button data-value="center">Center</button>
+  <button data-value="right">Right</button>
+</chassis-toggle-group>`}
+    react={`import { ToggleGroup } from '@chassis-ui/react';
+
+<ToggleGroup value="center">
+  <button data-value="left">Left</button>
+  <button data-value="center">Center</button>
+  <button data-value="right">Right</button>
+</ToggleGroup>`}
+    angular={`import { ToggleGroupComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [ToggleGroupComponent],
+  template: \`
+    <chassis-toggle-group-wrapper value="center">
+      <button data-value="left">Left</button>
+      <button data-value="center">Center</button>
+      <button data-value="right">Right</button>
+    </chassis-toggle-group-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import ToggleGroup from '@chassis-ui/astro/ToggleGroup.astro';
+---
+
+<ToggleGroup value="center">
+  <button data-value="left">Left</button>
+  <button data-value="center">Center</button>
+  <button data-value="right">Right</button>
+</ToggleGroup>`}
+    svelte={`<script>
+  import { ToggleGroup } from '@chassis-ui/svelte';
+</script>
+
+<ToggleGroup value="center">
+  <button data-value="left">Left</button>
+  <button data-value="center">Center</button>
+  <button data-value="right">Right</button>
+</ToggleGroup>`}
+  />
+
+  <h2>Multiple Selection</h2>
+  <ComponentPreview title="Allow multiple active">
+    <chassis-toggle-group multiple value="bold,italic">
+      <button data-value="bold"><strong>B</strong></button>
+      <button data-value="italic"><em>I</em></button>
+      <button data-value="underline"><u>U</u></button>
+    </chassis-toggle-group>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>value</code></td><td><code>string</code></td><td><code>''</code></td><td>Active value(s). Comma-separated for multiple.</td></tr>
+      <tr><td><code>multiple</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Allow multiple selections</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The group container</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>role="group"</code> on the container</li>
+    <li>Items use <code>aria-pressed</code> to reflect selection state</li>
+    <li>Arrow keys navigate between items</li>
+    <li>Home/End jump to first/last</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/toggle-group';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

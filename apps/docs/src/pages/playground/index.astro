@@ -1,0 +1,390 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout title="Playground">
+  <h1>Playground</h1>
+  <p>Experiment with Chassis UI components live. Select a component, configure its props, and see it render with the active theme.</p>
+
+  <div class="playground-container">
+    <div class="playground-controls">
+      <h3>Component</h3>
+      <chassis-select id="component-select" label="" value="button" placeholder="Select component">
+        <div data-value="button">Button</div>
+        <div data-value="input">Input</div>
+        <div data-value="card">Card</div>
+        <div data-value="checkbox">Checkbox</div>
+        <div data-value="switch">Switch</div>
+        <div data-value="badge">Badge</div>
+        <div data-value="tooltip">Tooltip</div>
+        <div data-value="alert">Alert</div>
+        <div data-value="avatar">Avatar</div>
+        <div data-value="chip">Chip</div>
+        <div data-value="spinner">Spinner</div>
+        <div data-value="progress">Progress</div>
+        <div data-value="divider">Divider</div>
+        <div data-value="skeleton">Skeleton</div>
+        <div data-value="slider">Slider</div>
+      </chassis-select>
+
+      <div id="props-panel" class="props-panel">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <div class="playground-preview">
+      <h3>Preview</h3>
+      <div id="preview-area" class="preview-area">
+        <chassis-button variant="primary">Button</chassis-button>
+      </div>
+
+      <h3>Code</h3>
+      <pre id="code-output" class="code-output"><code>&lt;chassis-button variant="primary"&gt;Button&lt;/chassis-button&gt;</code></pre>
+    </div>
+  </div>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/button';
+  import '@chassis-ui/core/input';
+  import '@chassis-ui/core/card';
+  import '@chassis-ui/core/checkbox';
+  import '@chassis-ui/core/switch';
+  import '@chassis-ui/core/badge';
+  import '@chassis-ui/core/tooltip';
+  import '@chassis-ui/core/select';
+  import '@chassis-ui/core/alert';
+  import '@chassis-ui/core/avatar';
+  import '@chassis-ui/core/chip';
+  import '@chassis-ui/core/spinner';
+  import '@chassis-ui/core/progress';
+  import '@chassis-ui/core/divider';
+  import '@chassis-ui/core/skeleton';
+  import '@chassis-ui/core/slider';
+
+  interface ComponentConfig {
+    html: string;
+    props: { name: string; type: string; options?: string[]; default: string }[];
+  }
+
+  const components: Record<string, ComponentConfig> = {
+    button: {
+      html: '<chassis-button {attrs}>{text}</chassis-button>',
+      props: [
+        { name: 'variant', type: 'select', options: ['primary', 'secondary', 'link'], default: 'primary' },
+        { name: 'size', type: 'select', options: ['sm', 'md', 'lg'], default: 'md' },
+        { name: 'disabled', type: 'checkbox', default: 'false' },
+        { name: 'loading', type: 'checkbox', default: 'false' },
+        { name: 'text', type: 'text', default: 'Button' },
+      ],
+    },
+    input: {
+      html: '<chassis-input {attrs}></chassis-input>',
+      props: [
+        { name: 'label', type: 'text', default: 'Label' },
+        { name: 'placeholder', type: 'text', default: 'Enter text...' },
+        { name: 'type', type: 'select', options: ['text', 'email', 'password', 'number'], default: 'text' },
+        { name: 'size', type: 'select', options: ['sm', 'md', 'lg'], default: 'md' },
+        { name: 'disabled', type: 'checkbox', default: 'false' },
+        { name: 'error', type: 'text', default: '' },
+      ],
+    },
+    card: {
+      html: '<chassis-card {attrs}><span slot="header">{header}</span><p>{body}</p></chassis-card>',
+      props: [
+        { name: 'elevated', type: 'checkbox', default: 'false' },
+        { name: 'outlined', type: 'checkbox', default: 'false' },
+        { name: 'header', type: 'text', default: 'Card Title' },
+        { name: 'body', type: 'text', default: 'Card content goes here.' },
+      ],
+    },
+    checkbox: {
+      html: '<chassis-checkbox {attrs}></chassis-checkbox>',
+      props: [
+        { name: 'label', type: 'text', default: 'Check me' },
+        { name: 'checked', type: 'checkbox', default: 'false' },
+        { name: 'indeterminate', type: 'checkbox', default: 'false' },
+        { name: 'disabled', type: 'checkbox', default: 'false' },
+      ],
+    },
+    switch: {
+      html: '<chassis-switch {attrs}></chassis-switch>',
+      props: [
+        { name: 'label', type: 'text', default: 'Toggle me' },
+        { name: 'checked', type: 'checkbox', default: 'false' },
+        { name: 'disabled', type: 'checkbox', default: 'false' },
+      ],
+    },
+    badge: {
+      html: '<chassis-badge {attrs}>{text}</chassis-badge>',
+      props: [
+        { name: 'variant', type: 'select', options: ['default', 'success', 'warning', 'error', 'info'], default: 'default' },
+        { name: 'dot', type: 'checkbox', default: 'false' },
+        { name: 'value', type: 'text', default: '' },
+        { name: 'text', type: 'text', default: 'Badge' },
+      ],
+    },
+    tooltip: {
+      html: '<chassis-tooltip {attrs}><chassis-button variant="secondary">Hover me</chassis-button></chassis-tooltip>',
+      props: [
+        { name: 'content', type: 'text', default: 'Tooltip text' },
+        { name: 'placement', type: 'select', options: ['top', 'bottom', 'left', 'right'], default: 'top' },
+      ],
+    },
+    alert: {
+      html: '<chassis-alert {attrs}>{text}</chassis-alert>',
+      props: [
+        { name: 'variant', type: 'select', options: ['info', 'success', 'warning', 'error'], default: 'info' },
+        { name: 'dismissible', type: 'checkbox', default: 'false' },
+        { name: 'text', type: 'text', default: 'This is an alert message.' },
+      ],
+    },
+    avatar: {
+      html: '<chassis-avatar {attrs}></chassis-avatar>',
+      props: [
+        { name: 'initials', type: 'text', default: 'JD' },
+        { name: 'size', type: 'select', options: ['sm', 'md', 'lg', 'xl'], default: 'md' },
+        { name: 'status', type: 'select', options: ['', 'online', 'offline', 'busy', 'away'], default: '' },
+      ],
+    },
+    chip: {
+      html: '<chassis-chip {attrs}>{text}</chassis-chip>',
+      props: [
+        { name: 'variant', type: 'select', options: ['filter', 'choice', 'input'], default: 'filter' },
+        { name: 'selected', type: 'checkbox', default: 'false' },
+        { name: 'removable', type: 'checkbox', default: 'false' },
+        { name: 'disabled', type: 'checkbox', default: 'false' },
+        { name: 'text', type: 'text', default: 'Chip' },
+      ],
+    },
+    spinner: {
+      html: '<chassis-spinner {attrs}></chassis-spinner>',
+      props: [
+        { name: 'size', type: 'select', options: ['sm', 'md', 'lg'], default: 'md' },
+      ],
+    },
+    progress: {
+      html: '<chassis-progress {attrs}></chassis-progress>',
+      props: [
+        { name: 'value', type: 'text', default: '60' },
+        { name: 'max', type: 'text', default: '100' },
+        { name: 'variant', type: 'select', options: ['linear', 'circular'], default: 'linear' },
+        { name: 'indeterminate', type: 'checkbox', default: 'false' },
+      ],
+    },
+    divider: {
+      html: '<chassis-divider {attrs}></chassis-divider>',
+      props: [
+        { name: 'orientation', type: 'select', options: ['horizontal', 'vertical'], default: 'horizontal' },
+        { name: 'label', type: 'text', default: '' },
+      ],
+    },
+    skeleton: {
+      html: '<chassis-skeleton {attrs}></chassis-skeleton>',
+      props: [
+        { name: 'variant', type: 'select', options: ['text', 'circular', 'rectangular'], default: 'text' },
+        { name: 'width', type: 'text', default: '200px' },
+        { name: 'height', type: 'text', default: '20px' },
+      ],
+    },
+    slider: {
+      html: '<chassis-slider {attrs}></chassis-slider>',
+      props: [
+        { name: 'min', type: 'text', default: '0' },
+        { name: 'max', type: 'text', default: '100' },
+        { name: 'value', type: 'text', default: '50' },
+        { name: 'step', type: 'text', default: '1' },
+        { name: 'disabled', type: 'checkbox', default: 'false' },
+      ],
+    },
+  };
+
+  function init() {
+    const select = document.getElementById('component-select') as any;
+    const propsPanel = document.getElementById('props-panel')!;
+    const previewArea = document.getElementById('preview-area')!;
+    const codeOutput = document.getElementById('code-output')!;
+
+    function renderProps(name: string) {
+      const config = components[name];
+      propsPanel.innerHTML = '';
+
+      config.props.forEach(p => {
+        const row = document.createElement('div');
+        row.className = 'prop-row';
+
+        const label = document.createElement('span');
+        label.textContent = p.name;
+        row.appendChild(label);
+
+        if (p.type === 'select') {
+          const sel = document.createElement('chassis-select') as any;
+          sel.setAttribute('data-prop', p.name);
+          sel.setAttribute('value', p.default);
+          sel.setAttribute('label', '');
+          sel.setAttribute('placeholder', p.name);
+          sel.className = 'prop-control';
+          p.options!.forEach(o => {
+            const opt = document.createElement('div');
+            opt.setAttribute('data-value', o);
+            opt.textContent = o;
+            sel.appendChild(opt);
+          });
+          sel.addEventListener('change', () => updatePreview(name));
+          row.appendChild(sel);
+        } else if (p.type === 'checkbox') {
+          const sw = document.createElement('chassis-switch') as any;
+          sw.setAttribute('data-prop', p.name);
+          sw.setAttribute('label', '');
+          if (p.default === 'true') sw.setAttribute('checked', '');
+          sw.addEventListener('change', () => updatePreview(name));
+          row.appendChild(sw);
+        } else {
+          const input = document.createElement('chassis-input') as any;
+          input.setAttribute('data-prop', p.name);
+          input.setAttribute('value', p.default);
+          input.setAttribute('placeholder', p.name);
+          input.setAttribute('label', '');
+          input.className = 'prop-control';
+          input.addEventListener('input', () => updatePreview(name));
+          row.appendChild(input);
+        }
+
+        propsPanel.appendChild(row);
+      });
+
+      updatePreview(name);
+    }
+
+    function updatePreview(name: string) {
+      const config = components[name];
+      const values: Record<string, string> = {};
+      const attrs: string[] = [];
+
+      config.props.forEach(p => {
+        const el = propsPanel.querySelector(`[data-prop="${p.name}"]`) as any;
+        if (p.type === 'checkbox') {
+          const isChecked = el.checked || el.hasAttribute('checked');
+          values[p.name] = isChecked ? 'true' : 'false';
+          if (isChecked) attrs.push(p.name);
+        } else {
+          const val = el.value || '';
+          values[p.name] = val;
+          if (val && p.name !== 'text' && p.name !== 'header' && p.name !== 'body') {
+            attrs.push(`${p.name}="${val}"`);
+          }
+        }
+      });
+
+      let html = config.html
+        .replace('{attrs}', attrs.join(' '))
+        .replace('{text}', values.text || '')
+        .replace('{header}', values.header || '')
+        .replace('{body}', values.body || '');
+
+      // Clean up empty attributes
+      html = html.replace(/\s+>/g, '>').replace(/\s{2,}/g, ' ');
+
+      previewArea.innerHTML = html;
+      codeOutput.textContent = html;
+    }
+
+    select.addEventListener('change', () => renderProps(select.value));
+    renderProps('button');
+  }
+
+  init();
+  document.addEventListener('astro:page-load', init);
+</script>
+
+<style>
+  .playground-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    min-height: 400px;
+  }
+
+  .playground-controls {
+    padding: 1rem;
+    background: var(--chassis-color-surface-variant, #e7e0ec);
+    border-radius: var(--chassis-shape-radius-md, 8px);
+  }
+
+  .playground-controls h3,
+  .playground-preview h3 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    margin-bottom: 0.75rem;
+  }
+
+  .props-panel {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .prop-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .prop-row > span {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    min-width: 80px;
+  }
+
+  .prop-row .prop-control,
+  .prop-row chassis-select,
+  .prop-row chassis-input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .prop-row chassis-switch {
+    flex-shrink: 0;
+  }
+
+  #component-select {
+    width: 100%;
+  }
+
+  .preview-area {
+    min-height: 120px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+    border-radius: var(--chassis-shape-radius-md, 8px);
+    background: var(--chassis-color-background, #fffbfe);
+    margin-bottom: 1.5rem;
+  }
+
+  .code-output {
+    padding: 1rem;
+    background: #1e1e2e;
+    color: #cdd6f4;
+    border-radius: var(--chassis-shape-radius-sm, 4px);
+    font-size: 0.8125rem;
+    font-family: var(--chassis-typography-font-family-mono, monospace);
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  @media (max-width: 768px) {
+    .playground-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

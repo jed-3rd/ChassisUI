@@ -1,0 +1,53 @@
+{
+  "name": "@chassis-ui/core",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./button": "./dist/components/button/index.js",
+    "./input": "./dist/components/input/index.js",
+    "./card": "./dist/components/card/index.js",
+    "./checkbox": "./dist/components/checkbox/index.js",
+    "./switch": "./dist/components/switch/index.js",
+    "./select": "./dist/components/select/index.js",
+    "./dialog": "./dist/components/dialog/index.js",
+    "./badge": "./dist/components/badge/index.js",
+    "./tooltip": "./dist/components/tooltip/index.js",
+    "./radio": "./dist/components/radio/index.js",
+    "./divider": "./dist/components/divider/index.js",
+    "./icon": "./dist/components/icon/index.js",
+    "./link": "./dist/components/link/index.js",
+    "./spinner": "./dist/components/spinner/index.js",
+    "./progress": "./dist/components/progress/index.js",
+    "./avatar": "./dist/components/avatar/index.js",
+    "./textarea": "./dist/components/textarea/index.js",
+    "./tabs": "./dist/components/tabs/index.js",
+    "./alert": "./dist/components/alert/index.js",
+    "./toast": "./dist/components/toast/index.js",
+    "./accordion": "./dist/components/accordion/index.js",
+    "./skeleton": "./dist/components/skeleton/index.js",
+    "./table": "./dist/components/table/index.js",
+    "./breadcrumb": "./dist/components/breadcrumb/index.js",
+    "./pagination": "./dist/components/pagination/index.js",
+    "./chip": "./dist/components/chip/index.js",
+    "./popover": "./dist/components/popover/index.js",
+    "./dropdown-menu": "./dist/components/dropdown-menu/index.js",
+    "./slider": "./dist/components/slider/index.js",
+    "./toggle-group": "./dist/components/toggle-group/index.js",
+    "./date-picker": "./dist/components/date-picker/index.js",
+    "./modal": "./dist/components/modal/index.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "lit": "^3.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

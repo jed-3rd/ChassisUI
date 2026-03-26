@@ -1,0 +1,115 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Avatar">
+  <h1>Avatar</h1>
+  <p>Displays a user photo, initials, or placeholder with optional online status indicator.</p>
+
+  <h2>Initials</h2>
+  <ComponentPreview title="Initials in different sizes">
+    <div style="display: flex; gap: 1rem; align-items: center;">
+      <chassis-avatar initials="SM" size="sm"></chassis-avatar>
+      <chassis-avatar initials="MD" size="md"></chassis-avatar>
+      <chassis-avatar initials="LG" size="lg"></chassis-avatar>
+      <chassis-avatar initials="XL" size="xl"></chassis-avatar>
+    </div>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-avatar initials="JD" size="md"></chassis-avatar>`}
+    react={`import { Avatar } from '@chassis-ui/react';
+
+<Avatar initials="JD" size="md" />`}
+    angular={`import { AvatarComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [AvatarComponent],
+  template: \`
+    <chassis-avatar-wrapper initials="JD"></chassis-avatar-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Avatar from '@chassis-ui/astro/Avatar.astro';
+---
+
+<Avatar initials="JD" />`}
+    svelte={`<script>
+  import { Avatar } from '@chassis-ui/svelte';
+</script>
+
+<Avatar initials="JD" />`}
+  />
+
+  <h2>Status Indicators</h2>
+  <ComponentPreview title="Online / Offline / Busy / Away">
+    <div style="display: flex; gap: 1rem; align-items: center;">
+      <chassis-avatar initials="ON" status="online"></chassis-avatar>
+      <chassis-avatar initials="OF" status="offline"></chassis-avatar>
+      <chassis-avatar initials="BS" status="busy"></chassis-avatar>
+      <chassis-avatar initials="AW" status="away"></chassis-avatar>
+    </div>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>src</code></td><td><code>string</code></td><td><code>''</code></td><td>Image URL</td></tr>
+      <tr><td><code>alt</code></td><td><code>string</code></td><td><code>''</code></td><td>Image alt text</td></tr>
+      <tr><td><code>initials</code></td><td><code>string</code></td><td><code>''</code></td><td>Initials fallback</td></tr>
+      <tr><td><code>size</code></td><td><code>'sm' | 'md' | 'lg' | 'xl'</code></td><td><code>'md'</code></td><td>Avatar size</td></tr>
+      <tr><td><code>status</code></td><td><code>'online' | 'offline' | 'busy' | 'away' | ''</code></td><td><code>''</code></td><td>Status indicator</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The avatar container</td></tr>
+      <tr><td><code>image</code></td><td>The img element</td></tr>
+      <tr><td><code>initials</code></td><td>The initials text</td></tr>
+      <tr><td><code>status</code></td><td>The status indicator dot</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>role="img"</code> with <code>aria-label</code> from alt or initials</li>
+    <li>Falls back to initials on image load error</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/avatar';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

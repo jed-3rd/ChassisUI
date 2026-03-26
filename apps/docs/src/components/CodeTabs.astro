@@ -1,0 +1,178 @@
+---
+export interface Props {
+  webComponent: string;
+  react: string;
+  angular: string;
+  astro: string;
+  svelte: string;
+}
+
+const { webComponent, react, angular, astro, svelte } = Astro.props;
+---
+
+<div class="code-tabs">
+  <div class="code-tabs-header">
+    <div class="tab-buttons" role="tablist">
+      <button class="tab-btn active" role="tab" data-tab="wc">Web Component</button>
+      <button class="tab-btn" role="tab" data-tab="react">React</button>
+      <button class="tab-btn" role="tab" data-tab="angular">Angular</button>
+      <button class="tab-btn" role="tab" data-tab="astro">Astro</button>
+      <button class="tab-btn" role="tab" data-tab="svelte">Svelte</button>
+    </div>
+    <button class="copy-btn" aria-label="Copy code" title="Copy to clipboard">
+      <svg class="copy-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="4.5" y="4.5" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M9.5 4.5V3a1.5 1.5 0 0 0-1.5-1.5H3A1.5 1.5 0 0 0 1.5 3v5A1.5 1.5 0 0 0 3 9.5h1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+      <svg class="check-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" style="display:none"><path d="M3 7.5L5.5 10L11 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  <div class="tab-panels">
+    <div class="tab-panel active" data-panel="wc">
+      <pre><code set:text={webComponent} /></pre>
+    </div>
+    <div class="tab-panel" data-panel="react">
+      <pre><code set:text={react} /></pre>
+    </div>
+    <div class="tab-panel" data-panel="angular">
+      <pre><code set:text={angular} /></pre>
+    </div>
+    <div class="tab-panel" data-panel="astro">
+      <pre><code set:text={astro} /></pre>
+    </div>
+    <div class="tab-panel" data-panel="svelte">
+      <pre><code set:text={svelte} /></pre>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initCodeTabs() {
+    document.querySelectorAll('.code-tabs').forEach((tabs) => {
+      const buttons = tabs.querySelectorAll('.tab-btn');
+      const panels = tabs.querySelectorAll('.tab-panel');
+      const copyBtn = tabs.querySelector('.copy-btn');
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const tab = btn.getAttribute('data-tab');
+          buttons.forEach((b) => b.classList.remove('active'));
+          panels.forEach((p) => p.classList.remove('active'));
+          btn.classList.add('active');
+          tabs.querySelector(`[data-panel="${tab}"]`)?.classList.add('active');
+        });
+      });
+
+      copyBtn?.addEventListener('click', () => {
+        const activePanel = tabs.querySelector('.tab-panel.active code');
+        if (activePanel) {
+          navigator.clipboard.writeText(activePanel.textContent || '');
+          const copyIcon = copyBtn.querySelector('.copy-icon') as HTMLElement;
+          const checkIcon = copyBtn.querySelector('.check-icon') as HTMLElement;
+          copyIcon.style.display = 'none';
+          checkIcon.style.display = 'block';
+          setTimeout(() => {
+            copyIcon.style.display = 'block';
+            checkIcon.style.display = 'none';
+          }, 1500);
+        }
+      });
+    });
+  }
+
+  initCodeTabs();
+  document.addEventListener('astro:page-load', initCodeTabs);
+</script>
+
+<style>
+  .code-tabs {
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #1a1b26;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .code-tabs-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #13141c;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 0 0.5rem;
+  }
+
+  .tab-buttons {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+
+  .tab-btn {
+    padding: 0.625rem 0.875rem;
+    border: none;
+    background: transparent;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    font-family: var(--chassis-typography-font-family-primary, sans-serif);
+    border-bottom: 2px solid transparent;
+    transition: color 100ms ease;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+
+  .tab-btn:hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .tab-btn.active {
+    color: #a9b1d6;
+    border-bottom-color: var(--chassis-color-primary, #7aa2f7);
+  }
+
+  .copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: all 100ms ease;
+    flex-shrink: 0;
+  }
+
+  .copy-btn:hover {
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  .tab-panel pre {
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    color: #a9b1d6;
+    padding: 1.25rem 1.5rem;
+    font-size: 0.8125rem;
+    line-height: 1.7;
+  }
+
+  .tab-panel pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+</style>

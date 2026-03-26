@@ -1,0 +1,129 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Badge">
+  <h1>Badge</h1>
+  <p>Badges display short status information. Supports color variants, value counts, and dot indicators.</p>
+
+  <h2>Variants</h2>
+  <ComponentPreview title="Default / Success / Warning / Error / Info">
+    <chassis-badge>Default</chassis-badge>
+    <chassis-badge variant="success">Success</chassis-badge>
+    <chassis-badge variant="warning">Warning</chassis-badge>
+    <chassis-badge variant="error">Error</chassis-badge>
+    <chassis-badge variant="info">Info</chassis-badge>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-badge>Default</chassis-badge>
+<chassis-badge variant="success">Success</chassis-badge>
+<chassis-badge variant="warning">Warning</chassis-badge>
+<chassis-badge variant="error">Error</chassis-badge>
+<chassis-badge variant="info">Info</chassis-badge>`}
+    react={`import { Badge } from '@chassis-ui/react';
+
+<Badge>Default</Badge>
+<Badge variant="success">Success</Badge>
+<Badge variant="warning">Warning</Badge>
+<Badge variant="error">Error</Badge>
+<Badge variant="info">Info</Badge>`}
+    angular={`import { BadgeComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [BadgeComponent],
+  template: \`
+    <chassis-badge-wrapper>Default</chassis-badge-wrapper>
+    <chassis-badge-wrapper variant="success">Success</chassis-badge-wrapper>
+    <chassis-badge-wrapper variant="warning">Warning</chassis-badge-wrapper>
+    <chassis-badge-wrapper variant="error">Error</chassis-badge-wrapper>
+    <chassis-badge-wrapper variant="info">Info</chassis-badge-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Badge from '@chassis-ui/astro/Badge.astro';
+---
+
+<Badge>Default</Badge>
+<Badge variant="success">Success</Badge>
+<Badge variant="warning">Warning</Badge>
+<Badge variant="error">Error</Badge>
+<Badge variant="info">Info</Badge>`}
+    svelte={`<script>
+  import { Badge } from '@chassis-ui/svelte';
+</script>
+
+<Badge>Default</Badge>
+<Badge variant="success">Success</Badge>
+<Badge variant="warning">Warning</Badge>
+<Badge variant="error">Error</Badge>
+<Badge variant="info">Info</Badge>`}
+  />
+
+  <h2>Value &amp; Dot</h2>
+  <ComponentPreview title="Count value / Dot indicator">
+    <chassis-badge value="5"></chassis-badge>
+    <chassis-badge variant="error" value="99+"></chassis-badge>
+    <chassis-badge variant="success" dot></chassis-badge>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>variant</code></td><td><code>'default' | 'success' | 'warning' | 'error' | 'info'</code></td><td><code>'default'</code></td><td>Color variant</td></tr>
+      <tr><td><code>value</code></td><td><code>string</code></td><td><code>''</code></td><td>Value to display (e.g. count)</td></tr>
+      <tr><td><code>dot</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Show as small dot indicator</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The badge container element</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses semantic color to convey status</li>
+    <li>Slot content or <code>value</code> prop provides text content for screen readers</li>
+    <li>Dot badges should have nearby text context for accessibility</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/badge';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

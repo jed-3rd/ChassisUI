@@ -1,0 +1,16 @@
+{
+  "chassis": {
+    "radio": {
+      "size": { "value": "20px" },
+      "border-color": { "value": "{chassis.color.outline}" },
+      "border-width": { "value": "{chassis.border.width-medium}" },
+      "checked-color": { "value": "{chassis.color.primary}" },
+      "checked-border-color": { "value": "{chassis.color.primary}" },
+      "dot-size": { "value": "10px" },
+      "dot-color": { "value": "{chassis.color.primary}" },
+      "label-font-size": { "value": "{chassis.typography.font-size.md}" },
+      "label-color": { "value": "{chassis.color.on-surface}" },
+      "focus-ring-color": { "value": "{chassis.color.primary}" }
+    }
+  }
+}

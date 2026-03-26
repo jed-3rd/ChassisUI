@@ -1,0 +1,12 @@
+{
+  "chassis": {
+    "modal": {
+      "background": { "value": "#ffffff" },
+      "color": { "value": "#1c1b1f" },
+      "border-radius": { "value": "16px" },
+      "overlay-color": { "value": "rgba(0, 0, 0, 0.32)" },
+      "title-font-size": { "value": "1.5rem" },
+      "close-button-color": { "value": "#49454f" }
+    }
+  }
+}

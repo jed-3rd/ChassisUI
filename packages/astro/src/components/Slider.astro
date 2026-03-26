@@ -1,0 +1,20 @@
+---
+export interface Props {
+  min?: number;
+  max?: number;
+  step?: number;
+  value?: string;
+  dual?: boolean;
+  'value-end'?: number;
+  disabled?: boolean;
+}
+
+const { min = 0, max = 100, step = 1, value = '0', dual = false, 'value-end': valueEnd = 100, disabled = false } = Astro.props;
+---
+
+<chassis-slider min={min} max={max} step={step} value={value} dual={dual} value-end={valueEnd} disabled={disabled}>
+</chassis-slider>
+
+<script>
+  import '@chassis-ui/core/slider';
+</script>

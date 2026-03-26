@@ -1,0 +1,16 @@
+---
+export interface Props {
+  value?: string;
+  multiple?: boolean;
+}
+
+const { value = '', multiple = false } = Astro.props;
+---
+
+<chassis-toggle-group value={value} multiple={multiple}>
+  <slot />
+</chassis-toggle-group>
+
+<script>
+  import '@chassis-ui/core/toggle-group';
+</script>

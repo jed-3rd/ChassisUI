@@ -1,0 +1,14 @@
+{
+  "chassis": {
+    "sizing": {
+      "icon-sm": { "value": "16px" },
+      "icon-md": { "value": "24px" },
+      "icon-lg": { "value": "32px" },
+      "touch-target": { "value": "44px" },
+      "avatar-sm": { "value": "32px" },
+      "avatar-md": { "value": "40px" },
+      "avatar-lg": { "value": "48px" },
+      "avatar-xl": { "value": "64px" }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+---
+export interface Props {
+  orientation?: 'horizontal' | 'vertical';
+  label?: string;
+}
+
+const { orientation = 'horizontal', label = '' } = Astro.props;
+---
+
+<chassis-divider orientation={orientation} label={label}>
+  <slot />
+</chassis-divider>
+
+<script>
+  import '@chassis-ui/core/divider';
+</script>

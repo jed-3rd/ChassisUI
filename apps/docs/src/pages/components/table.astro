@@ -1,0 +1,163 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Table">
+  <h1>Table</h1>
+  <p>Styled table wrapper with sortable headers, striped rows, and sticky header support. Wraps a native HTML table.</p>
+
+  <h2>Basic Usage</h2>
+  <ComponentPreview title="Simple table">
+    <chassis-table>
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Role</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Alice</td><td>Engineer</td><td>Active</td></tr>
+          <tr><td>Bob</td><td>Designer</td><td>Active</td></tr>
+          <tr><td>Carol</td><td>PM</td><td>Away</td></tr>
+        </tbody>
+      </table>
+    </chassis-table>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-table>
+  <table>
+    <thead>
+      <tr><th>Name</th><th>Role</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Alice</td><td>Engineer</td><td>Active</td></tr>
+      <tr><td>Bob</td><td>Designer</td><td>Active</td></tr>
+    </tbody>
+  </table>
+</chassis-table>`}
+    react={`import { Table } from '@chassis-ui/react';
+
+<Table striped>
+  <table>
+    <thead><tr><th>Name</th><th>Role</th></tr></thead>
+    <tbody><tr><td>Alice</td><td>Engineer</td></tr></tbody>
+  </table>
+</Table>`}
+    angular={`import { TableComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [TableComponent],
+  template: \`
+    <chassis-table-wrapper striped>
+      <table>
+        <thead><tr><th>Name</th><th>Role</th></tr></thead>
+        <tbody><tr><td>Alice</td><td>Engineer</td></tr></tbody>
+      </table>
+    </chassis-table-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Table from '@chassis-ui/astro/Table.astro';
+---
+
+<Table striped>
+  <table>
+    <thead><tr><th>Name</th><th>Role</th></tr></thead>
+    <tbody><tr><td>Alice</td><td>Engineer</td></tr></tbody>
+  </table>
+</Table>`}
+    svelte={`<script>
+  import { Table } from '@chassis-ui/svelte';
+</script>
+
+<Table striped>
+  <table>
+    <thead><tr><th>Name</th><th>Role</th></tr></thead>
+    <tbody><tr><td>Alice</td><td>Engineer</td></tr></tbody>
+  </table>
+</Table>`}
+  />
+
+  <h2>Striped Rows</h2>
+  <ComponentPreview title="Alternating row colors">
+    <chassis-table striped>
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Role</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Alice</td><td>Engineer</td><td>Active</td></tr>
+          <tr><td>Bob</td><td>Designer</td><td>Active</td></tr>
+          <tr><td>Carol</td><td>PM</td><td>Away</td></tr>
+          <tr><td>Dan</td><td>QA</td><td>Active</td></tr>
+        </tbody>
+      </table>
+    </chassis-table>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>sortable</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Enable sortable column headers (requires <code>data-sort</code> on <code>th</code>)</td></tr>
+      <tr><td><code>striped</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Alternating row background colors</td></tr>
+      <tr><td><code>sticky-header</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Stick header row to top on scroll</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The table wrapper container</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Events</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Event</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>chassis-sort</code></td><td>Fired when a sortable column header is clicked. Detail: <code>{'{ column, direction }'}</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses native <code>&lt;table&gt;</code> semantics for full screen reader support</li>
+    <li>Sortable headers should include <code>aria-sort</code> attributes in your markup</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/table';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

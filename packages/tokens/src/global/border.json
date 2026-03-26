@@ -1,0 +1,9 @@
+{
+  "chassis": {
+    "border": {
+      "width-thin": { "value": "1px" },
+      "width-medium": { "value": "2px" },
+      "width-thick": { "value": "3px" }
+    }
+  }
+}

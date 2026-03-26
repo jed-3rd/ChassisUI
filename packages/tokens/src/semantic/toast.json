@@ -1,0 +1,16 @@
+{
+  "chassis": {
+    "toast": {
+      "border-radius": { "value": "{chassis.shape.radius.md}" },
+      "font-size": { "value": "{chassis.typography.font-size.sm}" },
+      "info-background": { "value": "#323744" },
+      "info-color": { "value": "#e8f4fd" },
+      "success-background": { "value": "#1e6823" },
+      "success-color": { "value": "#ffffff" },
+      "warning-background": { "value": "#8a6d00" },
+      "warning-color": { "value": "#ffffff" },
+      "error-background": { "value": "#b3261e" },
+      "error-color": { "value": "#ffffff" }
+    }
+  }
+}

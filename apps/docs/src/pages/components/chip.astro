@@ -1,0 +1,148 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Chip">
+  <h1>Chip</h1>
+  <p>Compact interactive element for filters, choices, and input tags. Supports selection toggling and removable state.</p>
+
+  <h2>Variants</h2>
+  <ComponentPreview title="Filter / Choice / Input">
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+      <chassis-chip variant="filter">Filter Chip</chassis-chip>
+      <chassis-chip variant="filter" selected>Selected Filter</chassis-chip>
+      <chassis-chip variant="choice">Choice A</chassis-chip>
+      <chassis-chip variant="choice" selected>Choice B</chassis-chip>
+      <chassis-chip variant="input" removable>Tag One</chassis-chip>
+      <chassis-chip variant="input" removable>Tag Two</chassis-chip>
+    </div>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-chip variant="filter">Filter Chip</chassis-chip>
+<chassis-chip variant="filter" selected>Selected Filter</chassis-chip>
+<chassis-chip variant="choice">Choice A</chassis-chip>
+<chassis-chip variant="input" removable>Tag One</chassis-chip>`}
+    react={`import { Chip } from '@chassis-ui/react';
+
+<Chip variant="filter">Filter Chip</Chip>
+<Chip variant="filter" selected>Selected Filter</Chip>
+<Chip variant="choice">Choice A</Chip>
+<Chip variant="input" removable onRemove={() => handleRemove()}>Tag One</Chip>`}
+    angular={`import { ChipComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [ChipComponent],
+  template: \`
+    <chassis-chip-wrapper variant="filter">Filter Chip</chassis-chip-wrapper>
+    <chassis-chip-wrapper variant="filter" selected>Selected</chassis-chip-wrapper>
+    <chassis-chip-wrapper variant="input" removable>Tag One</chassis-chip-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Chip from '@chassis-ui/astro/Chip.astro';
+---
+
+<Chip variant="filter">Filter Chip</Chip>
+<Chip variant="filter" selected>Selected Filter</Chip>
+<Chip variant="input" removable>Tag One</Chip>`}
+    svelte={`<script>
+  import { Chip } from '@chassis-ui/svelte';
+</script>
+
+<Chip variant="filter">Filter Chip</Chip>
+<Chip variant="filter" selected>Selected Filter</Chip>
+<Chip variant="input" removable>Tag One</Chip>`}
+  />
+
+  <h2>Disabled</h2>
+  <ComponentPreview title="Disabled chips">
+    <div style="display: flex; gap: 0.5rem;">
+      <chassis-chip disabled>Disabled</chassis-chip>
+      <chassis-chip selected disabled>Selected Disabled</chassis-chip>
+    </div>
+  </ComponentPreview>
+
+  <h2>With Icon</h2>
+  <ComponentPreview title="Chip with leading icon slot">
+    <chassis-chip variant="filter">
+      <chassis-icon slot="icon" name="star" size="sm"></chassis-icon>
+      Favorites
+    </chassis-chip>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>variant</code></td><td><code>'filter' | 'choice' | 'input'</code></td><td><code>'filter'</code></td><td>Chip behavior variant</td></tr>
+      <tr><td><code>selected</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Whether the chip is selected</td></tr>
+      <tr><td><code>removable</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Show remove (X) button</td></tr>
+      <tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disable interaction</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The chip button element</td></tr>
+      <tr><td><code>label</code></td><td>The label text container</td></tr>
+      <tr><td><code>remove</code></td><td>The remove button (when removable)</td></tr>
+      <tr><td><code>icon</code></td><td>The leading icon slot container</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Events</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Event</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>change</code></td><td>Fired when selection toggles. Detail: <code>{'{ selected: boolean }'}</code></td></tr>
+      <tr><td><code>chassis-remove</code></td><td>Fired when the remove button is clicked</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Filter variant uses <code>aria-pressed</code> for toggle state</li>
+    <li>Choice variant uses <code>role="radio"</code> with <code>aria-checked</code></li>
+    <li>Remove button has <code>aria-label="Remove"</code></li>
+    <li>Disabled state via native <code>disabled</code> attribute</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/chip';
+  import '@chassis-ui/core/icon';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

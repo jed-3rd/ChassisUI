@@ -1,0 +1,129 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Icon">
+  <h1>Icon</h1>
+  <p>Renders built-in SVG icons at configurable sizes. Supports accessible labels and custom SVG via slot.</p>
+
+  <h2>Built-in Icons</h2>
+  <ComponentPreview title="Common icons">
+    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+      <chassis-icon name="check"></chassis-icon>
+      <chassis-icon name="close"></chassis-icon>
+      <chassis-icon name="search"></chassis-icon>
+      <chassis-icon name="add"></chassis-icon>
+      <chassis-icon name="edit"></chassis-icon>
+      <chassis-icon name="delete"></chassis-icon>
+      <chassis-icon name="settings"></chassis-icon>
+      <chassis-icon name="info"></chassis-icon>
+      <chassis-icon name="warning"></chassis-icon>
+      <chassis-icon name="error"></chassis-icon>
+      <chassis-icon name="star"></chassis-icon>
+      <chassis-icon name="heart"></chassis-icon>
+      <chassis-icon name="menu"></chassis-icon>
+    </div>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-icon name="check"></chassis-icon>
+<chassis-icon name="close"></chassis-icon>
+<chassis-icon name="search"></chassis-icon>`}
+    react={`import { Icon } from '@chassis-ui/react';
+
+<Icon name="check" />
+<Icon name="close" />
+<Icon name="search" />`}
+    angular={`import { IconComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [IconComponent],
+  template: \`
+    <chassis-icon-wrapper name="check"></chassis-icon-wrapper>
+    <chassis-icon-wrapper name="close"></chassis-icon-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Icon from '@chassis-ui/astro/Icon.astro';
+---
+
+<Icon name="check" />
+<Icon name="close" />`}
+    svelte={`<script>
+  import { Icon } from '@chassis-ui/svelte';
+</script>
+
+<Icon name="check" />
+<Icon name="close" />`}
+  />
+
+  <h2>Sizes</h2>
+  <ComponentPreview title="Small / Medium / Large">
+    <div style="display: flex; gap: 1rem; align-items: center;">
+      <chassis-icon name="star" size="sm"></chassis-icon>
+      <chassis-icon name="star" size="md"></chassis-icon>
+      <chassis-icon name="star" size="lg"></chassis-icon>
+    </div>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>name</code></td><td><code>string</code></td><td><code>''</code></td><td>Built-in icon name</td></tr>
+      <tr><td><code>size</code></td><td><code>'sm' | 'md' | 'lg'</code></td><td><code>'md'</code></td><td>Icon size (16/24/32px)</td></tr>
+      <tr><td><code>label</code></td><td><code>string</code></td><td><code>''</code></td><td>Accessible label (sets role="img")</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The icon container</td></tr>
+      <tr><td><code>svg</code></td><td>The SVG element</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Available Icons</h2>
+  <p>check, close, chevron-down, chevron-up, chevron-left, chevron-right, info, warning, error, success, search, add, remove, menu, arrow-left, arrow-right, star, heart, edit, delete, settings</p>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Without <code>label</code>: decorative (<code>aria-hidden="true"</code>)</li>
+    <li>With <code>label</code>: meaningful (<code>role="img"</code>, <code>aria-label</code>)</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/icon';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

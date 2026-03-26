@@ -1,0 +1,114 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Date Picker">
+  <h1>Date Picker</h1>
+  <p>A calendar-based date selection component with support for min/max constraints, range selection, and locale formatting.</p>
+
+  <h2>Basic Usage</h2>
+  <ComponentPreview title="Single date selection">
+    <chassis-date-picker></chassis-date-picker>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-date-picker></chassis-date-picker>`}
+    react={`import { DatePicker } from '@chassis-ui/react';
+
+<DatePicker />`}
+    angular={`import { DatePickerComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [DatePickerComponent],
+  template: \`
+    <chassis-date-picker-wrapper>
+    </chassis-date-picker-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import DatePicker from '@chassis-ui/astro/DatePicker.astro';
+---
+
+<DatePicker />`}
+    svelte={`<script>
+  import { DatePicker } from '@chassis-ui/svelte';
+</script>
+
+<DatePicker />`}
+  />
+
+  <h2>Range Selection</h2>
+  <ComponentPreview title="Select a date range">
+    <chassis-date-picker range></chassis-date-picker>
+  </ComponentPreview>
+
+  <h2>With Constraints</h2>
+  <ComponentPreview title="Min and max dates">
+    <chassis-date-picker min="2026-01-01" max="2026-12-31"></chassis-date-picker>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>value</code></td><td><code>string</code></td><td><code>''</code></td><td>Selected date in YYYY-MM-DD format</td></tr>
+      <tr><td><code>value-end</code></td><td><code>string</code></td><td><code>''</code></td><td>Range end date (range mode)</td></tr>
+      <tr><td><code>min</code></td><td><code>string</code></td><td><code>''</code></td><td>Earliest selectable date</td></tr>
+      <tr><td><code>max</code></td><td><code>string</code></td><td><code>''</code></td><td>Latest selectable date</td></tr>
+      <tr><td><code>range</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Enable date range selection</td></tr>
+      <tr><td><code>locale</code></td><td><code>string</code></td><td><code>'en-US'</code></td><td>Locale for month/day names</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>trigger</code></td><td>The date input button</td></tr>
+      <tr><td><code>calendar</code></td><td>The floating calendar panel</td></tr>
+      <tr><td><code>header</code></td><td>Month/year navigation header</td></tr>
+      <tr><td><code>day</code></td><td>Individual day buttons</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Trigger uses <code>aria-haspopup="dialog"</code> and <code>aria-expanded</code></li>
+    <li>Calendar panel uses <code>role="dialog"</code></li>
+    <li>Each day button has an <code>aria-label</code> with the full date</li>
+    <li>Selected days use <code>aria-selected="true"</code></li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/date-picker';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

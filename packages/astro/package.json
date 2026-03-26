@@ -1,0 +1,27 @@
+{
+  "name": "@chassis-ui/astro",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    "./Button.astro": "./src/components/Button.astro",
+    "./Input.astro": "./src/components/Input.astro",
+    "./Card.astro": "./src/components/Card.astro",
+    "./Checkbox.astro": "./src/components/Checkbox.astro",
+    "./Switch.astro": "./src/components/Switch.astro",
+    "./Badge.astro": "./src/components/Badge.astro",
+    "./Select.astro": "./src/components/Select.astro",
+    "./Dialog.astro": "./src/components/Dialog.astro",
+    "./Tooltip.astro": "./src/components/Tooltip.astro",
+    "./ThemeSwitcher.astro": "./src/components/ThemeSwitcher.astro"
+  },
+  "scripts": {
+    "build": "echo 'Astro components are source-distributed'"
+  },
+  "peerDependencies": {
+    "astro": "^4.0.0 || ^5.0.0 || ^6.0.0",
+    "@chassis-ui/core": "*"
+  },
+  "devDependencies": {
+    "@chassis-ui/core": "*"
+  }
+}

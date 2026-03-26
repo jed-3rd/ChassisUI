@@ -1,0 +1,147 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Select">
+  <h1>Select</h1>
+  <p>Select lets users choose one option from a dropdown list. Supports labels, placeholders, and error states.</p>
+
+  <h2>Basic</h2>
+  <ComponentPreview title="Default select">
+    <chassis-select label="Country" placeholder="Choose a country">
+      <option value="us">United States</option>
+      <option value="ca">Canada</option>
+      <option value="uk">United Kingdom</option>
+    </chassis-select>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-select label="Country" placeholder="Choose a country">
+  <option value="us">United States</option>
+  <option value="ca">Canada</option>
+  <option value="uk">United Kingdom</option>
+</chassis-select>`}
+    react={`import { Select } from '@chassis-ui/react';
+
+<Select label="Country" placeholder="Choose a country">
+  <option value="us">United States</option>
+  <option value="ca">Canada</option>
+  <option value="uk">United Kingdom</option>
+</Select>`}
+    angular={`import { SelectComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [SelectComponent],
+  template: \`
+    <chassis-select-wrapper label="Country" placeholder="Choose a country">
+      <option value="us">United States</option>
+      <option value="ca">Canada</option>
+      <option value="uk">United Kingdom</option>
+    </chassis-select-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Select from '@chassis-ui/astro/Select.astro';
+---
+
+<Select label="Country" placeholder="Choose a country">
+  <option value="us">United States</option>
+  <option value="ca">Canada</option>
+  <option value="uk">United Kingdom</option>
+</Select>`}
+    svelte={`<script>
+  import { Select } from '@chassis-ui/svelte';
+</script>
+
+<Select label="Country" placeholder="Choose a country">
+  <option value="us">United States</option>
+  <option value="ca">Canada</option>
+  <option value="uk">United Kingdom</option>
+</Select>`}
+  />
+
+  <h2>States</h2>
+  <ComponentPreview title="Required / Error / Disabled">
+    <chassis-select label="Size" required>
+      <option value="s">Small</option>
+      <option value="m">Medium</option>
+      <option value="l">Large</option>
+    </chassis-select>
+    <chassis-select label="Color" error="Please select a color">
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+    </chassis-select>
+    <chassis-select label="Disabled" disabled>
+      <option value="a">Option A</option>
+    </chassis-select>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>value</code></td><td><code>string</code></td><td><code>''</code></td><td>Currently selected value</td></tr>
+      <tr><td><code>placeholder</code></td><td><code>string</code></td><td><code>'Select an option'</code></td><td>Placeholder text when no value selected</td></tr>
+      <tr><td><code>label</code></td><td><code>string</code></td><td><code>''</code></td><td>Label text above the select</td></tr>
+      <tr><td><code>error</code></td><td><code>string</code></td><td><code>''</code></td><td>Error message displayed below</td></tr>
+      <tr><td><code>required</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Marks the field as required</td></tr>
+      <tr><td><code>open</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Controls dropdown visibility</td></tr>
+      <tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disables the select</td></tr>
+      <tr><td><code>size</code></td><td><code>'sm' | 'md' | 'lg'</code></td><td><code>'md'</code></td><td>Select size</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>label</code></td><td>The label element</td></tr>
+      <tr><td><code>trigger</code></td><td>The clickable trigger button</td></tr>
+      <tr><td><code>listbox</code></td><td>The dropdown options container</td></tr>
+      <tr><td><code>error</code></td><td>The error message text</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li><code>role="listbox"</code> on the dropdown</li>
+    <li>Keyboard navigation: <kbd>Enter</kbd>/<kbd>Space</kbd> to open, <kbd>Escape</kbd> to close</li>
+    <li>Click outside closes the dropdown</li>
+    <li>Error message linked via <code>aria-describedby</code></li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/select';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

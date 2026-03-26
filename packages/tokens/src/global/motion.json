@@ -1,0 +1,17 @@
+{
+  "chassis": {
+    "motion": {
+      "duration": {
+        "instant": { "value": "50ms", "type": "duration" },
+        "short": { "value": "150ms", "type": "duration" },
+        "medium": { "value": "300ms", "type": "duration" },
+        "long": { "value": "500ms", "type": "duration" }
+      },
+      "easing": {
+        "standard": { "value": "cubic-bezier(0.2, 0, 0, 1)", "type": "cubicBezier" },
+        "decelerate": { "value": "cubic-bezier(0, 0, 0, 1)", "type": "cubicBezier" },
+        "accelerate": { "value": "cubic-bezier(0.3, 0, 1, 1)", "type": "cubicBezier" }
+      }
+    }
+  }
+}

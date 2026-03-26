@@ -1,0 +1,160 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout title="Theming">
+  <h1>Theming</h1>
+  <p>Chassis UI solves design system lock-in by decoupling component structure from visual styling. The same components render as Material 3, Polaris, or Carbon — controlled entirely by CSS custom properties.</p>
+
+  <h2>How It Works</h2>
+  <p>The theming system has three layers:</p>
+
+  <h3>1. Global Tokens</h3>
+  <p>Abstract design tokens defined as CSS custom properties on <code>:root</code>. These provide sensible defaults that work without any theme loaded.</p>
+  <pre><code>:root &lbrace;
+  --chassis-color-primary: #6200ee;
+  --chassis-color-on-primary: #ffffff;
+  --chassis-color-surface: #ffffff;
+  --chassis-spacing-400: 1rem;
+  --chassis-shape-radius-md: 8px;
+  /* ... 60+ tokens */
+&rbrace;</code></pre>
+
+  <h3>2. Theme Overrides</h3>
+  <p>Each design system provides its own values for the same token names, scoped via <code>[data-theme]</code> attribute selectors:</p>
+  <pre><code>/* Material 3 */
+[data-theme="material3"] &lbrace;
+  --chassis-color-primary: #6750a4;
+  --chassis-shape-radius-md: 12px;
+  --chassis-typography-font-family-primary: 'Roboto', sans-serif;
+&rbrace;
+
+/* Shopify Polaris */
+[data-theme="polaris"] &lbrace;
+  --chassis-color-primary: #008060;
+  --chassis-shape-radius-md: 8px;
+  --chassis-typography-font-family-primary: 'Inter', sans-serif;
+&rbrace;
+
+/* IBM Carbon */
+[data-theme="carbon"] &lbrace;
+  --chassis-color-primary: #0f62fe;
+  --chassis-shape-radius-md: 0px;
+  --chassis-typography-font-family-primary: 'IBM Plex Sans', sans-serif;
+&rbrace;</code></pre>
+
+  <h3>3. Component Consumption</h3>
+  <p>Components reference these tokens in their Shadow DOM styles. CSS custom properties naturally inherit through Shadow DOM boundaries:</p>
+  <pre><code>/* Inside chassis-button shadow DOM */
+:host &lbrace;
+  background: var(--chassis-color-primary);
+  border-radius: var(--chassis-shape-radius-md);
+  font-family: var(--chassis-typography-font-family-primary);
+&rbrace;</code></pre>
+
+  <h2>Switching Themes</h2>
+  <p>Theme switching is a single attribute change on the document root:</p>
+  <pre><code>// Switch to Polaris
+document.documentElement.setAttribute('data-theme', 'polaris');
+
+// Or use the ThemeSwitcher utility
+import &lbrace; ThemeSwitcher &rbrace; from '@chassis-ui/themes';
+const switcher = new ThemeSwitcher(&lbrace; persist: true &rbrace;);
+switcher.setTheme('polaris');</code></pre>
+
+  <p>The CSS cascade immediately updates all components — no JavaScript re-rendering, no page reload. Measured performance is under 100ms even with 50+ components on page.</p>
+
+  <h2>Token Architecture</h2>
+  <p>Tokens are organized in two tiers:</p>
+  <table class="props-table">
+    <thead>
+      <tr><th>Tier</th><th>Example</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Global</td><td><code>--chassis-color-primary</code></td><td>System-wide design values</td></tr>
+      <tr><td>Semantic</td><td><code>--chassis-button-primary-bg</code></td><td>Component-specific mappings</td></tr>
+    </tbody>
+  </table>
+  <p>Components use a double-fallback pattern for maximum flexibility:</p>
+  <pre><code>background: var(--chassis-button-primary-bg, var(--chassis-color-primary, #6200ee));</code></pre>
+  <p>This means you can override at the component level, the theme level, or rely on the hardcoded fallback.</p>
+
+  <h2>Available Themes</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Theme</th><th>Attribute Value</th><th>Inspired By</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Default</td><td><code>default</code></td><td>Chassis UI baseline</td></tr>
+      <tr><td>Material Design 2</td><td><code>material2</code></td><td>Google Material Design 2</td></tr>
+      <tr><td>Material Design 3</td><td><code>material3</code></td><td>Google Material You</td></tr>
+      <tr><td>Fluent</td><td><code>fluent</code></td><td>Microsoft Fluent UI</td></tr>
+      <tr><td>HIG</td><td><code>hig</code></td><td>Apple Human Interface Guidelines</td></tr>
+      <tr><td>Lightning</td><td><code>lightning</code></td><td>Salesforce Lightning</td></tr>
+      <tr><td>Carbon</td><td><code>carbon</code></td><td>IBM Carbon</td></tr>
+      <tr><td>Atlassian</td><td><code>atlassian</code></td><td>Atlassian Design System</td></tr>
+      <tr><td>Spectrum</td><td><code>spectrum</code></td><td>Adobe Spectrum</td></tr>
+      <tr><td>Polaris</td><td><code>polaris</code></td><td>Shopify Polaris</td></tr>
+      <tr><td>Primer</td><td><code>primer</code></td><td>GitHub Primer</td></tr>
+      <tr><td>Uber</td><td><code>uber</code></td><td>Uber Base</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Token Categories</h2>
+  <ul>
+    <li><strong>Color</strong> — primary, secondary, surface, error, scrim, and their "on-" counterparts</li>
+    <li><strong>Typography</strong> — font families, sizes (xs–3xl), weights, line heights</li>
+    <li><strong>Spacing</strong> — 8-step scale from 0.25rem to 4rem</li>
+    <li><strong>Shape</strong> — border radius: sm, md, lg, full</li>
+    <li><strong>Elevation</strong> — 6-level box-shadow scale</li>
+    <li><strong>Motion</strong> — duration and easing tokens</li>
+    <li><strong>Z-Index</strong> — layering for dropdown, overlay, modal, toast, popover</li>
+    <li><strong>Opacity</strong> — disabled, hover, pressed, focus states</li>
+    <li><strong>Border</strong> — thin (1px), medium (2px), thick (3px)</li>
+    <li><strong>Sizing</strong> — icon sizes, touch targets, avatar sizes</li>
+    <li><strong>Breakpoints</strong> — sm, md, lg, xl responsive breakpoints</li>
+  </ul>
+
+  <h2>Creating Custom Themes</h2>
+  <p>Add a new theme by creating a CSS file that overrides the token values:</p>
+  <pre><code>[data-theme="my-brand"] &lbrace;
+  --chassis-color-primary: #ff6b00;
+  --chassis-color-on-primary: #ffffff;
+  --chassis-color-surface: #fafafa;
+  --chassis-shape-radius-md: 16px;
+  --chassis-typography-font-family-primary: 'Your Font', sans-serif;
+  /* Override as many or as few tokens as needed */
+&rbrace;</code></pre>
+  <p>Load this CSS alongside the global tokens, set <code>data-theme="my-brand"</code>, and every Chassis UI component will adopt your brand identity.</p>
+
+  <h2>Shadow DOM &amp; CSS Custom Properties</h2>
+  <p>A common concern with Web Components is style encapsulation preventing theming. Chassis UI avoids this because CSS custom properties (unlike regular CSS rules) <strong>inherit through Shadow DOM boundaries</strong>. This is a W3C-specified behavior, not a hack.</p>
+  <p>For cases where you need deeper control, every component exposes CSS Shadow Parts via the <code>::part()</code> selector:</p>
+  <pre><code>chassis-button::part(base) &lbrace;
+  text-transform: uppercase;
+&rbrace;</code></pre>
+</DocsLayout>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

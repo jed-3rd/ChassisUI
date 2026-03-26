@@ -1,0 +1,16 @@
+---
+export interface Props {
+  value?: string;
+  variant?: 'underline' | 'contained';
+}
+
+const { value = '', variant = 'underline' } = Astro.props;
+---
+
+<chassis-tabs value={value} variant={variant}>
+  <slot />
+</chassis-tabs>
+
+<script>
+  import '@chassis-ui/core/tabs';
+</script>

@@ -1,0 +1,16 @@
+---
+export interface Props {
+  open?: boolean;
+  disabled?: boolean;
+}
+
+const { open = false, disabled = false } = Astro.props;
+---
+
+<chassis-accordion-item open={open} disabled={disabled}>
+  <slot />
+</chassis-accordion-item>
+
+<script>
+  import '@chassis-ui/core/accordion';
+</script>

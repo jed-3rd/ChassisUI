@@ -1,0 +1,17 @@
+{
+  "chassis": {
+    "chip": {
+      "background": { "value": "{chassis.color.surface}" },
+      "color": { "value": "{chassis.color.on-surface}" },
+      "border-color": { "value": "{chassis.color.outline}" },
+      "border-radius": { "value": "9999px" },
+      "font-size": { "value": "{chassis.typography.font-size.sm}" },
+      "padding": { "value": "0.375rem 0.75rem" },
+      "hover-background": { "value": "{chassis.color.surface-variant}" },
+      "selected-background": { "value": "{chassis.color.primary}" },
+      "selected-color": { "value": "{chassis.color.on-primary}" },
+      "selected-border-color": { "value": "{chassis.color.primary}" },
+      "disabled-opacity": { "value": "{chassis.opacity.disabled}" }
+    }
+  }
+}

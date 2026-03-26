@@ -1,0 +1,854 @@
+/* Design Tokens */
+@import '@chassis-ui/tokens/css/global';
+@import '@chassis-ui/tokens/css/material2';
+@import '@chassis-ui/tokens/css/material3';
+@import '@chassis-ui/tokens/css/polaris';
+@import '@chassis-ui/tokens/css/carbon';
+@import '@chassis-ui/tokens/css/default';
+@import '@chassis-ui/tokens/css/hig';
+@import '@chassis-ui/tokens/css/atlassian';
+@import '@chassis-ui/tokens/css/fluent';
+@import '@chassis-ui/tokens/css/lightning';
+@import '@chassis-ui/tokens/css/primer';
+@import '@chassis-ui/tokens/css/spectrum';
+@import '@chassis-ui/tokens/css/uber';
+
+/* Theme overrides */
+@import '@chassis-ui/themes/css/material2';
+@import '@chassis-ui/themes/css/material3';
+@import '@chassis-ui/themes/css/polaris';
+@import '@chassis-ui/themes/css/carbon';
+@import '@chassis-ui/themes/css/default';
+@import '@chassis-ui/themes/css/hig';
+@import '@chassis-ui/themes/css/atlassian';
+@import '@chassis-ui/themes/css/fluent';
+@import '@chassis-ui/themes/css/lightning';
+@import '@chassis-ui/themes/css/primer';
+@import '@chassis-ui/themes/css/spectrum';
+@import '@chassis-ui/themes/css/uber';
+
+/* Dark mode overrides — applied on top of active theme */
+[data-mode="dark"] {
+  /* Global color tokens */
+  --chassis-color-background: #121212;
+  --chassis-color-on-background: #e6e1e5;
+  --chassis-color-surface: #1e1e1e;
+  --chassis-color-on-surface: #e6e1e5;
+  --chassis-color-surface-variant: #2d2d2d;
+  --chassis-color-on-surface-variant: #cac4d0;
+  --chassis-color-outline: #938f99;
+  --chassis-color-outline-variant: #49454f;
+
+  /* Semantic tokens — re-map to dark-mode equivalents */
+  --chassis-input-background: #1e1e1e;
+  --chassis-input-color: #e6e1e5;
+  --chassis-input-border-color: #938f99;
+  --chassis-input-placeholder-color: #cac4d0;
+  --chassis-input-label-color: #e6e1e5;
+  --chassis-input-helper-color: #cac4d0;
+
+  --chassis-button-secondary-color: #e6e1e5;
+  --chassis-button-secondary-border-color: #938f99;
+  --chassis-button-link-color: #e6e1e5;
+
+  --chassis-card-background: #1e1e1e;
+  --chassis-card-color: #e6e1e5;
+  --chassis-card-border-color: #49454f;
+
+  --chassis-surface-background: #1e1e1e;
+  --chassis-surface-color: #e6e1e5;
+  --chassis-surface-border-color: #49454f;
+
+  /* Divider */
+  --chassis-divider-color: #49454f;
+  --chassis-divider-label-color: #cac4d0;
+
+  /* Textarea */
+  --chassis-textarea-background: #1e1e1e;
+  --chassis-textarea-color: #e6e1e5;
+  --chassis-textarea-border-color: #938f99;
+  --chassis-textarea-placeholder-color: #cac4d0;
+  --chassis-textarea-label-color: #e6e1e5;
+  --chassis-textarea-helper-color: #cac4d0;
+
+  /* Avatar */
+  --chassis-avatar-background: #4f378b;
+  --chassis-avatar-color: #eaddff;
+  --chassis-avatar-status-border-color: #1e1e1e;
+
+  /* Tabs */
+  --chassis-tabs-border-color: #49454f;
+  --chassis-tabs-tab-color: #cac4d0;
+  --chassis-tabs-tab-color-hover: #e6e1e5;
+  --chassis-tabs-contained-background: #2d2d2d;
+  --chassis-tabs-contained-active-background: #1e1e1e;
+
+  /* Progress */
+  --chassis-progress-track-color: #2d2d2d;
+
+  /* Alert */
+  --chassis-alert-info-background: #1a2332;
+  --chassis-alert-info-color: #90caf9;
+  --chassis-alert-info-border-color: #1e3a5f;
+  --chassis-alert-success-background: #1a2e1a;
+  --chassis-alert-success-color: #81c784;
+  --chassis-alert-success-border-color: #1b5e20;
+  --chassis-alert-warning-background: #332b00;
+  --chassis-alert-warning-color: #ffd54f;
+  --chassis-alert-warning-border-color: #5d4e00;
+  --chassis-alert-error-background: #2e1215;
+  --chassis-alert-error-color: #ef9a9a;
+  --chassis-alert-error-border-color: #5f1a1a;
+
+  /* Toast */
+  --chassis-toast-info-background: #424858;
+  --chassis-toast-info-color: #e8f4fd;
+
+  /* Accordion */
+  --chassis-accordion-border-color: #49454f;
+  --chassis-accordion-trigger-background: #1e1e1e;
+  --chassis-accordion-trigger-color: #e6e1e5;
+  --chassis-accordion-trigger-hover-background: #2d2d2d;
+  --chassis-accordion-icon-color: #cac4d0;
+
+  /* Skeleton */
+  --chassis-skeleton-background: #2d2d2d;
+  --chassis-skeleton-shimmer-color: #3d3d3d;
+
+  /* Table */
+  --chassis-table-header-background: #2d2d2d;
+  --chassis-table-header-color: #e6e1e5;
+  --chassis-table-border-color: #49454f;
+  --chassis-table-row-hover-background: #2d2d2d;
+  --chassis-table-striped-background: rgba(255, 255, 255, 0.03);
+
+  /* Chip */
+  --chassis-chip-background: #1e1e1e;
+  --chassis-chip-color: #e6e1e5;
+  --chassis-chip-border-color: #938f99;
+  --chassis-chip-hover-background: #2d2d2d;
+
+  /* Breadcrumb */
+  --chassis-breadcrumb-separator-color: #cac4d0;
+  --chassis-breadcrumb-current-color: #e6e1e5;
+
+  /* Pagination */
+  --chassis-pagination-button-background: #1e1e1e;
+  --chassis-pagination-button-color: #e6e1e5;
+  --chassis-pagination-button-border-color: #49454f;
+  --chassis-pagination-button-hover-background: #2d2d2d;
+
+  /* Popover */
+  --chassis-popover-background: #2d2d2d;
+  --chassis-popover-color: #e6e1e5;
+  --chassis-popover-border-color: #49454f;
+
+  /* Dropdown Menu */
+  --chassis-dropdown-menu-background: #2d2d2d;
+  --chassis-dropdown-menu-color: #e6e1e5;
+  --chassis-dropdown-menu-border-color: #49454f;
+  --chassis-dropdown-menu-item-hover-background: #3d3d3d;
+
+  /* Slider */
+  --chassis-slider-track-color: #49454f;
+  --chassis-slider-fill-color: var(--chassis-color-primary, #bb86fc);
+  --chassis-slider-thumb-color: var(--chassis-color-primary, #bb86fc);
+
+  /* Toggle Group */
+  --chassis-toggle-group-background: #1e1e1e;
+  --chassis-toggle-group-color: #e6e1e5;
+  --chassis-toggle-group-border-color: #938f99;
+  --chassis-toggle-group-hover-background: #2d2d2d;
+
+  /* Date Picker */
+  --chassis-date-picker-trigger-background: #1e1e1e;
+  --chassis-date-picker-trigger-color: #e6e1e5;
+  --chassis-date-picker-trigger-border-color: #938f99;
+  --chassis-date-picker-calendar-background: #2d2d2d;
+  --chassis-date-picker-calendar-border-color: #49454f;
+  --chassis-date-picker-day-hover-background: #3d3d3d;
+
+  /* Modal */
+  --chassis-modal-background: #2d2d2d;
+  --chassis-modal-color: #e6e1e5;
+}
+
+[data-theme="material2"][data-mode="dark"] {
+  --chassis-color-primary: #bb86fc;
+  --chassis-color-on-primary: #000000;
+  --chassis-color-primary-container: #6200ee;
+  --chassis-color-on-primary-container: #e8d5ff;
+  --chassis-color-secondary: #03dac6;
+  --chassis-color-on-secondary: #000000;
+  --chassis-color-secondary-container: #005047;
+  --chassis-color-surface: #1e1b2e;
+  --chassis-color-on-surface: #e6e1e5;
+  --chassis-color-surface-variant: #332d41;
+  --chassis-color-on-surface-variant: #cac4d0;
+  --chassis-color-background: #17141f;
+  --chassis-color-on-background: #e6e1e5;
+  --chassis-color-outline: #938f99;
+  --chassis-color-outline-variant: #49454f;
+  --chassis-color-error: #cf6679;
+  --chassis-color-on-error: #000000;
+  --chassis-color-error-container: #93000a;
+
+  --chassis-input-background: #1e1b2e;
+  --chassis-input-color: #e6e1e5;
+  --chassis-input-border-color: #938f99;
+  --chassis-input-placeholder-color: #cac4d0;
+  --chassis-input-label-color: #e6e1e5;
+  --chassis-input-helper-color: #cac4d0;
+  --chassis-input-error-color: #cf6679;
+  --chassis-input-border-color-focus: #bb86fc;
+  --chassis-button-primary-background: #bb86fc;
+  --chassis-button-primary-color: #000000;
+  --chassis-button-secondary-color: #bb86fc;
+  --chassis-button-secondary-border-color: #938f99;
+  --chassis-button-link-color: #bb86fc;
+  --chassis-card-background: #1e1b2e;
+  --chassis-card-color: #e6e1e5;
+  --chassis-card-border-color: #49454f;
+}
+
+[data-theme="material3"][data-mode="dark"] {
+  --chassis-color-primary: #d0bcff;
+  --chassis-color-on-primary: #381e72;
+  --chassis-color-primary-container: #4f378b;
+  --chassis-color-on-primary-container: #eaddff;
+  --chassis-color-secondary: #ccc2dc;
+  --chassis-color-on-secondary: #332d41;
+  --chassis-color-secondary-container: #4a4458;
+  --chassis-color-surface: #141218;
+  --chassis-color-on-surface: #e6e0e9;
+  --chassis-color-surface-variant: #49454f;
+  --chassis-color-on-surface-variant: #cac4d0;
+  --chassis-color-background: #141218;
+  --chassis-color-on-background: #e6e0e9;
+  --chassis-color-outline: #938f99;
+  --chassis-color-outline-variant: #49454f;
+  --chassis-color-error: #f2b8b5;
+  --chassis-color-on-error: #601410;
+  --chassis-color-error-container: #8c1d18;
+
+  --chassis-input-background: #141218;
+  --chassis-input-color: #e6e0e9;
+  --chassis-input-border-color: #938f99;
+  --chassis-input-placeholder-color: #cac4d0;
+  --chassis-input-label-color: #e6e0e9;
+  --chassis-input-helper-color: #cac4d0;
+  --chassis-input-error-color: #f2b8b5;
+  --chassis-input-border-color-focus: #d0bcff;
+  --chassis-button-primary-background: #d0bcff;
+  --chassis-button-primary-color: #381e72;
+  --chassis-button-secondary-color: #d0bcff;
+  --chassis-button-secondary-border-color: #938f99;
+  --chassis-button-link-color: #d0bcff;
+  --chassis-card-background: #141218;
+  --chassis-card-color: #e6e0e9;
+  --chassis-card-border-color: #49454f;
+}
+
+[data-theme="polaris"][data-mode="dark"] {
+  --chassis-color-primary: #5bcea2;
+  --chassis-color-on-primary: #003921;
+  --chassis-color-primary-container: #00513a;
+  --chassis-color-on-primary-container: #7ef5bf;
+  --chassis-color-secondary: #babec3;
+  --chassis-color-on-secondary: #303336;
+  --chassis-color-secondary-container: #3d4043;
+  --chassis-color-surface: #1a1c1e;
+  --chassis-color-on-surface: #e3e2e6;
+  --chassis-color-surface-variant: #303336;
+  --chassis-color-on-surface-variant: #babec3;
+  --chassis-color-background: #1a1c1e;
+  --chassis-color-on-background: #e3e2e6;
+  --chassis-color-outline: #74777a;
+  --chassis-color-outline-variant: #44474a;
+  --chassis-color-error: #ffb4ab;
+  --chassis-color-on-error: #690005;
+
+  --chassis-input-background: #1a1c1e;
+  --chassis-input-color: #e3e2e6;
+  --chassis-input-border-color: #74777a;
+  --chassis-input-placeholder-color: #babec3;
+  --chassis-input-label-color: #e3e2e6;
+  --chassis-input-helper-color: #babec3;
+  --chassis-input-error-color: #ffb4ab;
+  --chassis-input-border-color-focus: #5bcea2;
+  --chassis-button-primary-background: #5bcea2;
+  --chassis-button-primary-color: #003921;
+  --chassis-button-secondary-color: #5bcea2;
+  --chassis-button-secondary-border-color: #74777a;
+  --chassis-button-link-color: #5bcea2;
+  --chassis-card-background: #1a1c1e;
+  --chassis-card-color: #e3e2e6;
+  --chassis-card-border-color: #44474a;
+}
+
+[data-theme="carbon"][data-mode="dark"] {
+  --chassis-color-primary: #78a9ff;
+  --chassis-color-on-primary: #003a6d;
+  --chassis-color-primary-container: #00539a;
+  --chassis-color-on-primary-container: #d0e2ff;
+  --chassis-color-secondary: #c6c6c6;
+  --chassis-color-on-secondary: #262626;
+  --chassis-color-secondary-container: #393939;
+  --chassis-color-surface: #262626;
+  --chassis-color-on-surface: #f4f4f4;
+  --chassis-color-surface-variant: #393939;
+  --chassis-color-on-surface-variant: #c6c6c6;
+  --chassis-color-background: #161616;
+  --chassis-color-on-background: #f4f4f4;
+  --chassis-color-outline: #6f6f6f;
+  --chassis-color-outline-variant: #525252;
+  --chassis-color-error: #ff8389;
+  --chassis-color-on-error: #620008;
+
+  --chassis-input-background: #262626;
+  --chassis-input-color: #f4f4f4;
+  --chassis-input-border-color: #6f6f6f;
+  --chassis-input-placeholder-color: #c6c6c6;
+  --chassis-input-label-color: #f4f4f4;
+  --chassis-input-helper-color: #c6c6c6;
+  --chassis-input-error-color: #ff8389;
+  --chassis-input-border-color-focus: #78a9ff;
+  --chassis-button-primary-background: #78a9ff;
+  --chassis-button-primary-color: #003a6d;
+  --chassis-button-secondary-color: #78a9ff;
+  --chassis-button-secondary-border-color: #6f6f6f;
+  --chassis-button-link-color: #78a9ff;
+  --chassis-card-background: #262626;
+  --chassis-card-color: #f4f4f4;
+  --chassis-card-border-color: #525252;
+}
+
+[data-theme="default"][data-mode="dark"] {
+  --chassis-color-primary: #fafafa;
+  --chassis-color-on-primary: #18181b;
+  --chassis-color-primary-container: #27272a;
+  --chassis-color-on-primary-container: #fafafa;
+  --chassis-color-secondary: #27272a;
+  --chassis-color-on-secondary: #fafafa;
+  --chassis-color-secondary-container: #27272a;
+  --chassis-color-surface: #09090b;
+  --chassis-color-on-surface: #fafafa;
+  --chassis-color-surface-variant: #27272a;
+  --chassis-color-on-surface-variant: #a1a1aa;
+  --chassis-color-background: #09090b;
+  --chassis-color-on-background: #fafafa;
+  --chassis-color-outline: #27272a;
+  --chassis-color-outline-variant: #27272a;
+  --chassis-color-error: #ef4444;
+  --chassis-color-on-error: #fafafa;
+  --chassis-color-error-container: #450a0a;
+
+  --chassis-input-background: #09090b;
+  --chassis-input-color: #fafafa;
+  --chassis-input-border-color: #27272a;
+  --chassis-input-placeholder-color: #a1a1aa;
+  --chassis-input-label-color: #fafafa;
+  --chassis-input-helper-color: #a1a1aa;
+  --chassis-input-error-color: #ef4444;
+  --chassis-input-border-color-focus: #fafafa;
+  --chassis-button-primary-background: #fafafa;
+  --chassis-button-primary-color: #18181b;
+  --chassis-button-secondary-color: #fafafa;
+  --chassis-button-secondary-border-color: #27272a;
+  --chassis-button-link-color: #fafafa;
+  --chassis-card-background: #09090b;
+  --chassis-card-color: #fafafa;
+  --chassis-card-border-color: #27272a;
+}
+
+[data-theme="hig"][data-mode="dark"] {
+  --chassis-color-primary: #0A84FF;
+  --chassis-color-on-primary: #FFFFFF;
+  --chassis-color-primary-container: #003A70;
+  --chassis-color-on-primary-container: #D6E4FF;
+  --chassis-color-secondary: #636366;
+  --chassis-color-on-secondary: #FFFFFF;
+  --chassis-color-secondary-container: #2C2C2E;
+  --chassis-color-surface: #1C1C1E;
+  --chassis-color-on-surface: #F2F2F7;
+  --chassis-color-surface-variant: #2C2C2E;
+  --chassis-color-on-surface-variant: #AEAEB2;
+  --chassis-color-background: #000000;
+  --chassis-color-on-background: #F2F2F7;
+  --chassis-color-outline: #38383A;
+  --chassis-color-outline-variant: #2C2C2E;
+  --chassis-color-error: #FF453A;
+  --chassis-color-on-error: #FFFFFF;
+  --chassis-color-error-container: #5C0008;
+
+  --chassis-input-background: #1C1C1E;
+  --chassis-input-color: #F2F2F7;
+  --chassis-input-border-color: #38383A;
+  --chassis-input-placeholder-color: #636366;
+  --chassis-input-label-color: #F2F2F7;
+  --chassis-input-helper-color: #AEAEB2;
+  --chassis-input-error-color: #FF453A;
+  --chassis-input-border-color-focus: #0A84FF;
+  --chassis-button-primary-background: #0A84FF;
+  --chassis-button-primary-color: #FFFFFF;
+  --chassis-button-secondary-color: #0A84FF;
+  --chassis-button-secondary-border-color: #38383A;
+  --chassis-button-link-color: #0A84FF;
+  --chassis-card-background: #1C1C1E;
+  --chassis-card-color: #F2F2F7;
+  --chassis-card-border-color: #2C2C2E;
+}
+
+[data-theme="atlassian"][data-mode="dark"] {
+  --chassis-color-primary: #579DFF;
+  --chassis-color-on-primary: #09326C;
+  --chassis-color-primary-container: #09326C;
+  --chassis-color-on-primary-container: #CCE0FF;
+  --chassis-color-secondary: #282E33;
+  --chassis-color-on-secondary: #B6C2CF;
+  --chassis-color-secondary-container: #282E33;
+  --chassis-color-surface: #22272B;
+  --chassis-color-on-surface: #B6C2CF;
+  --chassis-color-surface-variant: #282E33;
+  --chassis-color-on-surface-variant: #8C9BAB;
+  --chassis-color-background: #1D2125;
+  --chassis-color-on-background: #B6C2CF;
+  --chassis-color-outline: #A6C5E229;
+  --chassis-color-outline-variant: #A1BDD914;
+  --chassis-color-error: #F87168;
+  --chassis-color-on-error: #601E16;
+  --chassis-color-error-container: #601E16;
+
+  --chassis-input-background: #22272B;
+  --chassis-input-color: #B6C2CF;
+  --chassis-input-border-color: #A6C5E229;
+  --chassis-input-placeholder-color: #8C9BAB;
+  --chassis-input-label-color: #B6C2CF;
+  --chassis-input-helper-color: #8C9BAB;
+  --chassis-input-error-color: #F87168;
+  --chassis-input-border-color-focus: #579DFF;
+  --chassis-button-primary-background: #579DFF;
+  --chassis-button-primary-color: #09326C;
+  --chassis-button-secondary-color: #579DFF;
+  --chassis-button-secondary-border-color: #A6C5E229;
+  --chassis-button-link-color: #579DFF;
+  --chassis-card-background: #22272B;
+  --chassis-card-color: #B6C2CF;
+  --chassis-card-border-color: #A1BDD914;
+}
+
+[data-theme="fluent"][data-mode="dark"] {
+  --chassis-color-primary: #479EF5;
+  --chassis-color-on-primary: #002D5E;
+  --chassis-color-primary-container: #003B73;
+  --chassis-color-on-primary-container: #CFE4FA;
+  --chassis-color-secondary: #383838;
+  --chassis-color-on-secondary: #D6D6D6;
+  --chassis-color-secondary-container: #383838;
+  --chassis-color-surface: #292929;
+  --chassis-color-on-surface: #D6D6D6;
+  --chassis-color-surface-variant: #333333;
+  --chassis-color-on-surface-variant: #ADADAD;
+  --chassis-color-background: #1F1F1F;
+  --chassis-color-on-background: #D6D6D6;
+  --chassis-color-outline: #404040;
+  --chassis-color-outline-variant: #383838;
+  --chassis-color-error: #DC6262;
+  --chassis-color-on-error: #FFFFFF;
+  --chassis-color-error-container: #4A1313;
+
+  --chassis-input-background: #292929;
+  --chassis-input-color: #D6D6D6;
+  --chassis-input-border-color: #404040;
+  --chassis-input-placeholder-color: #8A8A8A;
+  --chassis-input-label-color: #D6D6D6;
+  --chassis-input-helper-color: #ADADAD;
+  --chassis-input-error-color: #DC6262;
+  --chassis-input-border-color-focus: #479EF5;
+  --chassis-button-primary-background: #479EF5;
+  --chassis-button-primary-color: #002D5E;
+  --chassis-button-secondary-color: #479EF5;
+  --chassis-button-secondary-border-color: #404040;
+  --chassis-button-link-color: #479EF5;
+  --chassis-card-background: #292929;
+  --chassis-card-color: #D6D6D6;
+  --chassis-card-border-color: #383838;
+}
+
+[data-theme="lightning"][data-mode="dark"] {
+  --chassis-color-primary: #1B96FF;
+  --chassis-color-on-primary: #FFFFFF;
+  --chassis-color-primary-container: #014486;
+  --chassis-color-on-primary-container: #D8EDFF;
+  --chassis-color-secondary: #4A4A4A;
+  --chassis-color-on-secondary: #E5E5E5;
+  --chassis-color-secondary-container: #3A3A3A;
+  --chassis-color-surface: #18191A;
+  --chassis-color-on-surface: #E5E5E5;
+  --chassis-color-surface-variant: #242526;
+  --chassis-color-on-surface-variant: #B0B0B0;
+  --chassis-color-background: #111111;
+  --chassis-color-on-background: #E5E5E5;
+  --chassis-color-outline: #4A4A4A;
+  --chassis-color-outline-variant: #3A3A3A;
+  --chassis-color-error: #FE5C4C;
+  --chassis-color-on-error: #FFFFFF;
+  --chassis-color-error-container: #5C0A00;
+
+  --chassis-input-background: #18191A;
+  --chassis-input-color: #E5E5E5;
+  --chassis-input-border-color: #4A4A4A;
+  --chassis-input-placeholder-color: #8E8E8E;
+  --chassis-input-label-color: #E5E5E5;
+  --chassis-input-helper-color: #B0B0B0;
+  --chassis-input-error-color: #FE5C4C;
+  --chassis-input-border-color-focus: #1B96FF;
+  --chassis-button-primary-background: #1B96FF;
+  --chassis-button-primary-color: #FFFFFF;
+  --chassis-button-secondary-color: #1B96FF;
+  --chassis-button-secondary-border-color: #4A4A4A;
+  --chassis-button-link-color: #1B96FF;
+  --chassis-card-background: #18191A;
+  --chassis-card-color: #E5E5E5;
+  --chassis-card-border-color: #3A3A3A;
+}
+
+[data-theme="primer"][data-mode="dark"] {
+  --chassis-color-primary: #238636;
+  --chassis-color-on-primary: #FFFFFF;
+  --chassis-color-primary-container: #033A16;
+  --chassis-color-on-primary-container: #ABEDC6;
+  --chassis-color-secondary: #21262D;
+  --chassis-color-on-secondary: #E6EDF3;
+  --chassis-color-secondary-container: #30363D;
+  --chassis-color-surface: #0D1117;
+  --chassis-color-on-surface: #E6EDF3;
+  --chassis-color-surface-variant: #161B22;
+  --chassis-color-on-surface-variant: #8B949E;
+  --chassis-color-background: #010409;
+  --chassis-color-on-background: #E6EDF3;
+  --chassis-color-outline: #30363D;
+  --chassis-color-outline-variant: #21262D;
+  --chassis-color-error: #F85149;
+  --chassis-color-on-error: #FFFFFF;
+  --chassis-color-error-container: #490202;
+
+  --chassis-input-background: #0D1117;
+  --chassis-input-color: #E6EDF3;
+  --chassis-input-border-color: #30363D;
+  --chassis-input-placeholder-color: #484F58;
+  --chassis-input-label-color: #E6EDF3;
+  --chassis-input-helper-color: #8B949E;
+  --chassis-input-error-color: #F85149;
+  --chassis-input-border-color-focus: #58A6FF;
+  --chassis-button-primary-background: #238636;
+  --chassis-button-primary-color: #FFFFFF;
+  --chassis-button-secondary-color: #E6EDF3;
+  --chassis-button-secondary-border-color: #30363D;
+  --chassis-button-link-color: #58A6FF;
+  --chassis-card-background: #0D1117;
+  --chassis-card-color: #E6EDF3;
+  --chassis-card-border-color: #30363D;
+}
+
+[data-theme="spectrum"][data-mode="dark"] {
+  --chassis-color-primary: #378EF0;
+  --chassis-color-on-primary: #FFFFFF;
+  --chassis-color-primary-container: #1A3A5C;
+  --chassis-color-secondary: #6E6E6E;
+  --chassis-color-surface: #252525;
+  --chassis-color-on-surface: #EBEBEB;
+  --chassis-color-surface-variant: #323232;
+  --chassis-color-on-surface-variant: #B3B3B3;
+  --chassis-color-background: #1E1E1E;
+  --chassis-color-on-background: #EBEBEB;
+  --chassis-color-outline: #4A4A4A;
+  --chassis-color-outline-variant: #3A3A3A;
+  --chassis-color-error: #EC5B62;
+  --chassis-color-on-error: #FFFFFF;
+  --chassis-color-success: #33AB84;
+  --chassis-color-warning: #E68619;
+  --chassis-color-info: #378EF0;
+  --chassis-elevation-1: 0 1px 4px rgba(0, 0, 0, 0.4);
+  --chassis-elevation-2: 0 3px 12px rgba(0, 0, 0, 0.4);
+  --chassis-elevation-3: 0 8px 28px rgba(0, 0, 0, 0.45);
+  --chassis-input-background: #323232;
+  --chassis-input-color: #EBEBEB;
+  --chassis-input-border-color: #4A4A4A;
+  --chassis-input-placeholder-color: #6E6E6E;
+  --chassis-input-label-color: #EBEBEB;
+  --chassis-input-helper-color: #B3B3B3;
+  --chassis-input-error-color: #EC5B62;
+  --chassis-input-border-color-focus: #378EF0;
+  --chassis-button-primary-background: #378EF0;
+  --chassis-button-primary-color: #FFFFFF;
+  --chassis-button-secondary-color: #EBEBEB;
+  --chassis-button-secondary-border-color: #4A4A4A;
+  --chassis-button-link-color: #378EF0;
+  --chassis-card-background: #252525;
+  --chassis-card-color: #EBEBEB;
+  --chassis-card-border-color: #3A3A3A;
+}
+
+[data-theme="uber"][data-mode="dark"] {
+  --chassis-color-primary: #FFFFFF;
+  --chassis-color-on-primary: #000000;
+  --chassis-color-primary-container: #333333;
+  --chassis-color-secondary: #333333;
+  --chassis-color-surface: #1D1D1D;
+  --chassis-color-on-surface: #FFFFFF;
+  --chassis-color-surface-variant: #282828;
+  --chassis-color-on-surface-variant: #A0A0A0;
+  --chassis-color-background: #000000;
+  --chassis-color-on-background: #FFFFFF;
+  --chassis-color-outline: #333333;
+  --chassis-color-outline-variant: #282828;
+  --chassis-color-error: #FF6347;
+  --chassis-color-on-error: #000000;
+  --chassis-color-success: #05C168;
+  --chassis-color-warning: #FFC043;
+  --chassis-color-info: #5B91F5;
+  --chassis-elevation-1: 0 1px 4px rgba(0, 0, 0, 0.5);
+  --chassis-elevation-2: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --chassis-elevation-3: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --chassis-input-background: #1D1D1D;
+  --chassis-input-color: #FFFFFF;
+  --chassis-input-border-color: #333333;
+  --chassis-input-placeholder-color: #6B6B6B;
+  --chassis-input-label-color: #FFFFFF;
+  --chassis-input-helper-color: #A0A0A0;
+  --chassis-input-error-color: #FF6347;
+  --chassis-input-border-color-focus: #FFFFFF;
+  --chassis-button-primary-background: #FFFFFF;
+  --chassis-button-primary-color: #000000;
+  --chassis-button-secondary-color: #FFFFFF;
+  --chassis-button-secondary-border-color: #333333;
+  --chassis-button-link-color: #FFFFFF;
+  --chassis-card-background: #1D1D1D;
+  --chassis-card-color: #FFFFFF;
+  --chassis-card-border-color: #333333;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--chassis-typography-font-family-primary, system-ui, sans-serif);
+  color: var(--chassis-color-on-background, #1c1b1f);
+  background: var(--chassis-color-background, #fffbfe);
+  line-height: var(--chassis-typography-line-height-normal, 1.5);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--chassis-color-primary, #6200ee);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  font-family: var(--chassis-typography-font-family-mono, 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace);
+  background: var(--chassis-color-surface-variant, #e7e0ec);
+  padding: 0.15em 0.4em;
+  border-radius: 5px;
+  font-size: 0.8125em;
+  font-weight: 450;
+}
+
+pre {
+  background: #1a1b26;
+  color: #a9b1d6;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-family: var(--chassis-typography-font-family-mono, 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: 400;
+}
+
+pre + pre {
+  margin-top: 1rem;
+}
+
+h1, h2, h3, h4 {
+  font-weight: var(--chassis-typography-font-weight-bold, 700);
+  line-height: var(--chassis-typography-line-height-tight, 1.25);
+}
+
+h1 { font-size: var(--chassis-typography-font-size-3xl, 3rem); }
+h2 { font-size: var(--chassis-typography-font-size-2xl, 2rem); margin-top: 2rem; }
+h3 { font-size: var(--chassis-typography-font-size-xl, 1.5rem); margin-top: 1.5rem; }
+
+/* Table light DOM styles (::slotted can't target table children) */
+chassis-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--chassis-typography-font-size-sm, 0.875rem);
+}
+
+chassis-table table th,
+chassis-table table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+}
+
+chassis-table table th {
+  font-weight: 600;
+  color: var(--chassis-color-on-surface-variant, #49454f);
+  background: var(--chassis-color-surface-variant, rgba(0, 0, 0, 0.03));
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+chassis-table table tbody tr:hover {
+  background: var(--chassis-color-surface-variant, rgba(0, 0, 0, 0.03));
+}
+
+chassis-table[striped] table tbody tr:nth-child(even) {
+  background: var(--chassis-color-surface-variant, rgba(0, 0, 0, 0.03));
+}
+
+/* Modal footer button styles (::slotted can't reach nested buttons) */
+chassis-modal [slot="footer"] button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  border: var(--chassis-border-width-thin, 1px) solid var(--chassis-color-outline, #79747e);
+  border-radius: var(--chassis-shape-radius-md, 8px);
+  background: var(--chassis-color-surface, #fff);
+  color: var(--chassis-color-on-surface, #1c1b1f);
+  font-size: var(--chassis-typography-font-size-sm, 0.875rem);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+chassis-modal [slot="footer"] button:hover {
+  background: var(--chassis-color-surface-variant, #e7e0ec);
+}
+
+chassis-modal [slot="footer"] button:last-child {
+  background: var(--chassis-color-primary, #6200ee);
+  color: var(--chassis-color-on-primary, #fff);
+  border-color: var(--chassis-color-primary, #6200ee);
+}
+
+chassis-modal [slot="footer"] button:last-child:hover {
+  opacity: 0.9;
+}
+
+/* Popover trigger button styles (::slotted has lower cascade priority than light DOM) */
+chassis-popover > button[slot="trigger"],
+chassis-dropdown-menu > button[slot="trigger"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  border: var(--chassis-border-width-thin, 1px) solid var(--chassis-color-outline, #79747e);
+  border-radius: var(--chassis-shape-radius-md, 8px);
+  background: var(--chassis-color-surface, #fff);
+  color: var(--chassis-color-on-surface, #1c1b1f);
+  font-size: var(--chassis-typography-font-size-sm, 0.875rem);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+chassis-popover > button[slot="trigger"]:hover,
+chassis-dropdown-menu > button[slot="trigger"]:hover {
+  background: var(--chassis-color-surface-variant, #e7e0ec);
+}
+
+/* Dropdown menu item styles */
+chassis-dropdown-menu > [role="menuitem"] {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: var(--chassis-typography-font-size-sm, 0.875rem);
+  cursor: pointer;
+  transition: background 150ms ease;
+  border: none;
+  background: none;
+  color: var(--chassis-color-on-surface, #1c1b1f);
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+chassis-dropdown-menu > [role="menuitem"]:hover,
+chassis-dropdown-menu > [role="menuitem"]:focus {
+  background: var(--chassis-color-surface-variant, #e7e0ec);
+  outline: none;
+}
+
+chassis-dropdown-menu > [role="separator"] {
+  height: 1px;
+  background: var(--chassis-color-outline-variant, #cac4d0);
+  margin: 0.25rem 0;
+}
+
+/* Toggle group button styles */
+chassis-toggle-group > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-right: var(--chassis-border-width-thin, 1px) solid var(--chassis-color-outline, #79747e);
+  background: var(--chassis-color-surface, #fff);
+  color: var(--chassis-color-on-surface, #1c1b1f);
+  font-size: var(--chassis-typography-font-size-sm, 0.875rem);
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 150ms ease;
+  outline: none;
+}
+
+chassis-toggle-group > button:last-child {
+  border-right: none;
+}
+
+chassis-toggle-group > button:hover {
+  background: var(--chassis-color-surface-variant, #e7e0ec);
+}
+
+chassis-toggle-group > button[aria-pressed="true"] {
+  background: var(--chassis-color-primary, #6200ee);
+  color: var(--chassis-color-on-primary, #fff);
+}
+
+chassis-toggle-group > button:focus-visible {
+  outline: 2px solid var(--chassis-color-primary, #6200ee);
+  outline-offset: -2px;
+  z-index: 1;
+}

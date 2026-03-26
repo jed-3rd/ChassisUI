@@ -1,0 +1,17 @@
+---
+export interface Props {
+  src?: string;
+  alt?: string;
+  initials?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  status?: 'online' | 'offline' | 'busy' | 'away' | '';
+}
+
+const { src = '', alt = '', initials = '', size = 'md', status = '' } = Astro.props;
+---
+
+<chassis-avatar src={src} alt={alt} initials={initials} size={size} status={status}></chassis-avatar>
+
+<script>
+  import '@chassis-ui/core/avatar';
+</script>

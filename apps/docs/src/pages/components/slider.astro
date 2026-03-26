@@ -1,0 +1,118 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Slider">
+  <h1>Slider</h1>
+  <p>A draggable range input for selecting numeric values. Supports single and dual (range) thumbs with keyboard navigation.</p>
+
+  <h2>Basic Usage</h2>
+  <ComponentPreview title="Single slider">
+    <chassis-slider value="50"></chassis-slider>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-slider value="50" min="0" max="100"></chassis-slider>`}
+    react={`import { Slider } from '@chassis-ui/react';
+
+<Slider value="50" min={0} max={100} />`}
+    angular={`import { SliderComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [SliderComponent],
+  template: \`
+    <chassis-slider-wrapper
+      [value]="'50'"
+      [min]="0"
+      [max]="100">
+    </chassis-slider-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Slider from '@chassis-ui/astro/Slider.astro';
+---
+
+<Slider value="50" min={0} max={100} />`}
+    svelte={`<script>
+  import { Slider } from '@chassis-ui/svelte';
+</script>
+
+<Slider value="50" min={0} max={100} />`}
+  />
+
+  <h2>Dual Range</h2>
+  <ComponentPreview title="Range slider with two thumbs">
+    <chassis-slider dual value="25" value-end="75"></chassis-slider>
+  </ComponentPreview>
+
+  <h2>Stepped</h2>
+  <ComponentPreview title="Step of 10">
+    <chassis-slider value="30" step="10"></chassis-slider>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>min</code></td><td><code>number</code></td><td><code>0</code></td><td>Minimum value</td></tr>
+      <tr><td><code>max</code></td><td><code>number</code></td><td><code>100</code></td><td>Maximum value</td></tr>
+      <tr><td><code>step</code></td><td><code>number</code></td><td><code>1</code></td><td>Step increment</td></tr>
+      <tr><td><code>value</code></td><td><code>string</code></td><td><code>'0'</code></td><td>Current value (or range start)</td></tr>
+      <tr><td><code>dual</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Enable dual-thumb range mode</td></tr>
+      <tr><td><code>value-end</code></td><td><code>number</code></td><td><code>100</code></td><td>Range end value (dual mode)</td></tr>
+      <tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disable interaction</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The slider container</td></tr>
+      <tr><td><code>track</code></td><td>The background track</td></tr>
+      <tr><td><code>fill</code></td><td>The filled portion of the track</td></tr>
+      <tr><td><code>thumb</code></td><td>The draggable thumb(s)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Thumb uses <code>role="slider"</code> with <code>aria-valuemin</code>, <code>aria-valuemax</code>, <code>aria-valuenow</code></li>
+    <li>Arrow keys adjust value by step</li>
+    <li>Home/End jump to min/max</li>
+    <li>Dual mode labels thumbs as "Range start" and "Range end"</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/slider';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

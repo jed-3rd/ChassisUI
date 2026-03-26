@@ -1,0 +1,20 @@
+{
+  "chassis": {
+    "input": {
+      "background": { "value": "{chassis.color.surface}" },
+      "color": { "value": "{chassis.color.on-surface}" },
+      "border-color": { "value": "{chassis.color.outline}" },
+      "border-color-focus": { "value": "{chassis.color.primary}" },
+      "border-radius": { "value": "{chassis.shape.radius.md}" },
+      "padding-x": { "value": "{chassis.spacing.300}" },
+      "padding-y": { "value": "{chassis.spacing.200}" },
+      "font-size": { "value": "{chassis.typography.font-size.md}" },
+      "placeholder-color": { "value": "{chassis.color.on-surface-variant}" },
+      "label-color": { "value": "{chassis.color.on-surface}" },
+      "label-font-size": { "value": "{chassis.typography.font-size.sm}" },
+      "error-color": { "value": "{chassis.color.error}" },
+      "helper-color": { "value": "{chassis.color.on-surface-variant}" },
+      "helper-font-size": { "value": "{chassis.typography.font-size.xs}" }
+    }
+  }
+}

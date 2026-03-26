@@ -1,0 +1,65 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Input">
+  <h1>Input</h1>
+  <p>Text input for capturing user data. Supports labels, helper text, and validation.</p>
+
+  <h2>Basic</h2>
+  <ComponentPreview title="Text Input">
+    <chassis-input label="Name" placeholder="Enter your name"></chassis-input>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-input label="Name" placeholder="Enter your name"></chassis-input>`}
+    react={`import { Input } from '@chassis-ui/react';
+
+<Input label="Name" placeholder="Enter your name" />`}
+    angular={`import { InputComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [InputComponent],
+  template: \`
+    <chassis-input-wrapper label="Name" placeholder="Enter your name" />
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Input from '@chassis-ui/astro/Input.astro';
+---
+
+<Input label="Name" placeholder="Enter your name" />`}
+    svelte={`<script>
+  import { Input } from '@chassis-ui/svelte';
+</script>
+
+<Input label="Name" placeholder="Enter your name" />`}
+  />
+
+  <h2>Types</h2>
+  <ComponentPreview title="Email / Password">
+    <chassis-input label="Email" type="email" placeholder="you@example.com"></chassis-input>
+    <chassis-input label="Password" type="password" placeholder="••••••••"></chassis-input>
+  </ComponentPreview>
+
+  <h2>States</h2>
+  <ComponentPreview title="Error / Helper / Disabled">
+    <chassis-input label="Email" error="Please enter a valid email" value="bad-email"></chassis-input>
+    <chassis-input label="Username" helper-text="Must be 3-20 characters"></chassis-input>
+    <chassis-input label="Disabled" disabled value="Cannot edit"></chassis-input>
+  </ComponentPreview>
+
+  <h2>Sizes</h2>
+  <ComponentPreview title="Small / Medium / Large">
+    <chassis-input size="sm" placeholder="Small"></chassis-input>
+    <chassis-input size="md" placeholder="Medium"></chassis-input>
+    <chassis-input size="lg" placeholder="Large"></chassis-input>
+  </ComponentPreview>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/input';
+</script>

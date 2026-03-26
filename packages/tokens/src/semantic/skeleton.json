@@ -1,0 +1,12 @@
+{
+  "chassis": {
+    "skeleton": {
+      "background": { "value": "#e0e0e0" },
+      "shimmer-color": { "value": "#f5f5f5" },
+      "border-radius": { "value": "{chassis.shape.radius.sm}" },
+      "text-height": { "value": "1rem" },
+      "text-spacing": { "value": "0.5rem" },
+      "circular-size": { "value": "40px" }
+    }
+  }
+}

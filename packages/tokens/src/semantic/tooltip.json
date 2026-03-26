@@ -1,0 +1,13 @@
+{
+  "chassis": {
+    "tooltip": {
+      "background": { "value": "{chassis.color.inverse-surface}" },
+      "color": { "value": "{chassis.color.inverse-on-surface}" },
+      "border-radius": { "value": "{chassis.shape.radius.sm}" },
+      "padding-x": { "value": "{chassis.spacing.200}" },
+      "padding-y": { "value": "{chassis.spacing.100}" },
+      "font-size": { "value": "{chassis.typography.font-size.sm}" },
+      "max-width": { "value": "200px" }
+    }
+  }
+}

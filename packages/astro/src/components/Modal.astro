@@ -1,0 +1,18 @@
+---
+export interface Props {
+  modalTitle?: string;
+  open?: boolean;
+  modalSize?: 'sm' | 'md' | 'lg' | 'xl';
+  closable?: boolean;
+}
+
+const { modalTitle = '', open = false, modalSize = 'md', closable = true } = Astro.props;
+---
+
+<chassis-modal modal-title={modalTitle} open={open} modal-size={modalSize} closable={closable}>
+  <slot />
+</chassis-modal>
+
+<script>
+  import '@chassis-ui/core/modal';
+</script>

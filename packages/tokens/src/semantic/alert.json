@@ -1,0 +1,20 @@
+{
+  "chassis": {
+    "alert": {
+      "border-radius": { "value": "{chassis.shape.radius.md}" },
+      "font-size": { "value": "{chassis.typography.font-size.sm}" },
+      "info-background": { "value": "#e8f4fd" },
+      "info-color": { "value": "#0c5f9e" },
+      "info-border-color": { "value": "#b8daf5" },
+      "success-background": { "value": "#edf7ee" },
+      "success-color": { "value": "#1e6823" },
+      "success-border-color": { "value": "#c3e6c5" },
+      "warning-background": { "value": "#fff8e1" },
+      "warning-color": { "value": "#8a6d00" },
+      "warning-border-color": { "value": "#ffe082" },
+      "error-background": { "value": "#fdedf0" },
+      "error-color": { "value": "{chassis.color.error}" },
+      "error-border-color": { "value": "#f5c6cb" }
+    }
+  }
+}

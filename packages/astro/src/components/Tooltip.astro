@@ -1,0 +1,16 @@
+---
+export interface Props {
+  content: string;
+  placement?: 'top' | 'bottom' | 'left' | 'right';
+}
+
+const { content, placement = 'top' } = Astro.props;
+---
+
+<chassis-tooltip content={content} placement={placement}>
+  <slot />
+</chassis-tooltip>
+
+<script>
+  import '@chassis-ui/core/tooltip';
+</script>

@@ -1,0 +1,149 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Toast">
+  <h1>Toast</h1>
+  <p>Ephemeral notification that appears briefly and auto-dismisses. Use the static <code>ToastManager</code> API for imperative creation and stacking.</p>
+
+  <h2>Variants</h2>
+  <ComponentPreview title="Trigger toasts via buttons">
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+      <chassis-button id="toast-info" variant="secondary" size="sm">Info Toast</chassis-button>
+      <chassis-button id="toast-success" variant="secondary" size="sm">Success Toast</chassis-button>
+      <chassis-button id="toast-warning" variant="secondary" size="sm">Warning Toast</chassis-button>
+      <chassis-button id="toast-error" variant="secondary" size="sm">Error Toast</chassis-button>
+    </div>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`import { ToastManager } from '@chassis-ui/core/toast';
+
+ToastManager.show('File saved.', { variant: 'success' });
+ToastManager.show('Network error.', { variant: 'error', duration: 8000 });`}
+    react={`import { ToastManager } from '@chassis-ui/react';
+
+ToastManager.show('File saved.', { variant: 'success' });
+ToastManager.show('Network error.', { variant: 'error', duration: 8000 });`}
+    angular={`import '@chassis-ui/core/toast';
+import { ToastManager } from '@chassis-ui/core/toast';
+
+ToastManager.show('File saved.', { variant: 'success' });`}
+    astro={`---
+---
+
+<script>
+  import { ToastManager } from '@chassis-ui/core/toast';
+  ToastManager.show('File saved.', { variant: 'success' });
+</script>`}
+    svelte={`<script>
+  import { ToastManager } from '@chassis-ui/core/toast';
+  ToastManager.show('File saved.', { variant: 'success' });
+</script>`}
+  />
+
+  <h2>ToastManager API</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Method</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>ToastManager.show(message, options?)</code></td><td>Creates and shows a toast, returns the element</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Options</h3>
+  <table class="props-table">
+    <thead>
+      <tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>variant</code></td><td><code>'info' | 'success' | 'warning' | 'error'</code></td><td><code>'info'</code></td><td>Toast color variant</td></tr>
+      <tr><td><code>duration</code></td><td><code>number</code></td><td><code>5000</code></td><td>Auto-dismiss delay in ms (0 = no auto-dismiss)</td></tr>
+      <tr><td><code>position</code></td><td><code>'top-right' | 'top-left' | 'top-center' | 'bottom-right' | 'bottom-left' | 'bottom-center'</code></td><td><code>'top-right'</code></td><td>Screen position</td></tr>
+      <tr><td><code>dismissible</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Show dismiss button</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Component Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>variant</code></td><td><code>'info' | 'success' | 'warning' | 'error'</code></td><td><code>'info'</code></td><td>Toast color variant</td></tr>
+      <tr><td><code>duration</code></td><td><code>number</code></td><td><code>5000</code></td><td>Auto-dismiss delay in ms</td></tr>
+      <tr><td><code>dismissible</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Show dismiss button</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The toast container</td></tr>
+      <tr><td><code>icon</code></td><td>The status icon</td></tr>
+      <tr><td><code>message</code></td><td>The message content area</td></tr>
+      <tr><td><code>action</code></td><td>The action slot</td></tr>
+      <tr><td><code>dismiss</code></td><td>The dismiss button</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses <code>role="alert"</code> and <code>aria-live="polite"</code></li>
+    <li>Toast container uses <code>aria-atomic="false"</code> for stacked toasts</li>
+    <li>Auto-dismiss respects z-index stacking order</li>
+    <li>Dismiss button has <code>aria-label="Dismiss"</code></li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/toast';
+  import '@chassis-ui/core/button';
+  import { ToastManager } from '@chassis-ui/core/toast';
+
+  function initToastDemo() {
+    document.getElementById('toast-info')?.addEventListener('click', () => {
+      ToastManager.show('This is an informational toast.', { variant: 'info' });
+    });
+    document.getElementById('toast-success')?.addEventListener('click', () => {
+      ToastManager.show('Operation completed successfully!', { variant: 'success' });
+    });
+    document.getElementById('toast-warning')?.addEventListener('click', () => {
+      ToastManager.show('Please review your changes.', { variant: 'warning' });
+    });
+    document.getElementById('toast-error')?.addEventListener('click', () => {
+      ToastManager.show('Something went wrong.', { variant: 'error' });
+    });
+  }
+
+  initToastDemo();
+  document.addEventListener('astro:page-load', initToastDemo);
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

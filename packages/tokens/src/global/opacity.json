@@ -1,0 +1,11 @@
+{
+  "chassis": {
+    "opacity": {
+      "disabled": { "value": "0.38" },
+      "hover": { "value": "0.08" },
+      "pressed": { "value": "0.12" },
+      "dragged": { "value": "0.16" },
+      "focus": { "value": "0.12" }
+    }
+  }
+}

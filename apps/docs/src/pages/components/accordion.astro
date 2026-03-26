@@ -1,0 +1,183 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Accordion">
+  <h1>Accordion</h1>
+  <p>Vertically stacked set of expandable/collapsible content sections. Supports single or multiple open panels.</p>
+
+  <h2>Basic Usage</h2>
+  <ComponentPreview title="Single expand (default)">
+    <chassis-accordion>
+      <chassis-accordion-item open>
+        <span slot="trigger">Section One</span>
+        <p>Content for section one. This panel is open by default.</p>
+      </chassis-accordion-item>
+      <chassis-accordion-item>
+        <span slot="trigger">Section Two</span>
+        <p>Content for section two.</p>
+      </chassis-accordion-item>
+      <chassis-accordion-item>
+        <span slot="trigger">Section Three</span>
+        <p>Content for section three.</p>
+      </chassis-accordion-item>
+    </chassis-accordion>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-accordion>
+  <chassis-accordion-item open>
+    <span slot="trigger">Section One</span>
+    <p>Content for section one.</p>
+  </chassis-accordion-item>
+  <chassis-accordion-item>
+    <span slot="trigger">Section Two</span>
+    <p>Content for section two.</p>
+  </chassis-accordion-item>
+</chassis-accordion>`}
+    react={`import { Accordion, AccordionItem } from '@chassis-ui/react';
+
+<Accordion>
+  <AccordionItem open>
+    <span slot="trigger">Section One</span>
+    <p>Content for section one.</p>
+  </AccordionItem>
+  <AccordionItem>
+    <span slot="trigger">Section Two</span>
+    <p>Content for section two.</p>
+  </AccordionItem>
+</Accordion>`}
+    angular={`import { AccordionComponent, AccordionItemComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [AccordionComponent, AccordionItemComponent],
+  template: \`
+    <chassis-accordion-wrapper>
+      <chassis-accordion-item-wrapper open>
+        <span slot="trigger">Section One</span>
+        <p>Content for section one.</p>
+      </chassis-accordion-item-wrapper>
+    </chassis-accordion-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Accordion from '@chassis-ui/astro/Accordion.astro';
+import AccordionItem from '@chassis-ui/astro/AccordionItem.astro';
+---
+
+<Accordion>
+  <AccordionItem open>
+    <span slot="trigger">Section One</span>
+    <p>Content for section one.</p>
+  </AccordionItem>
+</Accordion>`}
+    svelte={`<script>
+  import { Accordion, AccordionItem } from '@chassis-ui/svelte';
+</script>
+
+<Accordion>
+  <AccordionItem open>
+    <span slot="trigger">Section One</span>
+    <p>Content for section one.</p>
+  </AccordionItem>
+</Accordion>`}
+  />
+
+  <h2>Multiple Open</h2>
+  <ComponentPreview title="Allow multiple panels open simultaneously">
+    <chassis-accordion multiple>
+      <chassis-accordion-item open>
+        <span slot="trigger">Panel A</span>
+        <p>Content A — other panels can remain open.</p>
+      </chassis-accordion-item>
+      <chassis-accordion-item open>
+        <span slot="trigger">Panel B</span>
+        <p>Content B — also open at the same time.</p>
+      </chassis-accordion-item>
+      <chassis-accordion-item>
+        <span slot="trigger">Panel C</span>
+        <p>Content C.</p>
+      </chassis-accordion-item>
+    </chassis-accordion>
+  </ComponentPreview>
+
+  <h2>Props — Accordion</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>multiple</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Allow multiple panels open at once</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Props — Accordion Item</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>open</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Whether the panel is expanded</td></tr>
+      <tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disable toggle interaction</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The accordion/item container</td></tr>
+      <tr><td><code>trigger</code></td><td>The clickable header button</td></tr>
+      <tr><td><code>icon</code></td><td>The expand/collapse chevron icon</td></tr>
+      <tr><td><code>content</code></td><td>The collapsible content region</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Events</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Event</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>chassis-accordion-toggle</code></td><td>Fired when an item is toggled. Detail: <code>{'{ open: boolean }'}</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Trigger uses <code>aria-expanded</code> to reflect open state</li>
+    <li>Content region uses <code>role="region"</code></li>
+    <li>Disabled items prevent interaction via <code>disabled</code> attribute</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/accordion';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

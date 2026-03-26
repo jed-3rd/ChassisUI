@@ -1,0 +1,25 @@
+---
+export interface Props {
+  checked?: boolean;
+  indeterminate?: boolean;
+  label?: string;
+  disabled?: boolean;
+  value?: string;
+  name?: string;
+}
+
+const { checked = false, indeterminate = false, label = '', disabled = false, value = '', name = '' } = Astro.props;
+---
+
+<chassis-checkbox
+  checked={checked}
+  indeterminate={indeterminate}
+  label={label}
+  disabled={disabled}
+  value={value}
+  name={name}
+/>
+
+<script>
+  import '@chassis-ui/core/checkbox';
+</script>

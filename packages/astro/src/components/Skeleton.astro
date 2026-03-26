@@ -1,0 +1,16 @@
+---
+export interface Props {
+  variant?: 'text' | 'circular' | 'rectangular';
+  width?: string;
+  height?: string;
+  lines?: number;
+}
+
+const { variant = 'text', width, height, lines = 1 } = Astro.props;
+---
+
+<chassis-skeleton variant={variant} width={width} height={height} lines={lines}></chassis-skeleton>
+
+<script>
+  import '@chassis-ui/core/skeleton';
+</script>

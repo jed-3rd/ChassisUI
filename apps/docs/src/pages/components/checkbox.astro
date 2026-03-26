@@ -1,0 +1,121 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Checkbox">
+  <h1>Checkbox</h1>
+  <p>Checkboxes allow users to select one or more options. Supports checked, unchecked, and indeterminate states.</p>
+
+  <h2>States</h2>
+  <ComponentPreview title="Unchecked / Checked / Indeterminate">
+    <chassis-checkbox label="Unchecked"></chassis-checkbox>
+    <chassis-checkbox label="Checked" checked></chassis-checkbox>
+    <chassis-checkbox label="Indeterminate" indeterminate></chassis-checkbox>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-checkbox label="Accept terms"></chassis-checkbox>
+<chassis-checkbox label="Pre-checked" checked></chassis-checkbox>
+<chassis-checkbox label="Mixed" indeterminate></chassis-checkbox>`}
+    react={`import { Checkbox } from '@chassis-ui/react';
+
+<Checkbox label="Accept terms" />
+<Checkbox label="Pre-checked" checked />
+<Checkbox label="Mixed" indeterminate />`}
+    angular={`import { CheckboxComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [CheckboxComponent],
+  template: \`
+    <chassis-checkbox-wrapper label="Accept terms" />
+    <chassis-checkbox-wrapper label="Pre-checked" [checked]="true" />
+    <chassis-checkbox-wrapper label="Mixed" [indeterminate]="true" />
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Checkbox from '@chassis-ui/astro/Checkbox.astro';
+---
+
+<Checkbox label="Accept terms" />
+<Checkbox label="Pre-checked" checked />
+<Checkbox label="Mixed" indeterminate />`}
+    svelte={`<script>
+  import { Checkbox } from '@chassis-ui/svelte';
+</script>
+
+<Checkbox label="Accept terms" />
+<Checkbox label="Pre-checked" checked />
+<Checkbox label="Mixed" indeterminate />`}
+  />
+
+  <h2>Disabled</h2>
+  <ComponentPreview title="Disabled states">
+    <chassis-checkbox label="Disabled unchecked" disabled></chassis-checkbox>
+    <chassis-checkbox label="Disabled checked" checked disabled></chassis-checkbox>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>checked</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Whether the checkbox is checked</td></tr>
+      <tr><td><code>indeterminate</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Shows a mixed/partial state</td></tr>
+      <tr><td><code>label</code></td><td><code>string</code></td><td><code>''</code></td><td>Label text displayed next to the checkbox</td></tr>
+      <tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disables the checkbox</td></tr>
+      <tr><td><code>size</code></td><td><code>'sm' | 'md' | 'lg'</code></td><td><code>'md'</code></td><td>Checkbox size</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The outer container</td></tr>
+      <tr><td><code>control</code></td><td>The checkbox input element</td></tr>
+      <tr><td><code>label</code></td><td>The label text</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li><code>role="checkbox"</code> with <code>aria-checked</code> state</li>
+    <li><code>aria-checked="mixed"</code> for indeterminate state</li>
+    <li>Keyboard toggle via <kbd>Space</kbd> and <kbd>Enter</kbd></li>
+    <li>Form-associated via <code>ElementInternals</code></li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/checkbox';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

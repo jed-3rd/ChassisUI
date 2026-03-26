@@ -1,0 +1,29 @@
+{
+  "name": "@chassis-ui/themes",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./css/material2": "./src/material2/overrides.css",
+    "./css/material3": "./src/material3/overrides.css",
+    "./css/polaris": "./src/polaris/overrides.css",
+    "./css/carbon": "./src/carbon/overrides.css",
+    "./css/default": "./src/default/overrides.css",
+    "./css/hig": "./src/hig/overrides.css",
+    "./css/atlassian": "./src/atlassian/overrides.css",
+    "./css/fluent": "./src/fluent/overrides.css",
+    "./css/lightning": "./src/lightning/overrides.css",
+    "./css/primer": "./src/primer/overrides.css",
+    "./css/spectrum": "./src/spectrum/overrides.css",
+    "./css/uber": "./src/uber/overrides.css"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

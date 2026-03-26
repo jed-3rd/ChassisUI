@@ -1,0 +1,31 @@
+---
+export interface Props {
+  type?: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url';
+  value?: string;
+  placeholder?: string;
+  label?: string;
+  helperText?: string;
+  error?: string;
+  disabled?: boolean;
+  required?: boolean;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { type = 'text', value = '', placeholder = '', label = '', helperText = '', error = '', disabled = false, required = false, size = 'md' } = Astro.props;
+---
+
+<chassis-input
+  type={type}
+  value={value}
+  placeholder={placeholder}
+  label={label}
+  helper-text={helperText}
+  error={error}
+  disabled={disabled}
+  required={required}
+  size={size}
+/>
+
+<script>
+  import '@chassis-ui/core/input';
+</script>

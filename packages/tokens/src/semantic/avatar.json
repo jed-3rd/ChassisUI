@@ -1,0 +1,15 @@
+{
+  "chassis": {
+    "avatar": {
+      "background": { "value": "{chassis.color.primary-container}" },
+      "color": { "value": "{chassis.color.on-primary-container}" },
+      "font-weight": { "value": "600" },
+      "border-radius": { "value": "50%" },
+      "status-online": { "value": "{chassis.color.success}" },
+      "status-offline": { "value": "{chassis.color.on-surface-variant}" },
+      "status-busy": { "value": "{chassis.color.error}" },
+      "status-away": { "value": "{chassis.color.warning}" },
+      "status-border-color": { "value": "{chassis.color.surface}" }
+    }
+  }
+}

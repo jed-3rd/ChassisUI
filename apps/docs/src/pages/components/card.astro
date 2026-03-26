@@ -1,0 +1,76 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Card">
+  <h1>Card</h1>
+  <p>Cards group related content and actions. Supports header, body, and footer slots.</p>
+
+  <h2>Variants</h2>
+  <ComponentPreview title="Default / Elevated / Outlined">
+    <chassis-card>
+      <span slot="header">Default Card</span>
+      <p>Card content goes here. This adapts to the active theme.</p>
+    </chassis-card>
+    <chassis-card elevated>
+      <span slot="header">Elevated Card</span>
+      <p>This card has elevated shadow.</p>
+    </chassis-card>
+    <chassis-card outlined>
+      <span slot="header">Outlined Card</span>
+      <p>This card has a border outline.</p>
+    </chassis-card>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-card>
+  <span slot="header">Card Title</span>
+  <p>Card content here.</p>
+  <span slot="footer">Footer</span>
+</chassis-card>`}
+    react={`import { Card } from '@chassis-ui/react';
+
+<Card>
+  <span slot="header">Card Title</span>
+  <p>Card content here.</p>
+  <span slot="footer">Footer</span>
+</Card>`}
+    angular={`import { CardComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [CardComponent],
+  template: \`
+    <chassis-card-wrapper>
+      <span slot="header">Card Title</span>
+      <p>Card content here.</p>
+      <span slot="footer">Footer</span>
+    </chassis-card-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Card from '@chassis-ui/astro/Card.astro';
+---
+
+<Card>
+  <span slot="header">Card Title</span>
+  <p>Card content here.</p>
+  <span slot="footer">Footer</span>
+</Card>`}
+    svelte={`<script>
+  import { Card } from '@chassis-ui/svelte';
+</script>
+
+<Card>
+  <span slot="header">Card Title</span>
+  <p>Card content here.</p>
+  <span slot="footer">Footer</span>
+</Card>`}
+  />
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/card';
+</script>

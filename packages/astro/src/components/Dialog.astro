@@ -1,0 +1,18 @@
+---
+export interface Props {
+  open?: boolean;
+  modal?: boolean;
+}
+
+const { open = false, modal = true } = Astro.props;
+---
+
+<chassis-dialog open={open} modal={modal}>
+  <slot name="header" slot="header" />
+  <slot />
+  <slot name="footer" slot="footer" />
+</chassis-dialog>
+
+<script>
+  import '@chassis-ui/core/dialog';
+</script>

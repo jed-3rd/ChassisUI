@@ -1,0 +1,17 @@
+---
+export interface Props {
+  sortable?: boolean;
+  striped?: boolean;
+  stickyHeader?: boolean;
+}
+
+const { sortable = false, striped = false, stickyHeader = false } = Astro.props;
+---
+
+<chassis-table sortable={sortable} striped={striped} sticky-header={stickyHeader}>
+  <slot />
+</chassis-table>
+
+<script>
+  import '@chassis-ui/core/table';
+</script>

@@ -1,0 +1,31 @@
+{
+  "chassis": {
+    "badge": {
+      "border-radius": { "value": "{chassis.shape.radius.full}" },
+      "font-size": { "value": "{chassis.typography.font-size.xs}" },
+      "font-weight": { "value": "{chassis.typography.font-weight.medium}" },
+      "padding-x": { "value": "{chassis.spacing.200}" },
+      "padding-y": { "value": "{chassis.spacing.100}" },
+      "default": {
+        "background": { "value": "{chassis.color.surface-variant}" },
+        "color": { "value": "{chassis.color.on-surface-variant}" }
+      },
+      "success": {
+        "background": { "value": "{chassis.color.success}" },
+        "color": { "value": "{chassis.color.on-success}" }
+      },
+      "warning": {
+        "background": { "value": "{chassis.color.warning}" },
+        "color": { "value": "{chassis.color.on-warning}" }
+      },
+      "error": {
+        "background": { "value": "{chassis.color.error}" },
+        "color": { "value": "{chassis.color.on-error}" }
+      },
+      "info": {
+        "background": { "value": "{chassis.color.info}" },
+        "color": { "value": "{chassis.color.on-info}" }
+      }
+    }
+  }
+}

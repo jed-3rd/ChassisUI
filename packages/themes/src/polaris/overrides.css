@@ -1,0 +1,15 @@
+/* Shopify Polaris - Component-specific overrides */
+[data-theme="polaris"] chassis-button::part(base) {
+  text-transform: none;
+  letter-spacing: normal;
+  border-radius: var(--chassis-shape-radius-md, 8px);
+}
+
+[data-theme="polaris"] chassis-card::part(base) {
+  border: 1px solid var(--chassis-color-outline-variant, #c9cccf);
+  border-radius: var(--chassis-shape-radius-md, 8px);
+}
+
+[data-theme="polaris"] chassis-input::part(input) {
+  border-radius: var(--chassis-shape-radius-md, 8px);
+}

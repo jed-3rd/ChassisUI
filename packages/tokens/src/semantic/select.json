@@ -1,0 +1,25 @@
+{
+  "chassis": {
+    "select": {
+      "trigger-background": { "value": "{chassis.color.surface}" },
+      "trigger-color": { "value": "{chassis.color.on-surface}" },
+      "trigger-border-color": { "value": "{chassis.color.outline}" },
+      "trigger-border-radius": { "value": "{chassis.shape.radius.md}" },
+      "trigger-padding-x": { "value": "{chassis.spacing.300}" },
+      "trigger-padding-y": { "value": "{chassis.spacing.200}" },
+      "trigger-font-size": { "value": "{chassis.typography.font-size.md}" },
+      "listbox-background": { "value": "{chassis.color.surface}" },
+      "listbox-border-color": { "value": "{chassis.color.outline-variant}" },
+      "listbox-border-radius": { "value": "{chassis.shape.radius.md}" },
+      "listbox-elevation": { "value": "{chassis.elevation.2}" },
+      "option-padding-x": { "value": "{chassis.spacing.300}" },
+      "option-padding-y": { "value": "{chassis.spacing.200}" },
+      "option-hover-background": { "value": "{chassis.color.surface-variant}" },
+      "option-selected-background": { "value": "{chassis.color.primary-container}" },
+      "placeholder-color": { "value": "{chassis.color.on-surface-variant}" },
+      "label-color": { "value": "{chassis.color.on-surface}" },
+      "label-font-size": { "value": "{chassis.typography.font-size.sm}" },
+      "error-color": { "value": "{chassis.color.error}" }
+    }
+  }
+}

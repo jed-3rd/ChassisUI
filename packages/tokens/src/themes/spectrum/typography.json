@@ -1,0 +1,29 @@
+{
+  "chassis": {
+    "typography": {
+      "font-family": {
+        "primary": { "value": "'Adobe Clean', adobe-clean, 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" },
+        "mono": { "value": "'Source Code Pro', 'Adobe Clean Mono', 'Courier New', monospace" }
+      },
+      "font-size": {
+        "xs": { "value": "0.6875rem" },
+        "sm": { "value": "0.75rem" },
+        "md": { "value": "0.875rem" },
+        "lg": { "value": "1rem" },
+        "xl": { "value": "1.25rem" },
+        "2xl": { "value": "1.5rem" },
+        "3xl": { "value": "1.75rem" }
+      },
+      "font-weight": {
+        "regular": { "value": "400" },
+        "medium": { "value": "700" },
+        "bold": { "value": "900" }
+      },
+      "line-height": {
+        "tight": { "value": "1.3" },
+        "normal": { "value": "1.5" },
+        "loose": { "value": "1.7" }
+      }
+    }
+  }
+}

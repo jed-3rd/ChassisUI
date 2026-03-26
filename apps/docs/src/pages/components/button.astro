@@ -1,0 +1,130 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Button">
+  <h1>Button</h1>
+  <p>Buttons trigger actions. Chassis UI provides three variants that adapt to each design system.</p>
+
+  <h2>Variants</h2>
+  <ComponentPreview title="Primary / Secondary / Link">
+    <chassis-button variant="primary">Primary</chassis-button>
+    <chassis-button variant="secondary">Secondary</chassis-button>
+    <chassis-button variant="link">Link</chassis-button>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-button variant="primary">Click me</chassis-button>
+<chassis-button variant="secondary">Secondary</chassis-button>
+<chassis-button variant="link">Link</chassis-button>`}
+    react={`import { Button } from '@chassis-ui/react';
+
+<Button variant="primary">Click me</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="link">Link</Button>`}
+    angular={`import { ButtonComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [ButtonComponent],
+  template: \`
+    <chassis-button-wrapper variant="primary">Click me</chassis-button-wrapper>
+    <chassis-button-wrapper variant="secondary">Secondary</chassis-button-wrapper>
+    <chassis-button-wrapper variant="link">Link</chassis-button-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Button from '@chassis-ui/astro/Button.astro';
+---
+
+<Button variant="primary">Click me</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="link">Link</Button>`}
+    svelte={`<script>
+  import { Button } from '@chassis-ui/svelte';
+</script>
+
+<Button variant="primary">Click me</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="link">Link</Button>`}
+  />
+
+  <h2>Sizes</h2>
+  <ComponentPreview title="Small / Medium / Large">
+    <chassis-button size="sm">Small</chassis-button>
+    <chassis-button size="md">Medium</chassis-button>
+    <chassis-button size="lg">Large</chassis-button>
+  </ComponentPreview>
+
+  <h2>States</h2>
+  <ComponentPreview title="Disabled / Loading">
+    <chassis-button disabled>Disabled</chassis-button>
+    <chassis-button loading>Loading</chassis-button>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>variant</code></td><td><code>'primary' | 'secondary' | 'link'</code></td><td><code>'primary'</code></td><td>Visual style variant</td></tr>
+      <tr><td><code>size</code></td><td><code>'sm' | 'md' | 'lg'</code></td><td><code>'md'</code></td><td>Button size</td></tr>
+      <tr><td><code>disabled</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Disables the button</td></tr>
+      <tr><td><code>loading</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Shows a loading spinner</td></tr>
+      <tr><td><code>type</code></td><td><code>'button' | 'submit' | 'reset'</code></td><td><code>'button'</code></td><td>HTML button type</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The inner <code>&lt;button&gt;</code> element</td></tr>
+      <tr><td><code>label</code></td><td>The label text wrapper</td></tr>
+      <tr><td><code>prefix</code></td><td>Prefix slot container</td></tr>
+      <tr><td><code>suffix</code></td><td>Suffix slot container</td></tr>
+      <tr><td><code>spinner</code></td><td>Loading spinner element</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li><code>aria-busy="true"</code> when loading</li>
+    <li><code>aria-disabled="true"</code> when disabled</li>
+    <li>Focus ring visible on keyboard navigation (<code>:focus-visible</code>)</li>
+    <li>Disabled state prevents pointer events</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/button';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

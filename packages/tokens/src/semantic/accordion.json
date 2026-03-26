@@ -1,0 +1,15 @@
+{
+  "chassis": {
+    "accordion": {
+      "border-color": { "value": "{chassis.color.outline-variant}" },
+      "trigger-background": { "value": "{chassis.color.surface}" },
+      "trigger-color": { "value": "{chassis.color.on-surface}" },
+      "trigger-hover-background": { "value": "{chassis.color.surface-variant}" },
+      "trigger-font-weight": { "value": "{chassis.typography.font-weight.medium}" },
+      "trigger-padding": { "value": "1rem" },
+      "content-padding": { "value": "0 1rem 1rem" },
+      "icon-color": { "value": "{chassis.color.on-surface-variant}" },
+      "border-radius": { "value": "{chassis.shape.radius.md}" }
+    }
+  }
+}

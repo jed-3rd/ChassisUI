@@ -1,0 +1,16 @@
+---
+export interface Props {
+  total?: number;
+  current?: number;
+  siblings?: number;
+  showEdges?: boolean;
+}
+
+const { total = 1, current = 1, siblings = 1, showEdges = false } = Astro.props;
+---
+
+<chassis-pagination total={total} current={current} siblings={siblings} show-edges={showEdges}></chassis-pagination>
+
+<script>
+  import '@chassis-ui/core/pagination';
+</script>

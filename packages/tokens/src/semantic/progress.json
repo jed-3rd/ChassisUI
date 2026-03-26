@@ -1,0 +1,14 @@
+{
+  "chassis": {
+    "progress": {
+      "track-color": { "value": "{chassis.color.surface-variant}" },
+      "track-height": { "value": "4px" },
+      "track-radius": { "value": "9999px" },
+      "indicator-color": { "value": "{chassis.color.primary}" },
+      "label-color": { "value": "{chassis.color.on-surface-variant}" },
+      "label-font-size": { "value": "{chassis.typography.font-size.xs}" },
+      "circular-size": { "value": "48px" },
+      "circular-stroke-width": { "value": "4" }
+    }
+  }
+}

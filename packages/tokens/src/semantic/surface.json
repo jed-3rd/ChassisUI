@@ -1,0 +1,9 @@
+{
+  "chassis": {
+    "surface": {
+      "background": { "value": "{chassis.color.background}" },
+      "color": { "value": "{chassis.color.on-background}" },
+      "border-color": { "value": "{chassis.color.outline-variant}" }
+    }
+  }
+}

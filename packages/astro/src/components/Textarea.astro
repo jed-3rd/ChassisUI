@@ -1,0 +1,44 @@
+---
+export interface Props {
+  label?: string;
+  placeholder?: string;
+  value?: string;
+  rows?: number;
+  maxlength?: number;
+  resize?: 'none' | 'vertical' | 'auto';
+  error?: string;
+  'helper-text'?: string;
+  disabled?: boolean;
+  required?: boolean;
+}
+
+const {
+  label = '',
+  placeholder = '',
+  value = '',
+  rows = 3,
+  maxlength = 0,
+  resize = 'vertical',
+  error = '',
+  'helper-text': helperText = '',
+  disabled = false,
+  required = false,
+} = Astro.props;
+---
+
+<chassis-textarea
+  label={label}
+  placeholder={placeholder}
+  value={value}
+  rows={rows}
+  maxlength={maxlength}
+  resize={resize}
+  error={error}
+  helper-text={helperText}
+  disabled={disabled}
+  required={required}
+></chassis-textarea>
+
+<script>
+  import '@chassis-ui/core/textarea';
+</script>

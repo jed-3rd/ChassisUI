@@ -1,0 +1,94 @@
+/* default/ui - Component-specific overrides */
+
+/* Buttons: soft radius, no uppercase, subtle hover */
+[data-theme="default"] chassis-button::part(base) {
+  text-transform: none;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: none;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="default"] chassis-button[variant="primary"]::part(base) {
+  box-shadow: none;
+}
+
+[data-theme="default"] chassis-button[variant="secondary"]::part(base) {
+  background: var(--chassis-color-secondary, #F4F4F5);
+  color: var(--chassis-color-on-secondary, #18181B);
+  border: 1px solid var(--chassis-color-outline, #E4E4E7);
+}
+
+[data-theme="default"] chassis-button[variant="link"]::part(base) {
+  border-radius: 6px;
+}
+
+/* Cards: large radius, border instead of shadow, very clean */
+[data-theme="default"] chassis-card::part(base) {
+  border-radius: 12px;
+  border: 1px solid var(--chassis-color-outline, #E4E4E7);
+  box-shadow: none;
+  background: var(--chassis-color-surface, #FFFFFF);
+}
+
+/* Inputs: bordered with ring focus, modern feel */
+[data-theme="default"] chassis-input::part(input) {
+  border-radius: 6px;
+  border: 1px solid var(--chassis-color-outline, #E4E4E7);
+  background: transparent;
+}
+
+[data-theme="default"] chassis-input::part(input):focus-visible {
+  border-color: var(--chassis-color-primary, #18181B);
+  box-shadow: 0 0 0 3px rgba(24, 24, 27, 0.08);
+  outline: none;
+}
+
+/* Switch: pill shape */
+[data-theme="default"] chassis-switch::part(track) {
+  border-radius: 9999px;
+}
+
+/* Checkbox: medium radius */
+[data-theme="default"] chassis-checkbox::part(control) {
+  border-radius: 4px;
+  border: 1px solid var(--chassis-color-outline, #E4E4E7);
+}
+
+/* Badge: pill shape */
+[data-theme="default"] chassis-badge::part(base) {
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+}
+
+/* Dialog: large radius, border, no heavy shadow */
+[data-theme="default"] chassis-dialog::part(dialog) {
+  border-radius: 12px;
+  border: 1px solid var(--chassis-color-outline, #E4E4E7);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+}
+
+/* Select: bordered */
+[data-theme="default"] chassis-select::part(trigger) {
+  border-radius: 6px;
+  border: 1px solid var(--chassis-color-outline, #E4E4E7);
+}
+
+/* Dark mode specifics for default */
+[data-theme="default"][data-mode="dark"] chassis-button[variant="secondary"]::part(base) {
+  background: var(--chassis-color-secondary, #27272a);
+  border-color: var(--chassis-color-outline, #27272a);
+  color: var(--chassis-color-on-secondary, #fafafa);
+}
+
+[data-theme="default"][data-mode="dark"] chassis-input::part(input):focus-visible {
+  box-shadow: 0 0 0 3px rgba(250, 250, 250, 0.1);
+}
+
+[data-theme="default"][data-mode="dark"] chassis-input::part(input) {
+  background: transparent;
+}

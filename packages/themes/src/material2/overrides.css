@@ -1,0 +1,64 @@
+/* Material 2 - Component-specific overrides */
+
+/* Buttons: UPPERCASE, tight radius, prominent elevation */
+[data-theme="material2"] chassis-button::part(base) {
+  text-transform: uppercase;
+  letter-spacing: 0.0892857em;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+[data-theme="material2"] chassis-button[variant="primary"]::part(base) {
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12);
+}
+
+[data-theme="material2"] chassis-button[variant="primary"]::part(base):hover {
+  box-shadow: 0 4px 5px -2px rgba(0,0,0,0.2), 0 7px 10px 1px rgba(0,0,0,0.14), 0 2px 16px 1px rgba(0,0,0,0.12);
+}
+
+[data-theme="material2"] chassis-button[variant="secondary"]::part(base) {
+  border-width: 2px;
+}
+
+/* Cards: tight radius, prominent Material elevation */
+[data-theme="material2"] chassis-card::part(base) {
+  border-radius: 4px;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.14), 0 1px 3px 0 rgba(0,0,0,0.12);
+  border: none;
+}
+
+/* Inputs: underline-style with bottom border emphasis */
+[data-theme="material2"] chassis-input::part(input) {
+  border-radius: 4px 4px 0 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid var(--chassis-input-border-color, #79747E);
+  background: var(--chassis-color-surface-variant, #F3EDF7);
+}
+
+[data-theme="material2"] chassis-input::part(input):focus-visible {
+  border-bottom-color: var(--chassis-color-primary, #6200EE);
+  border-bottom-width: 2px;
+}
+
+/* Switch: M2 uses smaller, circular thumb */
+[data-theme="material2"] chassis-switch::part(track) {
+  border-radius: 7px;
+}
+
+/* Checkbox: sharp corners */
+[data-theme="material2"] chassis-checkbox::part(control) {
+  border-radius: 2px;
+}
+
+/* Badge: tight radius */
+[data-theme="material2"] chassis-badge::part(base) {
+  border-radius: 4px;
+}
+
+/* Dialog: tight radius with prominent shadow */
+[data-theme="material2"] chassis-dialog::part(dialog) {
+  border-radius: 4px;
+  box-shadow: 0 11px 15px -7px rgba(0,0,0,0.2), 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12);
+}

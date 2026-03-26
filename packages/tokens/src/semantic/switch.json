@@ -1,0 +1,19 @@
+{
+  "chassis": {
+    "switch": {
+      "track-width": { "value": "44px" },
+      "track-height": { "value": "24px" },
+      "track-border-radius": { "value": "{chassis.shape.radius.full}" },
+      "track-background": { "value": "{chassis.color.surface-variant}" },
+      "track-border-color": { "value": "{chassis.color.outline}" },
+      "track-checked-background": { "value": "{chassis.color.primary}" },
+      "track-checked-border-color": { "value": "{chassis.color.primary}" },
+      "thumb-size": { "value": "16px" },
+      "thumb-color": { "value": "{chassis.color.outline}" },
+      "thumb-checked-color": { "value": "{chassis.color.on-primary}" },
+      "label-font-size": { "value": "{chassis.typography.font-size.md}" },
+      "label-color": { "value": "{chassis.color.on-surface}" },
+      "focus-ring-color": { "value": "{chassis.color.primary}" }
+    }
+  }
+}

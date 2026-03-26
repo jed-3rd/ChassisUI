@@ -1,0 +1,122 @@
+/* Salesforce Lightning Design System - Component-specific overrides */
+
+/* Buttons: 4px radius, bold weight, signature blue brand button */
+[data-theme="lightning"] chassis-button::part(base) {
+  text-transform: none;
+  letter-spacing: 0.025em;
+  font-weight: 700;
+  border-radius: 4px;
+  min-height: 32px;
+  box-shadow: none;
+}
+
+[data-theme="lightning"] chassis-button[variant="primary"]::part(base) {
+  box-shadow: none;
+}
+
+[data-theme="lightning"] chassis-button[variant="primary"]::part(base):hover {
+  filter: none;
+  background: #014486;
+}
+
+[data-theme="lightning"] chassis-button[variant="secondary"]::part(base) {
+  background: var(--chassis-color-surface, #FFFFFF);
+  color: var(--chassis-color-primary, #0176D3);
+  border: 1px solid var(--chassis-color-primary, #0176D3);
+}
+
+[data-theme="lightning"] chassis-button[variant="secondary"]::part(base):hover {
+  background: #F3F3F3;
+}
+
+[data-theme="lightning"] chassis-button[variant="link"]::part(base) {
+  color: var(--chassis-color-primary, #0176D3);
+  border-radius: 4px;
+}
+
+[data-theme="lightning"] chassis-button[variant="link"]::part(base):hover {
+  color: #014486;
+  text-decoration: underline;
+}
+
+/* Cards: SLDS card — bordered, white surface, tight radius */
+[data-theme="lightning"] chassis-card::part(base) {
+  border-radius: 8px;
+  border: 1px solid var(--chassis-color-outline, #C9C9C9);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  background: var(--chassis-color-surface, #FFFFFF);
+}
+
+/* Inputs: SLDS input — bordered, white bg, focus ring */
+[data-theme="lightning"] chassis-input::part(input) {
+  border-radius: 4px;
+  border: 1px solid var(--chassis-color-outline, #C9C9C9);
+  background: var(--chassis-color-surface, #FFFFFF);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+[data-theme="lightning"] chassis-input::part(input):focus-visible {
+  border-color: var(--chassis-color-primary, #0176D3);
+  box-shadow: 0 0 0 3px rgba(1, 118, 211, 0.2);
+  outline: none;
+}
+
+/* Switch */
+[data-theme="lightning"] chassis-switch::part(track) {
+  border-radius: 9999px;
+}
+
+/* Checkbox: tight radius */
+[data-theme="lightning"] chassis-checkbox::part(control) {
+  border-radius: 4px;
+  border: 1px solid var(--chassis-color-outline, #C9C9C9);
+}
+
+/* Badge: SLDS badge — pill, bold */
+[data-theme="lightning"] chassis-badge::part(base) {
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.6875rem;
+  letter-spacing: 0.025em;
+}
+
+/* Dialog: SLDS modal */
+[data-theme="lightning"] chassis-dialog::part(dialog) {
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16), 0 0 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Select */
+[data-theme="lightning"] chassis-select::part(trigger) {
+  border-radius: 4px;
+  border: 1px solid var(--chassis-color-outline, #C9C9C9);
+  background: var(--chassis-color-surface, #FFFFFF);
+}
+
+/* Dark mode */
+[data-theme="lightning"][data-mode="dark"] chassis-button[variant="primary"]::part(base):hover {
+  background: #1B96FF;
+}
+
+[data-theme="lightning"][data-mode="dark"] chassis-button[variant="secondary"]::part(base) {
+  background: var(--chassis-color-surface, #18191A);
+  border-color: var(--chassis-color-primary, #1B96FF);
+  color: var(--chassis-color-primary, #1B96FF);
+}
+
+[data-theme="lightning"][data-mode="dark"] chassis-input::part(input) {
+  background: var(--chassis-color-surface, #18191A);
+  border-color: var(--chassis-color-outline, #4A4A4A);
+}
+
+[data-theme="lightning"][data-mode="dark"] chassis-input::part(input):focus-visible {
+  border-color: var(--chassis-color-primary, #1B96FF);
+  box-shadow: 0 0 0 3px rgba(27, 150, 255, 0.25);
+}
+
+[data-theme="lightning"][data-mode="dark"] chassis-card::part(base) {
+  background: var(--chassis-color-surface, #18191A);
+  border-color: var(--chassis-color-outline, #4A4A4A);
+  box-shadow: none;
+}

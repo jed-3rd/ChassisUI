@@ -1,0 +1,11 @@
+{
+  "chassis": {
+    "divider": {
+      "color": { "value": "{chassis.color.outline-variant}" },
+      "thickness": { "value": "{chassis.border.width-thin}" },
+      "spacing": { "value": "{chassis.spacing.300}" },
+      "label-color": { "value": "{chassis.color.on-surface-variant}" },
+      "label-font-size": { "value": "{chassis.typography.font-size.xs}" }
+    }
+  }
+}

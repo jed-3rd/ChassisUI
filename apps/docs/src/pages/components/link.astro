@@ -1,0 +1,113 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import CodeTabs from '../../components/CodeTabs.astro';
+---
+
+<DocsLayout title="Link">
+  <h1>Link</h1>
+  <p>A styled anchor element with variant and underline options. Inherits focus management from FocusMixin.</p>
+
+  <h2>Variants</h2>
+  <ComponentPreview title="Default / Subtle">
+    <chassis-link href="#">Default link</chassis-link>
+    &nbsp;&nbsp;
+    <chassis-link href="#" variant="subtle">Subtle link</chassis-link>
+  </ComponentPreview>
+
+  <CodeTabs
+    webComponent={`<chassis-link href="#">Default link</chassis-link>
+<chassis-link href="#" variant="subtle">Subtle link</chassis-link>`}
+    react={`import { Link } from '@chassis-ui/react';
+
+<Link href="#">Default link</Link>
+<Link href="#" variant="subtle">Subtle link</Link>`}
+    angular={`import { LinkComponent } from '@chassis-ui/angular';
+
+@Component({
+  imports: [LinkComponent],
+  template: \`
+    <chassis-link-wrapper href="#">Default link</chassis-link-wrapper>
+    <chassis-link-wrapper href="#" variant="subtle">Subtle link</chassis-link-wrapper>
+  \`
+})
+export class MyComponent {}`}
+    astro={`---
+import Link from '@chassis-ui/astro/Link.astro';
+---
+
+<Link href="#">Default link</Link>
+<Link href="#" variant="subtle">Subtle link</Link>`}
+    svelte={`<script>
+  import { Link } from '@chassis-ui/svelte';
+</script>
+
+<Link href="#">Default link</Link>
+<Link href="#" variant="subtle">Subtle link</Link>`}
+  />
+
+  <h2>Underline Options</h2>
+  <ComponentPreview title="Always / Hover / None">
+    <chassis-link href="#" underline="always">Always underlined</chassis-link>
+    &nbsp;&nbsp;
+    <chassis-link href="#" underline="hover">Hover underline</chassis-link>
+    &nbsp;&nbsp;
+    <chassis-link href="#" underline="none">No underline</chassis-link>
+  </ComponentPreview>
+
+  <h2>Props</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Prop</th><th>Type</th><th>Default</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>href</code></td><td><code>string</code></td><td><code>''</code></td><td>Link URL</td></tr>
+      <tr><td><code>target</code></td><td><code>string</code></td><td><code>''</code></td><td>Link target (e.g. _blank)</td></tr>
+      <tr><td><code>variant</code></td><td><code>'default' | 'subtle'</code></td><td><code>'default'</code></td><td>Color variant</td></tr>
+      <tr><td><code>underline</code></td><td><code>'always' | 'hover' | 'none'</code></td><td><code>'always'</code></td><td>Underline behavior</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shadow Parts</h2>
+  <table class="props-table">
+    <thead>
+      <tr><th>Part</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>base</code></td><td>The anchor element</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Uses native <code>&lt;a&gt;</code> element for full keyboard and screen reader support</li>
+    <li>Adds <code>rel="noopener noreferrer"</code> when <code>target="_blank"</code></li>
+    <li>Focus-visible outline for keyboard navigation</li>
+  </ul>
+</DocsLayout>
+
+<script>
+  import '@chassis-ui/core/link';
+</script>
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+  .props-table th,
+  .props-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--chassis-color-outline-variant, #cac4d0);
+  }
+  .props-table th {
+    font-weight: 600;
+    color: var(--chassis-color-on-surface-variant, #49454f);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

@@ -1,0 +1,29 @@
+{
+  "chassis": {
+    "typography": {
+      "font-family": {
+        "primary": { "value": "'Inter', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" },
+        "mono": { "value": "'SF Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace" }
+      },
+      "font-size": {
+        "xs": { "value": "0.75rem" },
+        "sm": { "value": "0.8125rem" },
+        "md": { "value": "0.875rem" },
+        "lg": { "value": "1rem" },
+        "xl": { "value": "1.25rem" },
+        "2xl": { "value": "1.5rem" },
+        "3xl": { "value": "1.75rem" }
+      },
+      "font-weight": {
+        "regular": { "value": "400" },
+        "medium": { "value": "550" },
+        "bold": { "value": "650" }
+      },
+      "line-height": {
+        "tight": { "value": "1.25" },
+        "normal": { "value": "1.45" },
+        "loose": { "value": "1.65" }
+      }
+    }
+  }
+}

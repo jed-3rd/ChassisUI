@@ -1,0 +1,15 @@
+{
+  "chassis": {
+    "dialog": {
+      "scrim-color": { "value": "{chassis.color.scrim}" },
+      "panel-background": { "value": "{chassis.color.surface}" },
+      "panel-color": { "value": "{chassis.color.on-surface}" },
+      "panel-border-radius": { "value": "{chassis.shape.radius.lg}" },
+      "panel-elevation": { "value": "{chassis.elevation.3}" },
+      "panel-padding": { "value": "{chassis.spacing.600}" },
+      "panel-max-width": { "value": "560px" },
+      "title-font-size": { "value": "{chassis.typography.font-size.lg}" },
+      "title-font-weight": { "value": "{chassis.typography.font-weight.bold}" }
+    }
+  }
+}

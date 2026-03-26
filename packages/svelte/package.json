@@ -1,0 +1,26 @@
+{
+  "name": "@chassis-ui/svelte",
+  "version": "0.1.0",
+  "type": "module",
+  "svelte": "./src/index.js",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./Button.svelte": "./src/Button.svelte",
+    "./Input.svelte": "./src/Input.svelte",
+    "./Card.svelte": "./src/Card.svelte",
+    "./Checkbox.svelte": "./src/Checkbox.svelte",
+    "./Switch.svelte": "./src/Switch.svelte",
+    "./Badge.svelte": "./src/Badge.svelte"
+  },
+  "scripts": {
+    "build": "echo 'Svelte components are source-distributed'"
+  },
+  "peerDependencies": {
+    "svelte": "^4.0.0 || ^5.0.0",
+    "@chassis-ui/core": "*"
+  },
+  "devDependencies": {
+    "@chassis-ui/core": "*"
+  }
+}

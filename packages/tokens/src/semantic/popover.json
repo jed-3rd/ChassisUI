@@ -1,0 +1,12 @@
+{
+  "chassis": {
+    "popover": {
+      "background": { "value": "#ffffff" },
+      "color": { "value": "#1c1b1f" },
+      "border-color": { "value": "#cac4d0" },
+      "border-radius": { "value": "8px" },
+      "padding": { "value": "0.75rem" },
+      "arrow-size": { "value": "8px" }
+    }
+  }
+}
