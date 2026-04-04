@@ -7,6 +7,7 @@ export interface Props {
 }
 
 const { title, description = 'Chassis UI - Universal Design System Bridge' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const categories = [
   {
@@ -80,7 +81,7 @@ const categories = [
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description} />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
   <title>{title} | Chassis UI</title>
   <script is:inline>
     // Prevent flash: apply saved theme/mode before first paint
@@ -100,7 +101,7 @@ const categories = [
   <header class="site-header">
     <div class="header-left">
       <a href="/" class="logo">
-        <span class="logo-mark">⬡</span>
+        <img src={`${base}/chassis_ui_icon_v2.svg`} alt="Chassis UI" class="logo-mark" />
         <span class="logo-text">Chassis UI</span>
       </a>
       <nav class="header-nav">
@@ -183,8 +184,9 @@ const categories = [
   }
 
   .logo-mark {
-    font-size: 1.5rem;
-    color: var(--chassis-color-primary, #6200ee);
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
   }
 
   .header-nav {
